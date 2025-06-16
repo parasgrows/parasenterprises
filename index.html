@@ -37,6 +37,9 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+        html {
+            scroll-behavior: smooth; /* Smooth scrolling for tab navigation */
+        }
         body {
             font-family: 'Inter', sans-serif;
             background: linear-gradient(to bottom right, #e0f2fe, #bfdbfe); /* Light blue gradient for the body */
@@ -93,7 +96,7 @@
         <!-- Header -->
         <header class="text-center mb-8 md:mb-12 p-6 rounded-b-xl bg-gradient-to-r from-blue-700 to-blue-500 shadow-lg">
             <div class="flex items-center justify-center">
-                <img src="images/Logo.jpg" alt="Paras Enterprises Logo" class="h-14 w-14 mr-4 object-contain rounded-full shadow-md">
+                <img src="images/Logo.jpg" alt="Paras Enterprises Logo" class="h-14 w-14 mr-4 object-contain rounded-full shadow-md transition-transform duration-300 hover:scale-110">
                 <h1 class="text-4xl md:text-5xl font-extrabold text-white tracking-tight text-shadow-lg">Paras Enterprises</h1>
             </div>
             <p class="mt-3 text-lg text-blue-100 font-medium">Delivering Excellence in Security and Water Purity</p>
@@ -126,25 +129,25 @@
                         <h3 class="text-2xl font-semibold text-gray-800 mb-4 text-center">Our Seamless Turn-Key Process</h3>
                         <div class="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0 md:space-x-4">
                              <div class="flex items-center flex-col text-center w-full md:w-1/5">
-                                <div class="flex items-center justify-center w-16 h-16 bg-blue-500 text-white rounded-full text-2xl font-bold shadow-md">1</div>
+                                <div class="flex items-center justify-center w-16 h-16 bg-blue-500 text-white rounded-full text-2xl font-bold shadow-md transition-transform duration-200 hover:scale-110">1</div>
                                 <p class="mt-2 font-semibold text-gray-800">Consult & Design</p>
                                 <p class="text-sm text-gray-600">Custom system design based on your needs and budget.</p>
                             </div>
                             <div class="hidden md:block flex-1 h-1 bg-blue-300 rounded-full"></div>
                              <div class="flex items-center flex-col text-center w-full md:w-1/5">
-                                <div class="flex items-center justify-center w-16 h-16 bg-blue-500 text-white rounded-full text-2xl font-bold shadow-md">2</div>
+                                <div class="flex items-center justify-center w-16 h-16 bg-blue-500 text-white rounded-full text-2xl font-bold shadow-md transition-transform duration-200 hover:scale-110">2</div>
                                 <p class="mt-2 font-semibold text-gray-800">Supply & Install</p>
                                 <p class="text-sm text-gray-600">Professional installation and configuration.</p>
                             </div>
                             <div class="hidden md:block flex-1 h-1 bg-blue-300 rounded-full"></div>
                              <div class="flex items-center flex-col text-center w-full md:w-1/5">
-                                <div class="flex items-center justify-center w-16 h-16 bg-blue-500 text-white rounded-full text-2xl font-bold shadow-md">3</div>
+                                <div class="flex items-center justify-center w-16 h-16 bg-blue-500 text-white rounded-full text-2xl font-bold shadow-md transition-transform duration-200 hover:scale-110">3</div>
                                 <p class="mt-2 font-semibold text-gray-800">Integrate AI</p>
                                 <p class="text-sm text-gray-600">Intelligent analytics for proactive threat detection.</p>
                             </div>
                              <div class="hidden md:block flex-1 h-1 bg-blue-300 rounded-full"></div>
                             <div class="flex items-center flex-col text-center w-full md:w-1/5">
-                                <div class="flex items-center justify-center w-16 h-16 bg-blue-500 text-white rounded-full text-2xl font-bold shadow-md">4</div>
+                                <div class="flex items-center justify-center w-16 h-16 bg-blue-500 text-white rounded-full text-2xl font-bold shadow-md transition-transform duration-200 hover:scale-110">4</div>
                                 <p class="mt-2 font-semibold text-gray-800">Maintain & Support</p>
                                 <p class="text-sm text-gray-600">Ensuring your system runs smoothly long-term.</p>
                             </div>
@@ -193,8 +196,8 @@
                     <p class="text-gray-700 mb-6">Discover our "fix and forget" hard water softening solution. Using an innovative, natural vortex process, we treat hard water without chemicals, salt, or electricity, protecting your appliances and saving you money.</p>
 
                     <div class="grid md:grid-cols-2 gap-8 mb-8">
-                        <div class="bg-gray-50 p-6 rounded-lg shadow-inner">
-                            <h3 class="text-xl font-semibold text-gray-800 mb-3">What Others Do</h3>
+                        <div class="bg-red-50 p-6 rounded-lg border border-red-200 shadow-inner">
+                            <h3 class="text-xl font-semibold text-red-800 mb-3">What Others Do</h3>
                             <p class="text-gray-700">Traditional systems rely on salt, chemicals, and electricity. They require constant maintenance, waste water during regeneration, and often have high operational costs.</p>
                         </div>
                         <div class="bg-blue-50 p-6 rounded-lg border border-blue-200 shadow-inner">
