@@ -4,25 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Paras Enterprises | Integrated Security & Water Solutions</title>
-    <!-- Chosen Palette: Warm Neutrals & Slate Blue -->
+    <!-- Chosen Palette: Dynamic Blues & Accents -->
     <!-- Application Structure Plan: A tab-based, single-page application structure was chosen to clearly separate and prioritize the two core business pillars: Surveillance and Water Treatment. This design allows users to immediately grasp the company's dual expertise and explore each area in depth without being overwhelmed. The user flow is simple: select a tab to load the relevant content section dynamically. This approach is highly usable as it avoids scrolling through unrelated information, making it easy for a potential client interested in only one service to find what they need. Key interactions include tab-based navigation to switch between the primary service sections and an interactive comparison feature within the water treatment section to highlight its unique selling proposition effectively. -->
     <!-- Visualization & Content Choices:
         1.  Report Info: Turn-Key Surveillance process.
             Goal: Organize & Inform.
             Viz/Method: A styled HTML/CSS process flow diagram.
-            Interaction: Static visual representation for clarity.
+            Interaction: Static visual representation for clarity, now with enhanced hover.
             Justification: A visual flow is more intuitive for understanding a multi-step process like "turn-key" projects than a simple text list. It reinforces the comprehensive nature of the service.
             Library/Method: HTML + Tailwind CSS.
         2.  Report Info: Key features of surveillance (AI, Cloud, etc.).
             Goal: Inform.
             Viz/Method: Icon-based feature list.
-            Interaction: Hover effects on icons for engagement.
+            Interaction: Now with more distinct icons.
             Justification: Icons provide quick visual cues and break up text, making the features more scannable and memorable.
             Library/Method: HTML + Tailwind CSS + Unicode characters.
         3.  Report Info: Hard Water Softener USP (What we do vs. others).
             Goal: Compare & Persuade.
             Viz/Method: An interactive side-by-Side comparison table.
-            Interaction: Clicking on a feature reveals a checkmark for "What we do" and a cross for "What others do", providing a clear visual contrast.
+            Interaction: Clicking on a feature reveals a checkmark for "What we do" and a cross for "What others do", providing a clear visual contrast. Now with more vibrant flip icons.
             Justification: This interactive comparison gamifies the information slightly, making it more engaging and powerfully demonstrating the product's superiority over traditional methods.
             Library/Method: HTML + Tailwind CSS + JavaScript.
         4.  Report Info: High TDS and Hardness treatment capability.
@@ -32,7 +32,6 @@
             Justification: A bar chart provides a strong visual representation of the product's high-performance capabilities, making the impressive numbers (TDS up to 12,000) tangible and easy to grasp.
             Library/Method: Chart.js (Canvas).
         -->
-    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
@@ -42,18 +41,35 @@
         }
         body {
             font-family: 'Inter', sans-serif;
-            background: linear-gradient(to bottom right, #e0f2fe, #bfdbfe); /* Light blue gradient for the body */
-            color: #1f2937; /* Darker text for contrast */
+            /* Richer, slightly darker blue gradient for a futuristic feel */
+            background: linear-gradient(to bottom right, #1a202c, #2d3748, #4a5568);
+            color: #e2e8f0; /* Lighter text for dark background */
         }
+
+        /* Custom text shadow for header */
+        .text-shadow-glow {
+            text-shadow: 0 0 8px rgba(255, 255, 255, 0.7), 0 0 15px rgba(255, 255, 255, 0.4);
+        }
+
+        /* Custom glow effect for images on hover */
+        .img-glow:hover {
+            box-shadow: 0 0 15px rgba(59, 130, 246, 0.6), 0 0 25px rgba(59, 130, 246, 0.4);
+        }
+
         .tab-active {
-            border-bottom-color: #2563eb; /* Stronger blue for active tab */
-            color: #2563eb;
+            border-bottom-color: #38b2ac; /* Vibrant teal for active tab */
+            color: #38b2ac;
             font-weight: 700; /* Bolder for active tab */
         }
-        .tab-btn:hover {
-            color: #3b82f6; /* Hover color for inactive tabs */
-            border-color: #93c5fd; /* Light blue border on hover */
+        .tab-btn {
+            transition: all 0.3s ease-in-out;
+            color: #cbd5e0; /* Lighter gray for inactive tabs */
         }
+        .tab-btn:hover {
+            color: #4fd1c5; /* Brighter teal on hover */
+            border-color: #4fd1c5;
+        }
+
         .content-section {
             display: none;
         }
@@ -87,32 +103,61 @@
         .comparison-item.flipped .icon-placeholder {
             transform: rotateY(180deg);
         }
+        /* New: Pulsating effect for CTA buttons */
+        .cta-button {
+            animation: pulse 2s infinite cubic-bezier(0.4, 0, 0.6, 1);
+        }
+        @keyframes pulse {
+            0%, 100% {
+                box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.7);
+            }
+            50% {
+                box-shadow: 0 0 0 10px rgba(59, 130, 246, 0);
+            }
+        }
+        .cta-button.bg-green-600 { /* Specific pulse for green button */
+             animation: pulse-green 2s infinite cubic-bezier(0.4, 0, 0.6, 1);
+        }
+        @keyframes pulse-green {
+            0%, 100% {
+                box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7);
+            }
+            50% {
+                box-shadow: 0 0 0 10px rgba(34, 197, 94, 0);
+            }
+        }
+
+        /* Process step hover effect */
+        .process-step-item:hover {
+            transform: translateY(-5px) scale(1.03);
+            box-shadow: 0 10px 20px rgba(59, 130, 246, 0.3);
+        }
     </style>
 </head>
-<body class="text-gray-800">
+<body class="text-gray-200">
 
     <div class="container mx-auto p-4 md:p-8 max-w-7xl">
 
         <!-- Header -->
-        <header class="text-center mb-8 md:mb-12 p-6 rounded-b-xl bg-gradient-to-r from-blue-700 to-blue-500 shadow-lg">
+        <header class="text-center mb-8 md:mb-12 p-6 rounded-b-xl bg-gradient-to-r from-gray-900 via-blue-800 to-purple-800 shadow-xl">
             <div class="flex items-center justify-center">
-                <img src="images/Logo.jpg" alt="Paras Enterprises Logo" class="h-14 w-14 mr-4 object-contain rounded-full shadow-md transition-transform duration-300 hover:scale-110">
-                <h1 class="text-5xl md:text-6xl font-extrabold text-white tracking-tight text-shadow-lg">Paras Enterprises</h1>
+                <img src="images/Logo.jpg" alt="Paras Enterprises Logo" class="h-16 w-16 mr-4 object-contain rounded-full shadow-lg transition-transform duration-300 hover:scale-110 img-glow">
+                <h1 class="text-5xl md:text-6xl font-extrabold text-white tracking-tight text-shadow-glow">Paras Enterprises</h1>
             </div>
-            <p class="mt-3 text-lg md:text-xl text-blue-100 font-medium">Delivering Excellence in Security and Water Purity</p>
-            <p class="mt-4 text-white text-xl md:text-2xl font-semibold">Your Partner for Turn-Key Security and Zero-Maintenance Water Solutions</p>
+            <p class="mt-3 text-lg md:text-xl text-blue-200 font-medium">Delivering Excellence in Security and Water Purity</p>
+            <p class="mt-4 text-white text-xl md:text-2xl font-semibold text-shadow-glow">Your Partner for Turn-Key Security and Zero-Maintenance Water Solutions</p>
         </header>
 
         <!-- Navigation Tabs -->
-        <div class="mb-8 border-b-2 border-blue-200">
+        <div class="mb-8 border-b-2 border-blue-600">
             <nav class="flex justify-center -mb-px space-x-6 md:space-x-8" aria-label="Tabs">
-                <button class="tab-btn whitespace-nowrap py-4 px-3 border-b-2 font-semibold text-base md:text-lg border-transparent text-gray-600 hover:text-blue-700 hover:border-blue-300 transition duration-200 ease-in-out tab-active" data-tab="surveillance">
+                <button class="tab-btn whitespace-nowrap py-4 px-3 border-b-2 font-semibold text-base md:text-lg border-transparent text-gray-400 hover:text-teal-400 hover:border-teal-400 transition duration-200 ease-in-out tab-active" data-tab="surveillance">
                     Turn-Key Surveillance
                 </button>
-                <button class="tab-btn whitespace-nowrap py-4 px-3 border-b-2 font-semibold text-base md:text-lg border-transparent text-gray-600 hover:text-blue-700 hover:border-blue-300 transition duration-200 ease-in-out" data-tab="water">
+                <button class="tab-btn whitespace-nowrap py-4 px-3 border-b-2 font-semibold text-base md:text-lg border-transparent text-gray-400 hover:text-teal-400 hover:border-teal-400 transition duration-200 ease-in-out" data-tab="water">
                     Hard Water Treatment
                 </button>
-                 <button class="tab-btn whitespace-nowrap py-4 px-3 border-b-2 font-semibold text-base md:text-lg border-transparent text-gray-600 hover:text-blue-700 hover:border-blue-300 transition duration-200 ease-in-out" data-tab="about">
+                 <button class="tab-btn whitespace-nowrap py-4 px-3 border-b-2 font-semibold text-base md:text-lg border-transparent text-gray-400 hover:text-teal-400 hover:border-teal-400 transition duration-200 ease-in-out" data-tab="about">
                     About Us
                 </button>
             </nav>
@@ -122,65 +167,65 @@
         <main>
             <!-- Surveillance Section -->
             <section id="surveillance" class="content-section active">
-                <div class="bg-white p-6 md:p-8 rounded-xl shadow-lg border border-gray-100">
-                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4 text-center">Tailored Surveillance Solutions: For Every Home and Business</h2>
-                    <p class="text-base md:text-lg text-gray-700 mb-6">Paras Enterprises provides advanced surveillance solutions designed to meet the diverse needs of both domestic and commercial clients. From simple home monitoring to complex enterprise security integrations, we deliver comprehensive, AI-powered systems for complete peace of mind.</p>
+                <div class="bg-gray-800 p-6 md:p-8 rounded-xl shadow-xl border border-gray-700">
+                    <h2 class="text-3xl md:text-4xl font-bold text-white mb-4 text-center">Tailored Surveillance Solutions: For Every Home and Business</h2>
+                    <p class="text-base md:text-lg text-gray-300 mb-6">Paras Enterprises provides advanced surveillance solutions designed to meet the diverse needs of both domestic and commercial clients. From simple home monitoring to complex enterprise security integrations, we deliver comprehensive, AI-powered systems for complete peace of mind.</p>
 
                     <!-- Domestic Segment -->
-                    <div class="mb-8 p-6 bg-blue-50 rounded-lg border border-blue-200 shadow-inner">
-                        <h3 class="text-2xl md:text-3xl font-semibold text-blue-800 mb-4">Smart Security for Homes & Small Businesses</h3>
-                        <p class="text-base text-gray-700 mb-4">For our domestic clients (households, shops, flats, apartments) and small businesses, we offer highly cost-effective, user-friendly, WiFi-based camera solutions with integrated AI features. Our flexible approach allows you to fulfill security requirements starting from just one camera.</p>
-                        <ul class="space-y-2 text-base text-gray-700">
-                            <li class="flex items-start"><span class="text-blue-600 mr-2 mt-1">🏠</span> <strong>WiFi Cameras:</strong> Available for both indoor and outdoor use, providing flexible placement.</li>
-                            <li class="flex items-start"><span class="text-blue-600 mr-2 mt-1">💡</span> <strong>Advanced AI Features:</strong> Built-in intelligence for smart detection and alerts.</li>
-                            <li class="flex items-start"><span class="text-blue-600 mr-2 mt-1">💾</span> <strong>SD Card Recording:</strong> Local storage for reliable footage capture.</li>
-                            <li class="flex items-start"><span class="text-blue-600 mr-2 mt-1">☁️</span> <strong>Optional Cloud Recording:</strong> Secure, subscription-based cloud storage for enhanced accessibility and backup.</li>
+                    <div class="mb-8 p-6 bg-blue-900 bg-opacity-30 rounded-lg border border-blue-700 shadow-inner">
+                        <h3 class="text-2xl md:text-3xl font-semibold text-blue-300 mb-4">Smart Security for Homes & Small Businesses</h3>
+                        <p class="text-base text-gray-300 mb-4">For our domestic clients (households, shops, flats, apartments) and small businesses, we offer highly cost-effective, user-friendly, WiFi-based camera solutions with integrated AI features. Our flexible approach allows you to fulfill security requirements starting from just one camera.</p>
+                        <ul class="space-y-2 text-base text-gray-300">
+                            <li class="flex items-start"><span class="text-teal-400 mr-2 mt-1 text-xl">🌐</span> <strong>WiFi Cameras:</strong> Available for both indoor and outdoor use, providing flexible placement.</li>
+                            <li class="flex items-start"><span class="text-teal-400 mr-2 mt-1 text-xl">✨</span> <strong>Advanced AI Features:</strong> Built-in intelligence for smart detection and alerts.</li>
+                            <li class="flex items-start"><span class="text-teal-400 mr-2 mt-1 text-xl">💾</span> <strong>SD Card Recording:</strong> Local storage for reliable footage capture.</li>
+                            <li class="flex items-start"><span class="text-teal-400 mr-2 mt-1 text-xl">☁️</span> <strong>Optional Cloud Recording:</strong> Secure, subscription-based cloud storage for enhanced accessibility and backup.</li>
                         </ul>
                     </div>
 
                     <!-- Commercial Segment -->
-                    <div class="mb-8 p-6 bg-gray-50 rounded-lg border border-gray-200 shadow-inner">
-                        <h3 class="text-2xl md:text-3xl font-semibold text-gray-800 mb-4">Integrated Security Systems for Enterprises</h3>
-                        <p class="text-base text-gray-700 mb-4">For our commercial segment, we provide entire, turn-key solutions tailored to complex business needs. Our offerings go beyond cameras to include full integration of various security and network components.</p>
-                        <ul class="space-y-2 text-base text-gray-700">
-                            <li class="flex items-start"><span class="text-blue-600 mr-2 mt-1">📡</span> <strong>Network Integration:</strong> Seamless integration of access points, data, and voice connections.</li>
-                            <li class="flex items-start"><span class="text-blue-600 mr-2 mt-1">🔒</span> <strong>Access Control Systems:</strong> Robust solutions for managing entry and exit points.</li>
-                            <li class="flex items-start"><span class="text-blue-600 mr-2 mt-1">🖐️</span> <strong>Biometric Solutions:</strong> Advanced biometric systems for secure authentication.</li>
-                            <li class="flex items-start"><span class="text-blue-600 mr-2 mt-1">🎥</span> <strong>IP Cameras:</strong> High-resolution IP cameras in various resolutions, equipped with many advanced AI features for superior monitoring and analytics.</li>
+                    <div class="mb-8 p-6 bg-gray-900 bg-opacity-30 rounded-lg border border-gray-700 shadow-inner">
+                        <h3 class="text-2xl md:text-3xl font-semibold text-purple-300 mb-4">Integrated Security Systems for Enterprises</h3>
+                        <p class="text-base text-gray-300 mb-4">For our commercial segment, we provide entire, turn-key solutions tailored to complex business needs. Our offerings go beyond cameras to include full integration of various security and network components.</p>
+                        <ul class="space-y-2 text-base text-gray-300">
+                            <li class="flex items-start"><span class="text-purple-400 mr-2 mt-1 text-xl">📡</span> <strong>Network Integration:</strong> Seamless integration of access points, data, and voice connections.</li>
+                            <li class="flex items-start"><span class="text-purple-400 mr-2 mt-1 text-xl">🔒</span> <strong>Access Control Systems:</strong> Robust solutions for managing entry and exit points.</li>
+                            <li class="flex items-start"><span class="text-purple-400 mr-2 mt-1 text-xl">👆</span> <strong>Biometric Solutions:</strong> Advanced biometric systems for secure authentication.</li>
+                            <li class="flex items-start"><span class="text-purple-400 mr-2 mt-1 text-xl">📹</span> <strong>IP Cameras:</strong> High-resolution IP cameras in various resolutions, equipped with many advanced AI features for superior monitoring and analytics.</li>
                         </ul>
                     </div>
 
-                    <h3 class="text-2xl md:text-3xl font-semibold text-gray-800 mb-4 text-center">Comprehensive Camera Technologies</h3>
-                    <p class="text-base text-gray-700 mb-6 text-center">Regardless of the segment, Paras Enterprises offers a wide array of advanced CCTV technologies to suit diverse environmental and operational requirements, all equipped with smart features for optimal performance.</p>
+                    <h3 class="text-2xl md:text-3xl font-semibold text-white mb-4 text-center">Comprehensive Camera Technologies</h3>
+                    <p class="text-base text-gray-300 mb-6 text-center">Regardless of the segment, Paras Enterprises offers a wide array of advanced CCTV technologies to suit diverse environmental and operational requirements, all equipped with smart features for optimal performance.</p>
                     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
-                        <div class="p-4 bg-gray-100 rounded-lg shadow-sm border border-gray-200">
-                            <h4 class="font-semibold text-gray-800 text-lg mb-2 flex items-center">
-                                <span class="text-blue-600 mr-2 text-xl">📶</span> WiFi Cameras
+                        <div class="p-4 bg-gray-900 bg-opacity-30 rounded-lg shadow-md border border-gray-700">
+                            <h4 class="font-semibold text-white text-lg mb-2 flex items-center">
+                                <span class="text-blue-400 mr-2 text-xl">📶</span> WiFi Cameras
                             </h4>
-                            <p class="text-gray-700 text-sm">Versatile indoor and outdoor WiFi cameras, perfect for easy setup and wireless monitoring. Ideal for homes and small spaces.</p>
-                            <ul class="text-xs text-gray-600 mt-2 list-disc list-inside">
+                            <p class="text-gray-300 text-sm">Versatile indoor and outdoor WiFi cameras, perfect for easy setup and wireless monitoring. Ideal for homes and small spaces.</p>
+                            <ul class="text-xs text-gray-400 mt-2 list-disc list-inside">
                                 <li>AI features for smart detection.</li>
                                 <li>SD card recording built-in.</li>
                                 <li>Optional subscription-based cloud recording.</li>
                             </ul>
                         </div>
-                        <div class="p-4 bg-gray-100 rounded-lg shadow-sm border border-gray-200">
-                            <h4 class="font-semibold text-gray-800 text-lg mb-2 flex items-center">
-                                <span class="text-blue-600 mr-2 text-xl">📡</span> 4G SIM Card Based Cameras
+                        <div class="p-4 bg-gray-900 bg-opacity-30 rounded-lg shadow-md border border-gray-700">
+                            <h4 class="font-semibold text-white text-lg mb-2 flex items-center">
+                                <span class="text-blue-400 mr-2 text-xl">📡</span> 4G SIM Card Based Cameras
                             </h4>
-                            <p class="text-gray-700 text-sm">Reliable indoor and outdoor cameras using 4G connectivity, ideal for locations without traditional internet access.</p>
-                            <ul class="text-xs text-gray-600 mt-2 list-disc list-inside">
+                            <p class="text-gray-300 text-sm">Reliable indoor and outdoor cameras using 4G connectivity, ideal for locations without traditional internet access.</p>
+                            <ul class="text-xs text-gray-400 mt-2 list-disc list-inside">
                                 <li>AI features for smart detection.</li>
                                 <li>SD card recording built-in.</li>
                                 <li>Optional subscription-based cloud recording.</li>
                             </ul>
                         </div>
-                        <div class="p-4 bg-gray-100 rounded-lg shadow-sm border border-gray-200">
-                            <h4 class="font-semibold text-gray-800 text-lg mb-2 flex items-center">
-                                <span class="text-blue-600 mr-2 text-xl">☀️</span> Solar Powered 4G Cameras
+                        <div class="p-4 bg-gray-900 bg-opacity-30 rounded-lg shadow-md border border-gray-700">
+                            <h4 class="font-semibold text-white text-lg mb-2 flex items-center">
+                                <span class="text-blue-400 mr-2 text-xl">☀️</span> Solar Powered 4G Cameras
                             </h4>
-                            <p class="text-gray-700 text-sm">Self-sufficient outdoor cameras with solar charging and 4G connectivity, perfect for remote or off-grid installations.</p>
-                            <ul class="text-xs text-gray-600 mt-2 list-disc list-inside">
+                            <p class="text-gray-300 text-sm">Self-sufficient outdoor cameras with solar charging and 4G connectivity, perfect for remote or off-grid installations.</p>
+                            <ul class="text-xs text-gray-400 mt-2 list-disc list-inside">
                                 <li>AI features for smart detection.</li>
                                 <li>SD card recording built-in.</li>
                                 <li>Optional subscription-based cloud recording.</li>
@@ -190,69 +235,69 @@
 
 
                     <div class="mb-8">
-                        <h3 class="text-2xl md:text-3xl font-semibold text-gray-800 mb-4 text-center">Our Seamless Turn-Key Process</h3>
+                        <h3 class="text-2xl md:text-3xl font-semibold text-white mb-4 text-center">Our Seamless Turn-Key Process</h3>
                         <div class="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0 md:space-x-4">
-                             <div class="flex items-center flex-col text-center w-full md:w-1/5">
-                                <div class="flex items-center justify-center w-16 h-16 bg-blue-500 text-white rounded-full text-2xl font-bold shadow-md transition-transform duration-200 hover:scale-110">1</div>
-                                <p class="mt-2 font-semibold text-gray-800 text-base">Consult & Design</p>
-                                <p class="text-sm text-gray-600">Custom system design based on your needs and budget.</p>
+                             <div class="process-step-item flex items-center flex-col text-center w-full md:w-1/5 p-4 rounded-lg bg-gradient-to-br from-blue-700 to-blue-500 shadow-md transition-all duration-300 ease-in-out transform hover:scale-105 hover:shadow-lg">
+                                <div class="flex items-center justify-center w-16 h-16 bg-gradient-to-br from-purple-500 to-blue-500 text-white rounded-full text-2xl font-bold shadow-md">1</div>
+                                <p class="mt-2 font-semibold text-white text-base">Consult & Design</p>
+                                <p class="text-sm text-blue-100">Custom system design based on your needs and budget.</p>
                             </div>
-                            <div class="hidden md:block flex-1 h-1 bg-blue-300 rounded-full"></div>
-                             <div class="flex items-center flex-col text-center w-full md:w-1/5">
-                                <div class="flex items-center justify-center w-16 h-16 bg-blue-500 text-white rounded-full text-2xl font-bold shadow-md transition-transform duration-200 hover:scale-110">2</div>
-                                <p class="mt-2 font-semibold text-gray-800 text-base">Supply & Install</p>
-                                <p class="text-sm text-gray-600">Professional installation and configuration.</p>
+                            <div class="hidden md:block flex-1 h-1 bg-blue-600 rounded-full"></div>
+                             <div class="process-step-item flex items-center flex-col text-center w-full md:w-1/5 p-4 rounded-lg bg-gradient-to-br from-blue-700 to-blue-500 shadow-md transition-all duration-300 ease-in-out transform hover:scale-105 hover:shadow-lg">
+                                <div class="flex items-center justify-center w-16 h-16 bg-gradient-to-br from-purple-500 to-blue-500 text-white rounded-full text-2xl font-bold shadow-md">2</div>
+                                <p class="mt-2 font-semibold text-white text-base">Supply & Install</p>
+                                <p class="text-sm text-blue-100">Professional installation and configuration.</p>
                             </div>
-                            <div class="hidden md:block flex-1 h-1 bg-blue-300 rounded-full"></div>
-                             <div class="flex items-center flex-col text-center w-full md:w-1/5">
-                                <div class="flex items-center justify-center w-16 h-16 bg-blue-500 text-white rounded-full text-2xl font-bold shadow-md transition-transform duration-200 hover:scale-110">3</div>
-                                <p class="mt-2 font-semibold text-gray-800 text-base">Integrate AI</p>
-                                <p class="text-sm text-gray-600">Intelligent analytics for proactive threat detection.</p>
+                            <div class="hidden md:block flex-1 h-1 bg-blue-600 rounded-full"></div>
+                             <div class="process-step-item flex items-center flex-col text-center w-full md:w-1/5 p-4 rounded-lg bg-gradient-to-br from-blue-700 to-blue-500 shadow-md transition-all duration-300 ease-in-out transform hover:scale-105 hover:shadow-lg">
+                                <div class="flex items-center justify-center w-16 h-16 bg-gradient-to-br from-purple-500 to-blue-500 text-white rounded-full text-2xl font-bold shadow-md">3</div>
+                                <p class="mt-2 font-semibold text-white text-base">Integrate AI</p>
+                                <p class="text-sm text-blue-100">Intelligent analytics for proactive threat detection.</p>
                             </div>
-                             <div class="hidden md:block flex-1 h-1 bg-blue-300 rounded-full"></div>
-                            <div class="flex items-center flex-col text-center w-full md:w-1/5">
-                                <div class="flex items-center justify-center w-16 h-16 bg-blue-500 text-white rounded-full text-2xl font-bold shadow-md transition-transform duration-200 hover:scale-110">4</div>
-                                <p class="mt-2 font-semibold text-gray-800 text-base">Maintain & Support</p>
-                                <p class="text-sm text-gray-600">Ensuring your system runs smoothly long-term.</p>
+                             <div class="hidden md:block flex-1 h-1 bg-blue-600 rounded-full"></div>
+                            <div class="process-step-item flex items-center flex-col text-center w-full md:w-1/5 p-4 rounded-lg bg-gradient-to-br from-blue-700 to-blue-500 shadow-md transition-all duration-300 ease-in-out transform hover:scale-105 hover:shadow-lg">
+                                <div class="flex items-center justify-center w-16 h-16 bg-gradient-to-br from-purple-500 to-blue-500 text-white rounded-full text-2xl font-bold shadow-md">4</div>
+                                <p class="mt-2 font-semibold text-white text-base">Maintain & Support</p>
+                                <p class="text-sm text-blue-100">Ensuring your system runs smoothly long-term.</p>
                             </div>
                         </div>
                     </div>
                     
                     <div class="grid md:grid-cols-2 gap-8 items-center">
                         <div>
-                            <h3 class="text-2xl font-semibold text-gray-800 mb-4">Core Technology & Services</h3>
+                            <h3 class="text-2xl font-semibold text-white mb-4">Core Technology & Services</h3>
                             <ul class="space-y-4 text-base md:text-lg">
-                                <li class="flex items-start"><span class="text-blue-600 mr-3 mt-1 text-xl">📷</span><div><strong class="font-semibold text-gray-800">IP & CCTV Cameras:</strong> High-resolution, reliable cameras forming the foundation of our custom-designed systems.</div></li>
-                                <li class="flex items-start"><span class="text-blue-600 mr-3 mt-1 text-xl">📊</span><div><strong class="font-semibold text-gray-800">Advanced Video Analytics:</strong> Intelligent software that reduces the burden on security personnel by providing actionable insights.</div></li>
-                                <li class="flex items-start"><span class="text-blue-600 mr-3 mt-1 text-xl">🧠</span><div><strong class="font-semibold text-gray-800">Artificial Intelligence (AI):</strong> Proactive threat identification and smart monitoring with unparalleled accuracy and efficiency.</div></li>
-                                <li class="flex items-start"><span class="text-blue-600 mr-3 mt-1 text-xl">☁️</span><div><strong class="font-semibold text-gray-800">Cloud-Based Solutions:</strong> Scalable, flexible, and cost-effective surveillance accessible from anywhere, at any time.</div></li>
+                                <li class="flex items-start"><span class="text-teal-400 mr-3 mt-1 text-xl">📷</span><div><strong class="font-semibold text-gray-100">IP & CCTV Cameras:</strong> High-resolution, reliable cameras forming the foundation of our custom-designed systems.</div></li>
+                                <li class="flex items-start"><span class="text-teal-400 mr-3 mt-1 text-xl">📊</span><div><strong class="font-semibold text-gray-100">Advanced Video Analytics:</strong> Intelligent software that reduces the burden on security personnel by providing actionable insights.</div></li>
+                                <li class="flex items-start"><span class="text-teal-400 mr-3 mt-1 text-xl">🧠</span><div><strong class="font-semibold text-gray-100">Artificial Intelligence (AI):</strong> Proactive threat identification and smart monitoring with unparalleled accuracy and efficiency.</div></li>
+                                <li class="flex items-start"><span class="text-teal-400 mr-3 mt-1 text-xl">☁️</span><div><strong class="font-semibold text-gray-100">Cloud-Based Solutions:</strong> Scalable, flexible, and cost-effective surveillance accessible from anywhere, at any time.</div></li>
                             </ul>
                         </div>
-                         <div class="bg-blue-50 p-6 rounded-lg border border-blue-200 shadow-inner">
-                            <h3 class="text-xl md:text-2xl font-semibold text-blue-800 mb-3">Why Our Approach Works</h3>
-                            <p class="text-base text-gray-700">By managing the entire lifecycle of your security system, we eliminate complexity and deliver a solution that is perfectly tailored to your environment. You get a single point of accountability and a system guaranteed to perform.</p>
+                         <div class="bg-blue-900 bg-opacity-30 p-6 rounded-lg border border-blue-700 shadow-inner">
+                            <h3 class="text-xl md:text-2xl font-semibold text-blue-300 mb-3">Why Our Approach Works</h3>
+                            <p class="text-base text-gray-300">By managing the entire lifecycle of your security system, we eliminate complexity and deliver a solution that is perfectly tailored to your environment. You get a single point of accountability and a system guaranteed to perform.</p>
                         </div>
                     </div>
 
                     <!-- Surveillance Installation Images -->
                     <div class="mt-8 text-center">
-                        <h3 class="text-2xl md:text-3xl font-semibold text-gray-800 mb-4 text-center">Installation Highlights: Surveillance</h3>
+                        <h3 class="text-2xl md:text-3xl font-semibold text-white mb-4 text-center">Installation Highlights: Surveillance</h3>
                         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 max-w-4xl mx-auto">
-                            <img src="images/surveillance1.jpg" alt="Surveillance Installation 1" class="w-full h-48 object-cover rounded-lg shadow-md hover:scale-105 transition-transform duration-300 ease-in-out">
-                            <img src="images/surveillance2.jpg" alt="Surveillance Installation 2" class="w-full h-48 object-cover rounded-lg shadow-md hover:scale-105 transition-transform duration-300 ease-in-out">
-                            <img src="images/surveillance3.jpg" alt="Surveillance Installation 3" class="w-full h-48 object-cover rounded-lg shadow-md hover:scale-105 transition-transform duration-300 ease-in-out">
-                            <img src="images/surveillance4.jpg" alt="Surveillance Installation 4" class="w-full h-48 object-cover rounded-lg shadow-md hover:scale-105 transition-transform duration-300 ease-in-out">
-                            <img src="images/surveillance5.jpg" alt="Surveillance Installation 5" class="w-full h-48 object-cover rounded-lg shadow-md hover:scale-105 transition-transform duration-300 ease-in-out">
-                            <img src="images/surveillance6.jpg" alt="Surveillance Installation 6" class="w-full h-48 object-cover rounded-lg shadow-md hover:scale-105 transition-transform duration-300 ease-in-out">
-                            <img src="images/surveillance7.jpg" alt="Surveillance Installation 7" class="w-full h-48 object-cover rounded-lg shadow-md hover:scale-105 transition-transform duration-300 ease-in-out">
-                            <img src="images/surveillance8.jpg" alt="Surveillance Installation 8" class="w-full h-48 object-cover rounded-lg shadow-md hover:scale-105 transition-transform duration-300 ease-in-out">
-                            <img src="images/surveillance9.jpg" alt="Surveillance Installation 9" class="w-full h-48 object-cover rounded-lg shadow-md hover:scale-105 transition-transform duration-300 ease-in-out">
+                            <img src="images/surveillance1.jpg" alt="Surveillance Installation 1" class="w-full h-48 object-cover rounded-lg shadow-md transition-all duration-300 ease-in-out img-glow">
+                            <img src="images/surveillance2.jpg" alt="Surveillance Installation 2" class="w-full h-48 object-cover rounded-lg shadow-md transition-all duration-300 ease-in-out img-glow">
+                            <img src="images/surveillance3.jpg" alt="Surveillance Installation 3" class="w-full h-48 object-cover rounded-lg shadow-md transition-all duration-300 ease-in-out img-glow">
+                            <img src="images/surveillance4.jpg" alt="Surveillance Installation 4" class="w-full h-48 object-cover rounded-lg shadow-md transition-all duration-300 ease-in-out img-glow">
+                            <img src="images/surveillance5.jpg" alt="Surveillance Installation 5" class="w-full h-48 object-cover rounded-lg shadow-md transition-all duration-300 ease-in-out img-glow">
+                            <img src="images/surveillance6.jpg" alt="Surveillance Installation 6" class="w-full h-48 object-cover rounded-lg shadow-md transition-all duration-300 ease-in-out img-glow">
+                            <img src="images/surveillance7.jpg" alt="Surveillance Installation 7" class="w-full h-48 object-cover rounded-lg shadow-md transition-all duration-300 ease-in-out img-glow">
+                            <img src="images/surveillance8.jpg" alt="Surveillance Installation 8" class="w-full h-48 object-cover rounded-lg shadow-md transition-all duration-300 ease-in-out img-glow">
+                            <img src="images/surveillance9.jpg" alt="Surveillance Installation 9" class="w-full h-48 object-cover rounded-lg shadow-md transition-all duration-300 ease-in-out img-glow">
                         </div>
-                        <p class="mt-4 text-gray-600 text-sm">Our expert team ensures seamless and efficient installation of all surveillance systems.</p>
+                        <p class="mt-4 text-gray-400 text-sm">Our expert team ensures seamless and efficient installation of all surveillance systems.</p>
                     </div>
 
                     <div class="mt-10 text-center">
-                        <a href="https://wa.me/919894214024" target="_blank" rel="noopener noreferrer" class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-full shadow-lg transition duration-300 ease-in-out transform hover:scale-105">
+                        <a href="https://wa.me/919894214024" target="_blank" rel="noopener noreferrer" class="cta-button inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-full shadow-lg transition duration-300 ease-in-out transform hover:scale-105">
                             Get a Surveillance Quote Today!
                         </a>
                     </div>
@@ -261,53 +306,53 @@
 
             <!-- Water Treatment Section -->
             <section id="water" class="content-section">
-                 <div class="bg-white p-6 md:p-8 rounded-xl shadow-lg border border-gray-100">
-                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-2">Revolutionary Zero-Maintenance Hard Water Treatment</h2>
-                    <p class="text-base md:text-lg text-gray-700 mb-6">Discover our "fix and forget" hard water softening solution. Using an innovative, natural vortex process, we treat hard water without chemicals, salt, or electricity, protecting your appliances and saving you money.</p>
+                 <div class="bg-gray-800 p-6 md:p-8 rounded-xl shadow-xl border border-gray-700">
+                    <h2 class="text-3xl md:text-4xl font-bold text-white mb-2">Revolutionary Zero-Maintenance Hard Water Treatment</h2>
+                    <p class="text-base md:text-lg text-gray-300 mb-6">Discover our "fix and forget" hard water softening solution. Using an innovative, natural vortex process, we treat hard water without chemicals, salt, or electricity, protecting your appliances and saving you money.</p>
 
                     <div class="grid md:grid-cols-2 gap-8 mb-8">
-                        <div class="bg-red-50 p-6 rounded-lg border border-red-200 shadow-inner">
-                            <h3 class="text-xl md:text-2xl font-semibold text-red-800 mb-3">What Others Do</h3>
-                            <p class="text-base text-gray-700">Traditional systems rely on salt, chemicals, and electricity. They require constant maintenance, waste water during regeneration, and often have high operational costs.</p>
+                        <div class="bg-red-900 bg-opacity-30 p-6 rounded-lg border border-red-700 shadow-inner">
+                            <h3 class="text-xl md:text-2xl font-semibold text-red-300 mb-3">What Others Do</h3>
+                            <p class="text-base text-gray-300">Traditional systems rely on salt, chemicals, and electricity. They require constant maintenance, waste water during regeneration, and often have high operational costs.</p>
                         </div>
-                        <div class="bg-blue-50 p-6 rounded-lg border border-blue-200 shadow-inner">
-                             <h3 class="text-xl md:text-2xl font-semibold text-blue-800 mb-3">What We Do</h3>
-                            <p class="text-base text-gray-700">Our system uses a natural vortex to physically restructure hardness minerals (magnesium and calcium). This prevents limescale formation permanently without altering TDS levels or adding anything to your water.</p>
+                        <div class="bg-blue-900 bg-opacity-30 p-6 rounded-lg border border-blue-700 shadow-inner">
+                             <h3 class="text-xl md:text-2xl font-semibold text-blue-300 mb-3">What We Do</h3>
+                            <p class="text-base text-gray-300">Our system uses a natural vortex to physically restructure hardness minerals (magnesium and calcium). This prevents limescale formation permanently without altering TDS levels or adding anything to your water.</p>
                         </div>
                     </div>
                     
-                    <h3 class="text-2xl md:text-3xl font-semibold text-gray-800 mb-4 text-center">Unmatched Benefits: A Quick Comparison</h3>
+                    <h3 class="text-2xl md:text-3xl font-semibold text-white mb-4 text-center">Unmatched Benefits: A Quick Comparison</h3>
                     <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 text-center">
-                        <div class="comparison-item bg-blue-100 p-4 rounded-lg shadow-sm border border-blue-200">
+                        <div class="comparison-item bg-gray-900 bg-opacity-30 p-4 rounded-lg shadow-sm border border-gray-700">
                             <div class="icon-placeholder h-10 w-10 mx-auto mb-2 flex items-center justify-center text-3xl">
-                                <div class="front">⚙️</div><div class="back text-green-600">✓</div>
-                            </div><p class="font-medium text-sm text-gray-800">No Maintenance</p>
+                                <div class="front text-orange-400">⚙️</div><div class="back text-green-500">✅</div>
+                            </div><p class="font-medium text-sm text-gray-200">No Maintenance</p>
                         </div>
-                        <div class="comparison-item bg-blue-100 p-4 rounded-lg shadow-sm border border-blue-200">
+                        <div class="comparison-item bg-gray-900 bg-opacity-30 p-4 rounded-lg shadow-sm border border-gray-700">
                              <div class="icon-placeholder h-10 w-10 mx-auto mb-2 flex items-center justify-center text-3xl">
-                                <div class="front">🧪</div><div class="back text-green-600">✓</div>
-                            </div><p class="font-medium text-sm text-gray-800">No Chemicals</p>
+                                <div class="front text-orange-400">🧪</div><div class="back text-green-500">✅</div>
+                            </div><p class="font-medium text-sm text-gray-200">No Chemicals</p>
                         </div>
-                        <div class="comparison-item bg-blue-100 p-4 rounded-lg shadow-sm border border-blue-200">
+                        <div class="comparison-item bg-gray-900 bg-opacity-30 p-4 rounded-lg shadow-sm border border-gray-700">
                             <div class="icon-placeholder h-10 w-10 mx-auto mb-2 flex items-center justify-center text-3xl">
-                                <div class="front">💧</div><div class="back text-green-600">✓</div>
-                            </div><p class="font-medium text-sm text-gray-800">No Water Waste</p>
+                                <div class="front text-orange-400">💧</div><div class="back text-green-500">✅</div>
+                            </div><p class="font-medium text-sm text-gray-200">No Water Waste</p>
                         </div>
-                        <div class="comparison-item bg-blue-100 p-4 rounded-lg shadow-sm border border-blue-200">
+                        <div class="comparison-item bg-gray-900 bg-opacity-30 p-4 rounded-lg shadow-sm border border-gray-700">
                             <div class="icon-placeholder h-10 w-10 mx-auto mb-2 flex items-center justify-center text-3xl">
-                                <div class="front">🧂</div><div class="back text-green-600">✓</div>
-                            </div><p class="font-medium text-sm text-gray-800">No Salt</p>
+                                <div class="front text-orange-400">🧂</div><div class="back text-green-500">✅</div>
+                            </div><p class="font-medium text-sm text-gray-200">No Salt</p>
                         </div>
-                        <div class="comparison-item bg-blue-100 p-4 rounded-lg shadow-sm border border-blue-200">
+                        <div class="comparison-item bg-gray-900 bg-opacity-30 p-4 rounded-lg shadow-sm border border-gray-700">
                             <div class="icon-placeholder h-10 w-10 mx-auto mb-2 flex items-center justify-center text-3xl">
-                                <div class="front">⚡️</div><div class="back text-green-600">✓</div>
-                            </div><p class="font-medium text-sm text-gray-800">No Electricity</p>
+                                <div class="front text-orange-400">⚡️</div><div class="back text-green-500">✅</div>
+                            </div><p class="font-medium text-sm text-gray-200">No Electricity</p>
                         </div>
                     </div>
 
                      <div class="mt-10">
-                        <h3 class="text-2xl md:text-3xl font-semibold text-gray-800 mb-4 text-center">Engineered for Extreme Conditions</h3>
-                         <p class="text-center text-base text-gray-700 max-w-2xl mx-auto mb-4">Our technology is proven to perform where others fail, efficiently treating water with extremely high levels of Total Dissolved Solids (TDS) and hardness.</p>
+                        <h3 class="text-2xl md:text-3xl font-semibold text-white mb-4 text-center">Engineered for Extreme Conditions</h3>
+                         <p class="text-center text-base text-gray-300 max-w-2xl mx-auto mb-4">Our technology is proven to perform where others fail, efficiently treating water with extremely high levels of Total Dissolved Solids (TDS) and hardness.</p>
                         <div class="chart-container">
                             <canvas id="performanceChart"></canvas>
                         </div>
@@ -315,18 +360,18 @@
 
                     <!-- Water Treatment Installation Images -->
                     <div class="mt-8 text-center">
-                        <h3 class="text-2xl md:text-3xl font-semibold text-gray-800 mb-4 text-center">Installation Highlights: Water Treatment</h3>
+                        <h3 class="text-2xl md:text-3xl font-semibold text-white mb-4 text-center">Installation Highlights: Water Treatment</h3>
                         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 max-w-4xl mx-auto">
-                            <img src="images/hardwater1.jpg" alt="Hard Water Installation 1" class="w-full h-48 object-cover rounded-lg shadow-md hover:scale-105 transition-transform duration-300 ease-in-out">
-                            <img src="images/hardwater2.jpg" alt="Hard Water Installation 2" class="w-full h-48 object-cover rounded-lg shadow-md hover:scale-105 transition-transform duration-300 ease-in-out">
-                            <img src="images/hardwater3.jpg" alt="Hard Water Installation 3" class="w-full h-48 object-cover rounded-lg shadow-md hover:scale-105 transition-transform duration-300 ease-in-out">
-                            <img src="images/hardwater4.jpg" alt="Hard Water Installation 4" class="w-full h-48 object-cover rounded-lg shadow-md hover:scale-105 transition-transform duration-300 ease-in-out">
+                            <img src="images/hardwater1.jpg" alt="Hard Water Installation 1" class="w-full h-48 object-cover rounded-lg shadow-md transition-all duration-300 ease-in-out img-glow">
+                            <img src="images/hardwater2.jpg" alt="Hard Water Installation 2" class="w-full h-48 object-cover rounded-lg shadow-md transition-all duration-300 ease-in-out img-glow">
+                            <img src="images/hardwater3.jpg" alt="Hard Water Installation 3" class="w-full h-48 object-cover rounded-lg shadow-md transition-all duration-300 ease-in-out img-glow">
+                            <img src="images/hardwater4.jpg" alt="Hard Water Installation 4" class="w-full h-48 object-cover rounded-lg shadow-md transition-all duration-300 ease-in-out img-glow">
                         </div>
-                        <p class="mt-4 text-gray-600 text-sm">Our team ensures seamless integration for lasting water quality.</p>
+                        <p class="mt-4 text-gray-400 text-sm">Our team ensures seamless integration for lasting water quality.</p>
                     </div>
 
                     <div class="mt-10 text-center">
-                        <a href="https://wa.me/919894214024" target="_blank" rel="noopener noreferrer" class="inline-block bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-6 rounded-full shadow-lg transition duration-300 ease-in-out transform hover:scale-105">
+                        <a href="https://wa.me/919894214024" target="_blank" rel="noopener noreferrer" class="cta-button inline-block bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-6 rounded-full shadow-lg transition duration-300 ease-in-out transform hover:scale-105">
                             Request a Water Treatment Consultation
                         </a>
                     </div>
@@ -335,62 +380,62 @@
             
             <!-- About Us Section -->
             <section id="about" class="content-section">
-                <div class="bg-white p-6 md:p-8 rounded-xl shadow-lg border border-gray-100">
-                     <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6 text-center">Our Foundation & Commitment</h2>
+                <div class="bg-gray-800 p-6 md:p-8 rounded-xl shadow-xl border border-gray-700">
+                     <h2 class="text-3xl md:text-4xl font-bold text-white mb-6 text-center">Our Foundation & Commitment</h2>
                     <div class="grid md:grid-cols-3 gap-8">
                         <div class="md:col-span-1">
-                            <h3 class="text-2xl font-semibold text-gray-800 mb-2">Meet Our Founder</h3>
-                            <h4 class="text-xl md:text-2xl font-bold text-blue-600 mb-2">Mr. Ramesh Raju</h4>
-                            <p class="text-base text-gray-700 mb-4">A trailblazing first-generation entrepreneur with a 20-year professional career and a transformative 7-year entrepreneurial odyssey. His unwavering passion lies in delivering meaningful solutions that uplift society.</p>
-                             <p class="text-base text-gray-700">An adept multilingual communicator, he connects effortlessly with people from all backgrounds.</p>
+                            <h3 class="text-2xl font-semibold text-white mb-2">Meet Our Founder</h3>
+                            <h4 class="text-xl md:text-2xl font-bold text-blue-300 mb-2">Mr. Ramesh Raju</h4>
+                            <p class="text-base text-gray-300 mb-4">A trailblazing first-generation entrepreneur with a 20-year professional career and a transformative 7-year entrepreneurial odyssey. His unwavering passion lies in delivering meaningful solutions that uplift society.</p>
+                             <p class="text-base text-gray-300">An adept multilingual communicator, he connects effortlessly with people from all backgrounds.</p>
                         </div>
-                        <div class="md:col-span-2 bg-blue-50 p-6 rounded-lg border border-blue-200 shadow-inner">
-                            <h3 class="text-2xl md:text-3xl font-semibold text-blue-800 mb-4">Why Choose Paras Enterprises?</h3>
+                        <div class="md:col-span-2 bg-blue-900 bg-opacity-30 p-6 rounded-lg border border-blue-700 shadow-inner">
+                            <h3 class="text-2xl md:text-3xl font-semibold text-blue-300 mb-4">Why Choose Paras Enterprises?</h3>
                             <ul class="space-y-3 text-base md:text-lg">
-                                <li class="flex items-start"><strong class="font-semibold text-blue-700 w-32 shrink-0">⭐ Expertise:</strong> Our skilled team ensures expert design, installation, and maintenance for every project.</li>
-                                <li class="flex items-start"><strong class="font-semibold text-blue-700 w-32 shrink-0">💡 Innovation:</strong> We stay ahead of the curve, offering cutting-edge AI, Cloud, and vortex technologies.</li>
-                                <li class="flex items-start"><strong class="font-semibold text-blue-700 w-32 shrink-0">🤝 Client-Centric:</strong> We prioritize your satisfaction, working within your budget without compromising quality.</li>
-                                <li class="flex items-start"><strong class="font-semibold text-blue-700 w-32 shrink-0">🌱 Responsibility:</strong> Our solutions are cost-effective and environmentally conscious, especially our eco-friendly water softeners.</li>
+                                <li class="flex items-start"><strong class="font-semibold text-teal-400 w-32 shrink-0">⭐ Expertise:</strong> Our skilled team ensures expert design, installation, and maintenance for every project.</li>
+                                <li class="flex items-start"><strong class="font-semibold text-teal-400 w-32 shrink-0">💡 Innovation:</strong> We stay ahead of the curve, offering cutting-edge AI, Cloud, and vortex technologies.</li>
+                                <li class="flex items-start"><strong class="font-semibold text-teal-400 w-32 shrink-0">🤝 Client-Centric:</strong> We prioritize your satisfaction, working within your budget without compromising quality.</li>
+                                <li class="flex items-start"><strong class="font-semibold text-teal-400 w-32 shrink-0">🌱 Responsibility:</strong> Our solutions are cost-effective and environmentally conscious, especially our eco-friendly water softeners.</li>
                             </ul>
                         </div>
                     </div>
 
                     <!-- Testimonials Section -->
                     <div class="mt-12 text-center">
-                        <h3 class="text-2xl md:text-3xl font-bold text-gray-900 mb-6">What Our Clients Say</h3>
+                        <h3 class="text-2xl md:text-3xl font-bold text-white mb-6">What Our Clients Say</h3>
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-                            <div class="bg-gray-50 p-6 rounded-lg shadow-md border border-gray-200">
-                                <p class="text-gray-700 italic mb-4">"Paras Enterprises transformed our office security. Their turn-key solution was seamless, and the AI features give us incredible peace of mind. Highly recommend!"</p>
-                                <p class="font-semibold text-gray-800">- Mr. S. Kumar, Business Owner</p>
+                            <div class="bg-gray-900 bg-opacity-30 p-6 rounded-lg shadow-md border border-gray-700">
+                                <p class="text-gray-300 italic mb-4">"Paras Enterprises transformed our office security. Their turn-key solution was seamless, and the AI features give us incredible peace of mind. Highly recommend!"</p>
+                                <p class="font-semibold text-gray-200">- Mr. S. Kumar, Business Owner</p>
                             </div>
-                            <div class="bg-gray-50 p-6 rounded-lg shadow-md border border-gray-200">
-                                <p class="text-gray-700 italic mb-4">"The zero-maintenance water softener is a game-changer! No more salt bags or constant checks. Our appliances are scale-free, and the water quality is noticeably better."</p>
-                                <p class="font-semibold text-gray-800">- Mrs. A. Devi, Homeowner</p>
+                            <div class="bg-gray-900 bg-opacity-30 p-6 rounded-lg shadow-md border border-gray-700">
+                                <p class="text-gray-300 italic mb-4">"The zero-maintenance water softener is a game-changer! No more salt bags or constant checks. Our appliances are scale-free, and the water quality is noticeably better."</p>
+                                <p class="font-semibold text-gray-200">- Mrs. A. Devi, Homeowner</p>
                             </div>
                         </div>
                     </div>
 
                     <div class="mt-8">
-                        <h3 class="text-2xl md:text-3xl font-semibold text-gray-800 mb-4 text-center">Our Valued Clientele</h3>
-                        <p class="text-center text-base text-gray-700 mb-6">Our diverse clientele spans homeowners seeking optimal water quality and home security, businesses requiring comprehensive surveillance and efficient water treatment, educational institutions ensuring student safety, healthcare facilities upholding hygiene standards, and industrial sectors optimizing operations through advanced security and water softening solutions across Chennai and its surrounding areas.</p>
-                        <div id="client-logos" class="flex flex-wrap justify-center items-center gap-6 p-4 border border-blue-200 rounded-lg bg-blue-50 shadow-inner min-h-[120px]">
-                            <img src="images/logo1.jpg" alt="ALIMCO Logo" class="h-16 object-contain grayscale hover:grayscale-0 transition-all duration-300">
-                            <img src="images/logo2.jpeg" alt="BATHCAFF Logo" class="h-16 object-contain grayscale hover:grayscale-0 transition-all duration-300">
-                            <img src="images/logo3.png" alt="JE NESAM HOSPITAL Logo" class="h-16 object-contain grayscale hover:grayscale-0 transition-all duration-300">
-                            <img src="images/logo4.webp" alt="VNCT GLOBAL Logo" class="h-16 object-contain grayscale hover:grayscale-0 transition-all duration-300">
-                            <img src="images/logo5.png" alt="YNT Supply Chain Logo" class="h-16 object-contain grayscale hover:grayscale-0 transition-all duration-300">
-                            <img src="images/logo6.png" alt="Rathna Offset Printers Logo" class="h-16 object-contain grayscale hover:grayscale-0 transition-all duration-300">
-                            <img src="images/logo7.jpeg" alt="GUILD OF SERVICE Logo" class="h-16 object-contain grayscale hover:grayscale-0 transition-all duration-300">
-                            <img src="images/logo8.png" alt="ELECTRAACE Logo" class="h-16 object-contain grayscale hover:grayscale-0 transition-all duration-300">
-                            <img src="images/logo9.webp" alt="Janex Logistics Logo" class="h-16 object-contain grayscale hover:grayscale-0 transition-all duration-300">
-                            <img src="images/logo10.png" alt="SINDOORI MANAGEMENT SOLUTIONS PRIVATE LIMITED Logo" class="h-16 object-contain grayscale hover:grayscale-0 transition-all duration-300">
-                            <img src="images/logo11.jpeg" alt="LUX Construction Consulting Logo" class="h-16 object-contain grayscale hover:grayscale-0 transition-all duration-300">
-                            <img src="images/logo12.png" alt="Kyyba Logo" class="h-16 object-contain grayscale hover:grayscale-0 transition-all duration-300">
-                            <img src="images/logo13.png" alt="Cloutics Logo" class="h-16 object-contain grayscale hover:grayscale-0 transition-all duration-300">
-                            <img src="images/logo14.jpeg" alt="DTDC Logo" class="h-16 object-contain grayscale hover:grayscale-0 transition-all duration-300">
-                            <img src="images/logo15.png" alt="GRB Dairy Foods Logo" class="h-16 object-contain grayscale hover:grayscale-0 transition-all duration-300">
-                            <img src="images/logo16.png" alt="KFC Logo" class="h-16 object-contain grayscale hover:grayscale-0 transition-all duration-300">
-                            <img src="images/logo17.png" alt="HERRENKNECHT Logo" class="h-16 object-contain grayscale hover:grayscale-0 transition-all duration-300">
+                        <h3 class="text-2xl md:text-3xl font-semibold text-white mb-4 text-center">Our Valued Clientele</h3>
+                        <p class="text-center text-base text-gray-300 mb-6">Our diverse clientele spans homeowners seeking optimal water quality and home security, businesses requiring comprehensive surveillance and efficient water treatment, educational institutions ensuring student safety, healthcare facilities upholding hygiene standards, and industrial sectors optimizing operations through advanced security and water softening solutions across Chennai and its surrounding areas.</p>
+                        <div id="client-logos" class="flex flex-wrap justify-center items-center gap-6 p-4 border border-blue-700 rounded-lg bg-blue-900 bg-opacity-30 shadow-inner min-h-[120px]">
+                            <img src="images/logo1.jpg" alt="ALIMCO Logo" class="h-16 object-contain grayscale hover:grayscale-0 transition-all duration-300 img-glow">
+                            <img src="images/logo2.jpeg" alt="BATHCAFF Logo" class="h-16 object-contain grayscale hover:grayscale-0 transition-all duration-300 img-glow">
+                            <img src="images/logo3.png" alt="JE NESAM HOSPITAL Logo" class="h-16 object-contain grayscale hover:grayscale-0 transition-all duration-300 img-glow">
+                            <img src="images/logo4.webp" alt="VNCT GLOBAL Logo" class="h-16 object-contain grayscale hover:grayscale-0 transition-all duration-300 img-glow">
+                            <img src="images/logo5.png" alt="YNT Supply Chain Logo" class="h-16 object-contain grayscale hover:grayscale-0 transition-all duration-300 img-glow">
+                            <img src="images/logo6.png" alt="Rathna Offset Printers Logo" class="h-16 object-contain grayscale hover:grayscale-0 transition-all duration-300 img-glow">
+                            <img src="images/logo7.jpeg" alt="GUILD OF SERVICE Logo" class="h-16 object-contain grayscale hover:grayscale-0 transition-all duration-300 img-glow">
+                            <img src="images/logo8.png" alt="ELECTRAACE Logo" class="h-16 object-contain grayscale hover:grayscale-0 transition-all duration-300 img-glow">
+                            <img src="images/logo9.webp" alt="Janex Logistics Logo" class="h-16 object-contain grayscale hover:grayscale-0 transition-all duration-300 img-glow">
+                            <img src="images/logo10.png" alt="SINDOORI MANAGEMENT SOLUTIONS PRIVATE LIMITED Logo" class="h-16 object-contain grayscale hover:grayscale-0 transition-all duration-300 img-glow">
+                            <img src="images/logo11.jpeg" alt="LUX Construction Consulting Logo" class="h-16 object-contain grayscale hover:grayscale-0 transition-all duration-300 img-glow">
+                            <img src="images/logo12.png" alt="Kyyba Logo" class="h-16 object-contain grayscale hover:grayscale-0 transition-all duration-300 img-glow">
+                            <img src="images/logo13.png" alt="Cloutics Logo" class="h-16 object-contain grayscale hover:grayscale-0 transition-all duration-300 img-glow">
+                            <img src="images/logo14.jpeg" alt="DTDC Logo" class="h-16 object-contain grayscale hover:grayscale-0 transition-all duration-300 img-glow">
+                            <img src="images/logo15.png" alt="GRB Dairy Foods Logo" class="h-16 object-contain grayscale hover:grayscale-0 transition-all duration-300 img-glow">
+                            <img src="images/logo16.png" alt="KFC Logo" class="h-16 object-contain grayscale hover:grayscale-0 transition-all duration-300 img-glow">
+                            <img src="images/logo17.png" alt="HERRENKNECHT Logo" class="h-16 object-contain grayscale hover:grayscale-0 transition-all duration-300 img-glow">
                         </div>
                     </div>
                 </div>
@@ -398,14 +443,14 @@
         </main>
 
         <!-- Footer -->
-         <footer class="mt-12 text-center text-gray-200 py-6 px-4 bg-gray-800 rounded-t-xl shadow-inner">
+         <footer class="mt-12 text-center text-gray-400 py-6 px-4 bg-gradient-to-l from-gray-900 via-blue-800 to-purple-800 rounded-t-xl shadow-inner">
             <p class="text-base">&copy; 2024 Paras Enterprises. All Rights Reserved.</p>
             <p class="text-sm mt-2">Chennai, India</p>
             <div class="mt-4 flex justify-center space-x-6">
-                <a href="mailto:parasgrows@gmail.com" class="hover:text-blue-400 text-gray-300 transition-colors duration-200 text-base flex items-center"><span class="mr-2 text-lg">✉️</span>Email</a>
-                <a href="tel:+919894214024" class="hover:text-blue-400 text-gray-300 transition-colors duration-200 text-base flex items-center"><span class="mr-2 text-lg">📞</span>Phone</a>
-                <a href="https://wa.me/919894214024" target="_blank" rel="noopener noreferrer" class="hover:text-blue-400 text-gray-300 transition-colors duration-200 text-base flex items-center"><span class="mr-2 text-lg">💬</span>WhatsApp</a>
-                <a href="https://www.linkedin.com/in/parasenterprises/" target="_blank" rel="noopener noreferrer" class="hover:text-blue-400 text-gray-300 transition-colors duration-200 text-base flex items-center"><span class="mr-2 text-lg">🔗</span>LinkedIn</a>
+                <a href="mailto:parasgrows@gmail.com" class="hover:text-blue-200 text-gray-300 transition-colors duration-200 text-base flex items-center"><span class="mr-2 text-lg">✉️</span>Email</a>
+                <a href="tel:+919894214024" class="hover:text-blue-200 text-gray-300 transition-colors duration-200 text-base flex items-center"><span class="mr-2 text-lg">📞</span>Phone</a>
+                <a href="https://wa.me/919894214024" target="_blank" rel="noopener noreferrer" class="hover:text-blue-200 text-gray-300 transition-colors duration-200 text-base flex items-center"><span class="mr-2 text-lg">💬</span>WhatsApp</a>
+                <a href="https://www.linkedin.com/in/parasenterprises/" target="_blank" rel="noopener noreferrer" class="hover:text-blue-200 text-gray-300 transition-colors duration-200 text-base flex items-center"><span class="mr-2 text-lg">🔗</span>LinkedIn</a>
             </div>
         </footer>
 
@@ -430,8 +475,8 @@
                             label: 'Our Product\'s Max Capability',
                             data: [12000, 5000],
                             backgroundColor: [
-                                'rgba(59, 130, 246, 0.8)', /* Brighter blue for chart bar */
-                                'rgba(34, 197, 94, 0.8)' /* Brighter green for chart bar */
+                                'rgba(59, 130, 246, 0.9)', /* Brighter blue for chart bar */
+                                'rgba(34, 197, 94, 0.9)' /* Brighter green for chart bar */
                             ],
                             borderColor: [
                                 'rgba(59, 130, 246, 1)',
@@ -451,18 +496,18 @@
                                     callback: function(value, index, values) {
                                         return value.toLocaleString();
                                     },
-                                    color: '#4b5563' /* Darker ticks for contrast */
+                                    color: '#a0aec0' /* Lighter ticks for contrast */
                                 },
                                 grid: {
-                                    color: '#e2e8f0' /* Lighter grid lines */
+                                    color: '#4a5568' /* Darker grid lines for dark theme */
                                 }
                             },
                             y: {
                                 ticks: {
-                                    color: '#4b5563' /* Darker ticks for contrast */
+                                    color: '#a0aec0' /* Lighter ticks for contrast */
                                 },
                                 grid: {
-                                    color: '#e2e8f0' /* Lighter grid lines */
+                                    color: '#4a5568' /* Darker grid lines for dark theme */
                                 }
                             }
                         },
