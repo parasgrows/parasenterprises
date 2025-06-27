@@ -41,14 +41,14 @@
         }
         body {
             font-family: 'Inter', sans-serif;
-            /* Richer, slightly darker blue gradient for a futuristic feel */
-            background: linear-gradient(to bottom right, #1a202c, #2d3748, #4a5568);
+            /* New: More appealing radial gradient for futuristic feel */
+            background: radial-gradient(circle at top left, #2c3e50, #1a2533, #0d121c);
             color: #e2e8f0; /* Lighter text for dark background */
         }
 
-        /* Custom text shadow for header */
+        /* Custom text shadow for header - slightly more pronounced glow */
         .text-shadow-glow {
-            text-shadow: 0 0 8px rgba(255, 255, 255, 0.7), 0 0 15px rgba(255, 255, 255, 0.4);
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 0 0 20px rgba(255, 255, 255, 0.5);
         }
 
         /* Custom glow effect for images on hover */
@@ -392,7 +392,11 @@
                         <div class="md:col-span-1">
                             <h3 class="text-2xl font-semibold text-white mb-2" data-en="Meet Our Founder" data-ta="எங்கள் நிறுவனரைச் சந்திக்கவும்" data-hi="हमारे संस्थापक से मिलें">Meet Our Founder</h3>
                             <h4 class="text-xl md:text-2xl font-bold text-blue-300 mb-2" data-en="Mr. Ramesh Raju" data-ta="திரு. ரமேஷ் ராஜு" data-hi="श्री रमेश राजू">Mr. Ramesh Raju</h4>
-                            <p class="text-base text-gray-300 mb-4" data-en="A trailblazing first-generation entrepreneur with a 20-year professional career and a transformative 7-year entrepreneurial odyssey. His unwavering passion lies in delivering meaningful solutions that uplift society." data-ta="20 ஆண்டுகால தொழில்முறை அனுபவத்தையும், 7 ஆண்டுகால மாற்றியமைக்கும் தொழில்முனைவோர் பயணத்தையும் கொண்ட ஒரு முன்னோடி முதல் தலைமுறை தொழில்முனைவோர். சமூகத்தை மேம்படுத்தும் அர்த்தமுள்ள தீர்வுகளை வழங்குவதே அவரது அசைக்க முடியாத விருப்பமாகும்." data-hi="एक अग्रणी पहली पीढ़ी के उद्यमी, श्री रमेश राजू के पास 20 साल का शानदार पेशेवर करियर है, जो 7 साल के परिवर्तनकारी उद्यमशीलता के ओडिसी द्वारा पूरक है। उनका अटूट जुनून सार्थक समाधानों को उजागर करने और वितरित करने में निहित है जो समाज को ऊपर उठाते हैं।">A trailblazing first-generation entrepreneur with a 20-year professional career and a transformative 7-year entrepreneurial odyssey. His unwavering passion lies in delivering meaningful solutions that uplift society.</p>
+                            <!-- UPDATED FOUNDER CONTENT -->
+                            <p class="text-base text-gray-300 mb-4"
+                               data-en="A trailblazing first-generation entrepreneur, Mr. Ramesh Raju boasts an illustrious 20-year professional career complemented by a transformative 5-year entrepreneurial odyssey. His unwavering passion lies in uncovering and delivering meaningful solutions that directly uplift both the common man and society at large."
+                               data-ta="ஒரு தடம்பதித்த முதல் தலைமுறை தொழில்முனைவோரான திரு. ரமேஷ் ராஜு, 20 ஆண்டுகால சிறப்புமிக்க தொழில் அனுபவத்தையும், அதை நிறைவு செய்யும் 5 ஆண்டுகால மாற்றியமைக்கும் தொழில்முனைவோர் பயணத்தையும் கொண்டவர். சாதாரண மனிதனையும் சமூகத்தையும் நேரடியாக மேம்படுத்தும் அர்த்தமுள்ள தீர்வுகளைக் கண்டறிந்து வழங்குவதே அவரது அசைக்க முடியாத விருப்பமாகும்."
+                               data-hi="एक अग्रणी पहली पीढ़ी के उद्यमी, श्री रमेश राजू के पास 20 साल का शानदार पेशेवर करियर है, जो 5 साल के परिवर्तनकारी उद्यमशीलता के ओडिसी द्वारा पूरक है। उनका अटूट जुनून सार्थक समाधानों को उजागर करने और वितरित करने में निहित है जो आम आदमी और बड़े पैमाने पर समाज दोनों को सीधे ऊपर उठाते हैं।">A trailblazing first-generation entrepreneur, Mr. Ramesh Raju boasts an illustrious 20-year professional career complemented by a transformative 5-year entrepreneurial odyssey. His unwavering passion lies in uncovering and delivering meaningful solutions that directly uplift both the common man and society at large.</p>
                              <p class="text-base text-gray-300" data-en="An adept multilingual communicator, he connects effortlessly with people from all backgrounds." data-ta="ஒரு திறமையான பன்மொழித் தொடர்பாளர், அவர் அனைத்து பின்னணியிலிருந்தும் உள்ளவர்களுடன் சிரமமின்றி இணைகிறார்." data-hi="एक कुशल बहुभाषी संचारक, वह सभी पृष्ठभूमि के लोगों के साथ आसानी से जुड़ता है।">An adept multilingual communicator, he connects effortlessly with people from all backgrounds.</p>
                         </div>
                         <div class="md:col-span-2 bg-blue-900 bg-opacity-30 p-6 rounded-lg border border-blue-700 shadow-inner">
@@ -588,7 +592,7 @@
                     'Tailored Surveillance Solutions: For Every Home and Business': 'தனிப்பயனாக்கப்பட்ட கண்காணிப்பு தீர்வுகள்: ஒவ்வொரு வீடு மற்றும் வணிகத்திற்கும்',
                     'Paras Enterprises provides advanced surveillance solutions designed to meet the diverse needs of both domestic and commercial clients. From simple home monitoring to complex enterprise security integrations, we deliver comprehensive, AI-powered systems for complete peace of mind.': 'பாரஸ் எண்டர்பிரைசஸ் வீட்டு மற்றும் வணிக வாடிக்கையாளர்களின் பல்வேறு தேவைகளைப் பூர்த்தி செய்யும் மேம்பட்ட கண்காணிப்பு தீர்வுகளை வழங்குகிறது. எளிய வீட்டு கண்காணிப்பு முதல் சிக்கலான நிறுவன பாதுகாப்பு ஒருங்கிணைப்புகள் வரை, முழுமையான மன அமைதிக்காக விரிவான, AI-இயங்கும் அமைப்புகளை நாங்கள் வழங்குகிறோம்.',
                     'Smart Security for Homes & Small Businesses': 'வீடுகள் மற்றும் சிறு வணிகங்களுக்கான ஸ்மார்ட் பாதுகாப்பு',
-                    'For our domestic clients (households, shops, flats, apartments) and small businesses, we offer highly cost-effective, user-friendly, WiFi-based camera solutions with integrated AI features. Our flexible approach allows you to fulfill security requirements starting from just one camera.': 'எங்கள் வீட்டு வாடிக்கையாளர்களுக்கும் (வீடுகள், கடைகள், அடுக்குமாடிக் குடியிருப்புகள்) சிறு வணிகங்களுக்கும், ஒருங்கிணைந்த AI அம்சங்களுடன் கூடிய மிகவும் செலவு குறைந்த, பயனர் நட்பு, வைஃபை அடிப்படையிலான கேமரா தீர்வுகளை நாங்கள் வழங்குகிறோம். ஒரு கேமராவில் இருந்து தொடங்கும் பாதுகாப்புத் தேவைகளைப் பூர்த்தி செய்ய எங்கள் நெகிழ்வான அணுகுமுறை உங்களுக்கு உதவுகிறது.',
+                    'For our domestic clients (households, shops, flats, apartments) and small businesses, we offer highly cost-effective, user-friendly, WiFi-based camera solutions with integrated AI features. Our flexible approach allows you to fulfill security requirements starting from just one camera.': 'எங்கள் வீட்டு வாடிக்கையாளருக்கும் (வீடுகள், கடைகள், அடுக்குமாடிக் குடியிருப்புகள்) சிறு வணிகங்களுக்கும், ஒருங்கிணைந்த AI அம்சங்களுடன் கூடிய மிகவும் செலவு குறைந்த, பயனர் நட்பு, வைஃபை அடிப்படையிலான கேமரா தீர்வுகளை நாங்கள் வழங்குகிறோம். ஒரு கேமராவில் இருந்து தொடங்கும் பாதுகாப்புத் தேவைகளைப் பூர்த்தி செய்ய எங்கள் நெகிழ்வான அணுகுமுறை உங்களுக்கு உதவுகிறது.',
                     'WiFi Cameras:': 'வைஃபை கேமராக்கள்:',
                     'Available for both indoor and outdoor use, providing flexible placement.': 'உட்புற மற்றும் வெளிப்புற பயன்பாட்டிற்கு கிடைக்கிறது, நெகிழ்வான இடம் அமைப்பை வழங்குகிறது.',
                     'Advanced AI Features:': 'மேம்பட்ட AI அம்சங்கள்:',
@@ -771,7 +775,7 @@
                     'Responsibility:': 'जिम्मेदारी:',
                     'Our solutions are cost-effective and environmentally conscious, especially our eco-friendly water softeners.': 'हमारे समाधान लागत प्रभावी और पर्यावरण के प्रति जागरूक हैं, विशेष रूप से हमारे पर्यावरण के अनुकूल जल सॉफ़्टनर।',
                     'What Our Clients Say': 'हमारे ग्राहक क्या कहते हैं',
-                    '"Paras Enterprises transformed our office security. Their turn-key solution was seamless, and the AI features give us incredible peace of mind. Highly recommend!"': '"पारस एंटरप्राइजेज ने हमारी कार्यालय सुरक्षा को बदल दिया। उनका टर्न-की समाधान निर्बाध था, और एआई सुविधाएँ हमें अविश्वसनीय मानसिक शांति देती हैं। अत्यधिक अनुशंसा करते हैं!"',
+                    '"Paras Enterprises transformed our office security. Their turn-key solution was seamless, and the AI features give us incredible peace of mind. Highly recommend!"': '"Paras Enterprises transformed our office security. Their turn-key solution was seamless, and the AI features give us incredible peace of mind. Highly recommend!"',
                     '- Mr. S. Kumar, Business Owner': '- श्री एस. कुमार, व्यवसाय के मालिक',
                     '"The zero-maintenance water softener is a game-changer! No more salt bags or constant checks. Our appliances are scale-free, and the water quality is noticeably better."': '"शून्य-रखरखाव जल सॉफ़्टनर एक गेम-चेंजर है! अब कोई नमक बैग या लगातार जांच नहीं। हमारे उपकरण स्केल-मुक्त हैं, और पानी की गुणवत्ता उल्लेखनीय रूप से बेहतर है।"',
                     '- Mrs. A. Devi, Homeowner': '- श्रीमती ए. देवी, गृहस्वामी',
