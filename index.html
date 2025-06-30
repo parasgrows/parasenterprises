@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title data-en="Paras Enterprises | AI Security & Zero-Maintenance Water Solutions in Chennai" data-ta="பாரஸ் எண்டர்பிரைசஸ் | சென்னையில் AI பாதுகாப்பு மற்றும் பூஜ்ஜிய பராமரிப்பு நீர் தீர்வுகள்" data-hi="पारस एंटरप्राइजेज | चेन्नई में एआई सुरक्षा और शून्य-रखरखाव जल समाधान">Paras Enterprises | AI Security & Zero-Maintenance Water Solutions in Chennai</title>
     <!-- SEO Meta Description: Summarizes your website content for search engines -->
-    <meta name="description" data-en="Paras Enterprises offers turn-key AI-powered surveillance systems and revolutionary zero-maintenance hard water treatment solutions in Chennai. Protect your home and business with smart security and eliminate limescale without salt, chemicals, or electricity." data-ta="பாரஸ் எண்டர்பிரைசஸ் சென்னையில் முழுமையான AI-இயங்கும் கண்காணிப்பு அமைப்புகள் மற்றும் புரட்சிகரமான பூஜ்ஜிய பராமரிப்பு கடின நீர் சுத்திகரிப்பு தீர்வுகளை வழங்குகிறது. ஸ்மார்ட் பாதுகாப்புடன் உங்கள் வீடு மற்றும் வணிகத்தைப் பாதுகாக்கவும், உப்பு, இரசாயனங்கள் அல்லது மின்சாரம் இல்லாமல் சுண்ணாம்பு அகற்றுங்கள்." data-hi="पारस एंटरप्राइजेज चेन्नई में टर्न-की एआई-संचालित निगरानी प्रणाली और क्रांतिकारी शून्य-रखरखाव कठोर जल उपचार समाधान प्रदान करता है। स्मार्ट सुरक्षा के साथ अपने घर और व्यवसाय को सुरक्षित रखें और नमक, रसायन या बिजली के बिना लाइmस्केल को खत्म करें।">
+    <meta name="description" data-en="Paras Enterprises offers turn-key AI-powered surveillance systems and revolutionary zero-maintenance hard water treatment solutions in Chennai. Protect your home and business with smart security and eliminate limescale without salt, chemicals, or electricity." data-ta="பாரஸ் எண்டர்பிரைசஸ் சென்னையில் முழுமையான AI-இயங்கும் கண்காணிப்பு அமைப்புகள் மற்றும் புரட்சிகரமான பூஜ்ஜிய பராமரிப்பு கடின நீர் சுத்திகரிப்பு தீர்வுகளை வழங்குகிறது. ஸ்மார்ட் பாதுகாப்புடன் உங்கள் வீடு மற்றும் வணிகத்தைப் பாதுகாக்கவும், உப்பு, இரசாயனங்கள் அல்லது மின்சாரம் இல்லாமல் சுண்ணாம்பு அகற்றுங்கள்." data-hi="पारस एंटरप्राइजेज चेन्नई में टर्न-की एआई-संचालित निगरानी प्रणाली और क्रांतिकारी शून्य-रखरखाव कठोर जल उपचार समाधान प्रदान करता है। स्मार्ट सुरक्षा के साथ अपने घर और व्यवसाय को सुरक्षित रखें और नमक, रसायन या बिजली के बिना लाइमस्केल को खत्म करें।">
     <!-- Chosen Palette: Dynamic Blues & Accents -->
     <!-- Application Structure Plan: A tab-based, single-page application structure was chosen to clearly separate and prioritize the two core business pillars: Surveillance and Water Treatment. This design allows users to immediately grasp the company's dual expertise and explore each area in depth without being overwhelmed. The user flow is simple: select a tab to load the relevant content section dynamically. This approach is highly usable as it avoids scrolling through unrelated information, making it easy for a potential client interested in only one service to find what they need. Key interactions include tab-based navigation to switch between the primary service sections and an interactive comparison feature within the water treatment section to highlight its unique selling proposition effectively. -->
     <!-- Visualization & Content Choices:
@@ -74,9 +74,13 @@
 
         .content-section {
             display: none;
+            /* Added for fade-in effect */
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
         }
         .content-section.active {
             display: block;
+            opacity: 1; /* Fade in when active */
         }
         .chart-container {
             position: relative;
@@ -190,21 +194,47 @@
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5); /* Subtle shadow */
             transition: background 0.3s ease;
         }
-        /* Video container styling for responsiveness */
-        .video-responsive {
+
+        /* Client Logos Auto-Scroll */
+        .logo-scroll-container {
             overflow: hidden;
-            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            white-space: nowrap; /* Prevent wrapping */
             position: relative;
-            height: 0;
+            mask-image: linear-gradient(to right, transparent, white 20%, white 80%, transparent); /* Fade edges */
+            -webkit-mask-image: linear-gradient(to right, transparent, white 20%, white 80%, transparent);
+            display: flex; /* Ensure logos are inline for scrolling */
+            align-items: center;
         }
-        .video-responsive iframe,
-        .video-responsive object,
-        .video-responsive embed {
-            left: 0;
-            top: 0;
-            height: 100%;
-            width: 100%;
-            position: absolute;
+
+        .logo-scroll {
+            display: inline-block; /* Essential for animation */
+            animation: scroll-left 40s linear infinite; /* Adjust duration for speed */
+            padding-right: 20px; /* Space between duplicated sets */
+        }
+
+        .logo-scroll:hover {
+            animation-play-state: paused; /* Pause on hover */
+        }
+
+        .logo-scroll img {
+            display: inline-block; /* Keep images inline */
+            margin-right: 24px; /* Space between individual logos */
+        }
+
+        @keyframes scroll-left {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); } /* Scroll exactly half to loop seamlessly */
+        }
+
+        /* Founder image styling */
+        .founder-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #38b2ac; /* Teal border */
+            box-shadow: 0 0 15px rgba(59, 130, 246, 0.6); /* Blue glow */
+            margin: 0 auto 1.5rem; /* Center and provide bottom margin */
         }
     </style>
 </head>
@@ -217,7 +247,7 @@
         <div class="sticky-header-container rounded-b-xl mb-8 md:mb-12">
             <header class="text-center p-6 bg-gradient-to-r from-gray-900 via-blue-800 to-purple-800 shadow-xl">
                 <div class="flex items-center justify-center">
-                    <img src="images/Logo.jpg" alt="Paras Enterprises Logo" class="h-16 w-16 mr-4 object-contain rounded-full shadow-lg transition-transform duration-300 hover:scale-110 img-glow" loading="lazy">
+                    <img src="images/Logo.jpg" alt="Paras Enterprises Logo" class="h-16 w-16 mr-4 object-contain rounded-full shadow-lg transition-transform duration-300 hover:scale-110 img-glow">
                     <h1 class="text-5xl md:text-6xl font-extrabold text-white tracking-tight text-shadow-glow" data-en="Paras Enterprises" data-ta="பாரஸ் எண்டர்பிரைசஸ்" data-hi="पारस एंटरप्राइजेज">Paras Enterprises</h1>
                 </div>
                 <p class="mt-3 text-lg md:text-xl text-blue-200 font-medium" data-en="Delivering Excellence in Security and Water Purity" data-ta="பாதுகாப்பு மற்றும் நீர் தூய்மையில் சிறந்து விளங்குதல்" data-hi="सुरक्षा और जल शुद्धता में उत्कृष्टता प्रदान करना">Delivering Excellence in Security and Water Purity</p>
@@ -232,14 +262,14 @@
 
             <!-- Navigation Tabs - Moved inside sticky container -->
             <div class="border-b-2 border-blue-600">
-                <nav class="flex justify-center -mb-px space-x-6 md:space-x-8" aria-label="Tabs">
-                    <button class="tab-btn whitespace-nowrap py-4 px-3 border-b-2 font-semibold text-base md:text-lg border-transparent text-gray-400 hover:text-teal-400 hover:border-teal-400 transition duration-200 ease-in-out tab-active" data-tab="surveillance" data-en="Turn-Key Surveillance" data-ta="முழுமையான கண்காணிப்பு" data-hi="टर्न-की निगरानी">
+                <nav class="flex justify-center -mb-px space-x-6 md:space-x-8" aria-label="Tabs" role="tablist">
+                    <button class="tab-btn whitespace-nowrap py-4 px-3 border-b-2 font-semibold text-base md:text-lg border-transparent text-gray-400 hover:text-teal-400 hover:border-teal-400 transition duration-200 ease-in-out tab-active" data-tab="surveillance" data-en="Turn-Key Surveillance" data-ta="முழுமையான கண்காணிப்பு" data-hi="टर्न-की निगरानी" role="tab" aria-controls="surveillance" aria-selected="true">
                         Turn-Key Surveillance
                     </button>
-                    <button class="tab-btn whitespace-nowrap py-4 px-3 border-b-2 font-semibold text-base md:text-lg border-transparent text-gray-400 hover:text-teal-400 hover:border-teal-400 transition duration-200 ease-in-out" data-tab="water" data-en="Hard Water Treatment" data-ta="கடின நீர் சுத்திகரிப்பு" data-hi="कठोर जल उपचार">
+                    <button class="tab-btn whitespace-nowrap py-4 px-3 border-b-2 font-semibold text-base md:text-lg border-transparent text-gray-400 hover:text-teal-400 hover:border-teal-400 transition duration-200 ease-in-out" data-tab="water" data-en="Hard Water Treatment" data-ta="கடின நீர் சுத்திகரிப்பு" data-hi="कठोर जल उपचार" role="tab" aria-controls="water" aria-selected="false">
                         Hard Water Treatment
                     </button>
-                     <button class="tab-btn whitespace-nowrap py-4 px-3 border-b-2 font-semibold text-base md:text-lg border-transparent text-gray-400 hover:text-teal-400 hover:border-teal-400 transition duration-200 ease-in-out" data-tab="about" data-en="About Us" data-ta="எங்களைப் பற்றி" data-hi="हमारे बारे में">
+                     <button class="tab-btn whitespace-nowrap py-4 px-3 border-b-2 font-semibold text-base md:text-lg border-transparent text-gray-400 hover:text-teal-400 hover:border-teal-400 transition duration-200 ease-in-out" data-tab="about" data-en="About Us" data-ta="எங்களைப் பற்றி" data-hi="हमारे बारे में" role="tab" aria-controls="about" aria-selected="false">
                         About Us
                     </button>
                 </nav>
@@ -249,7 +279,7 @@
         <!-- Content Sections -->
         <main>
             <!-- Surveillance Section -->
-            <section id="surveillance" class="content-section active">
+            <section id="surveillance" class="content-section active" role="tabpanel" aria-labelledby="surveillance-tab">
                 <div class="bg-gray-800 p-6 md:p-8 rounded-xl shadow-xl border border-gray-700">
                     <h2 class="text-3xl md:text-4xl font-bold text-white mb-4 text-center" data-en="Tailored Surveillance Solutions: For Every Home and Business" data-ta="தனிப்பயனாக்கப்பட்ட கண்காணிப்பு தீர்வுகள்: ஒவ்வொரு வீடு மற்றும் வணிகத்திற்கும்" data-hi="अनुकूलित निगरानी समाधान: हर घर और व्यवसाय के लिए">Tailored Surveillance Solutions: For Every Home and Business</h2>
                     <p class="text-base md:text-lg text-gray-300 mb-6" data-en="Paras Enterprises provides advanced surveillance solutions designed to meet the diverse needs of both domestic and commercial clients. From simple home monitoring to complex enterprise security integrations, we deliver comprehensive, AI-powered systems for complete peace of mind." data-ta="பாரஸ் எண்டர்பிரைசஸ் வீட்டு மற்றும் வணிக வாடிக்கையாளர்களின் பல்வேறு தேவைகளைப் பூர்த்தி செய்யும் மேம்பட்ட கண்காணிப்பு தீர்வுகளை வழங்குகிறது. எளிய வீட்டு கண்காணிப்பு முதல் சிக்கலான நிறுவன பாதுகாப்பு ஒருங்கிணைப்புகள் வரை, முழுமையான மன அமைதிக்காக விரிவான, AI-இயங்கும் அமைப்புகளை நாங்கள் வழங்குகிறோம்." data-hi="पारस एंटरप्राइजेज घरेलू और वाणिज्यिक दोनों ग्राहकों की विविध आवश्यकताओं को पूरा करने के लिए डिज़ाइन किए गए उन्नत निगरानी समाधान प्रदान करता है। साधारण घर की निगरानी से लेकर जटिल उद्यम सुरक्षा एकीकरण तक, हम पूर्ण मानसिक शांति के लिए व्यापक, एआई-संचालित सिस्टम प्रदान करते हैं।">Paras Enterprises provides advanced surveillance solutions designed to meet the diverse needs of both domestic and commercial clients. From simple home monitoring to complex enterprise security integrations, we deliver comprehensive, AI-powered systems for complete peace of mind.</p>
@@ -299,7 +329,7 @@
                             </h4>
                             <p class="text-gray-300 text-sm" data-en="Reliable indoor and outdoor cameras using 4G connectivity, ideal for locations without traditional internet access." data-ta="பாரம்பரிய இணைய அணுகல் இல்லாத இடங்களுக்கு ஏற்ற 4G இணைப்பைப் பயன்படுத்தும் நம்பகமான உட்புற மற்றும் வெளிப்புற கேமராக்கள்." data-hi="4G कनेक्टिविटी का उपयोग करने वाले विश्वसनीय इनडोर और आउटडोर कैमरे, पारंपरिक इंटरनेट एक्सेस के बिना स्थानों के लिए आदर्श।">Reliable indoor and outdoor cameras using 4G connectivity, ideal for locations without traditional internet access.</p>
                             <ul class="text-xs text-gray-400 mt-2 list-disc list-inside">
-                                <li data-en="AI features for smart detection." data-ta="ஸ்மார்ட் கண்டறிதலுக்கான AI அம்சங்கள்." data-hi="स्मार्ट डिटेक्शन के लिए एआई सुविधाएँ।">AI features for smart detection.</li>
+                                <li data-en="AI features for smart detection." data-ta="ஸ்மார்ட் கண்டறிதலுக்கான AI அம்சங்கள்." data-hi="स्मार्ट डिटेक्शन के लिए एஐ सुविधाएँ।">AI features for smart detection.</li>
                                 <li data-en="SD card recording built-in." data-ta="உள்ளமைக்கப்பட்ட SD கார்டு பதிவு." data-hi="एसडी कार्ड रिकॉर्डिंग अंतर्निहित।">SD card recording built-in.</li>
                                 <li data-en="Optional subscription-based cloud recording." data-ta="விரும்பினால் சந்தா அடிப்படையிலான கிளவுட் பதிவு." data-hi="वैकल्पिक सदस्यता-आधारित क्लाउड रिकॉर्डिंग।">Optional subscription-based cloud recording.</li>
                             </ul>
@@ -310,9 +340,9 @@
                             </h4>
                             <p class="text-gray-300 text-sm" data-en="Self-sufficient outdoor cameras with solar charging and 4G connectivity, perfect for remote or off-grid installations." data-ta="சூரிய ஆற்றல் சார்ஜிங் மற்றும் 4G இணைப்புடன் கூடிய சுய-சார்பு வெளிப்புற கேமராக்கள், தொலைதூர அல்லது ஆஃப்-கிரிட் நிறுவல்களுக்கு ஏற்றவை." data-hi="सौर चार्जिंग और 4G कनेक्टिविटी वाले आत्मनिर्भर आउटडोर कैमरे, दूरस्थ या ऑफ-ग्रिड इंस्टॉलेशन के लिए एकदम सही।">Self-sufficient outdoor cameras with solar charging and 4G connectivity, perfect for remote or off-grid installations.</p>
                             <ul class="text-xs text-gray-400 mt-2 list-disc list-inside">
-                                <li data-en="AI features for smart detection." data-ta="ஸ்மார்ட் கண்டறிதலுக்கான AI அம்சங்கள்." data-hi="स्मार्ट डिटेक्शन के लिए एஐ सुविधाएँ।">AI features for smart detection.</li>
+                                <li data-en="AI features for smart detection." data-ta="ஸ்மார்ட் கண்டறிதலுக்கான AI அம்சங்கள்." data-hi="स्मार्ट डिटेक्शन के लिए एआई सुविधाएँ।">AI features for smart detection.</li>
                                 <li data-en="SD card recording built-in." data-ta="உள்ளமைக்கப்பட்ட SD கார்டு பதிவு." data-hi="एसडी कार्ड रिकॉर्डिंग अंतर्निहित।">SD card recording built-in.</li>
-                                <li data-en="Optional subscription-based cloud recording." data-ta="விரும்பினால் சந்தா அடிப்படையிலான கிளவுட் பதிவு." data-hi="वैकल्पिक सदस्यता-आधारित क्लाउड रिकॉर्डिंग।">Optional subscription-based cloud recording.</li>
+                                <li data-en="Optional subscription-based cloud recording." data-ta="விரும்பினால் சந்தா அடிப்படையிலான கிளவுட் பதிவு." data-hi="வैकल्पिक सदस्यता-आधारित क्लाउड रिकॉर्डिंग।">Optional subscription-based cloud recording.</li>
                             </ul>
                         </div>
                     </div>
@@ -367,15 +397,15 @@
                     <div class="mt-8 text-center">
                         <h3 class="text-2xl md:text-3xl font-semibold text-white mb-4 text-center" data-en="Installation Highlights: Surveillance" data-ta="நிறுவல் சிறப்பம்சங்கள்: கண்காணிப்பு" data-hi="स्थापना हाइलाइट्स: निगरानी">Installation Highlights: Surveillance</h3>
                         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 max-w-4xl mx-auto">
-                            <img src="images/surveillance1.jpg" alt="Surveillance Installation 1" class="w-full h-48 object-cover rounded-lg shadow-md transition-all duration-300 ease-in-out img-glow" loading="lazy">
-                            <img src="images/surveillance2.jpg" alt="Surveillance Installation 2" class="w-full h-48 object-cover rounded-lg shadow-md transition-all duration-300 ease-in-out img-glow" loading="lazy">
-                            <img src="images/surveillance3.jpg" alt="Surveillance Installation 3" class="w-full h-48 object-cover rounded-lg shadow-md transition-all duration-300 ease-in-out img-glow" loading="lazy">
-                            <img src="images/surveillance4.jpg" alt="Surveillance Installation 4" class="w-full h-48 object-cover rounded-lg shadow-md transition-all duration-300 ease-in-out img-glow" loading="lazy">
-                            <img src="images/surveillance5.jpg" alt="Surveillance Installation 5" class="w-full h-48 object-cover rounded-lg shadow-md transition-all duration-300 ease-in-out img-glow" loading="lazy">
-                            <img src="images/surveillance6.jpg" alt="Surveillance Installation 6" class="w-full h-48 object-cover rounded-lg shadow-md transition-all duration-300 ease-in-out img-glow" loading="lazy">
-                            <img src="images/surveillance7.jpg" alt="Surveillance Installation 7" class="w-full h-48 object-cover rounded-lg shadow-md transition-all duration-300 ease-in-out img-glow" loading="lazy">
-                            <img src="images/surveillance8.jpg" alt="Surveillance Installation 8" class="w-full h-48 object-cover rounded-lg shadow-md transition-all duration-300 ease-in-out img-glow" loading="lazy">
-                            <img src="images/surveillance9.jpg" alt="Surveillance Installation 9" class="w-full h-48 object-cover rounded-lg shadow-md transition-all duration-300 ease-in-out img-glow" loading="lazy">
+                            <img src="images/surveillance1.jpg" alt="Surveillance Installation 1" class="w-full h-48 object-cover rounded-lg shadow-md transition-all duration-300 ease-in-out img-glow">
+                            <img src="images/surveillance2.jpg" alt="Surveillance Installation 2" class="w-full h-48 object-cover rounded-lg shadow-md transition-all duration-300 ease-in-out img-glow">
+                            <img src="images/surveillance3.jpg" alt="Surveillance Installation 3" class="w-full h-48 object-cover rounded-lg shadow-md transition-all duration-300 ease-in-out img-glow">
+                            <img src="images/surveillance4.jpg" alt="Surveillance Installation 4" class="w-full h-48 object-cover rounded-lg shadow-md transition-all duration-300 ease-in-out img-glow">
+                            <img src="images/surveillance5.jpg" alt="Surveillance Installation 5" class="w-full h-48 object-cover rounded-lg shadow-md transition-all duration-300 ease-in-out img-glow">
+                            <img src="images/surveillance6.jpg" alt="Surveillance Installation 6" class="w-full h-48 object-cover rounded-lg shadow-md transition-all duration-300 ease-in-out img-glow">
+                            <img src="images/surveillance7.jpg" alt="Surveillance Installation 7" class="w-full h-48 object-cover rounded-lg shadow-md transition-all duration-300 ease-in-out img-glow">
+                            <img src="images/surveillance8.jpg" alt="Surveillance Installation 8" class="w-full h-48 object-cover rounded-lg shadow-md transition-all duration-300 ease-in-out img-glow">
+                            <img src="images/surveillance9.jpg" alt="Surveillance Installation 9" class="w-full h-48 object-cover rounded-lg shadow-md transition-all duration-300 ease-in-out img-glow">
                         </div>
                         <p class="mt-4 text-gray-400 text-sm" data-en="Our expert team ensures seamless and efficient installation of all surveillance systems." data-ta="எங்கள் நிபுணர் குழு அனைத்து கண்காணிப்பு அமைப்புகளையும் தடையின்றி மற்றும் திறமையாக நிறுவுவதை உறுதி செய்கிறது." data-hi="हमारी विशेषज्ञ टीम सभी निगरानी प्रणालियों की निर्बाध और कुशल स्थापना सुनिश्चित करती है।">Our expert team ensures seamless and efficient installation of all surveillance systems.</p>
                     </div>
@@ -390,7 +420,7 @@
             </section>
 
             <!-- Water Treatment Section -->
-            <section id="water" class="content-section">
+            <section id="water" class="content-section" role="tabpanel" aria-labelledby="water-tab">
                  <div class="bg-gray-800 p-6 md:p-8 rounded-xl shadow-xl border border-gray-700">
                     <h2 class="text-3xl md:text-4xl font-bold text-white mb-2" data-en="Revolutionary Zero-Maintenance Hard Water Treatment" data-ta="புரட்சிகரமான பூஜ்ஜிய பராமரிப்பு கடின நீர் சுத்திகரிப்பு" data-hi="क्रांतिकारी शून्य-रखरखाव कठोर जल उपचार">Revolutionary Zero-Maintenance Hard Water Treatment</h2>
                     <!-- Rewritten Content with bullet points -->
@@ -399,7 +429,7 @@
                         <li data-en="**Zero maintenance:** No salt, chemicals, or electricity required." data-ta="**பூஜ்ஜிய பராமரிப்பு:** உப்பு, இரசாயனங்கள் அல்லது மின்சாரம் தேவையில்லை." data-hi="**शून्य रखरखाव:** नमक, रसायन या बिजली की आवश्यकता नहीं।">**Zero maintenance:** No salt, chemicals, or electricity required.</li>
                         <li data-en="**Appliance protection:** Extends the lifespan of your water-using appliances." data-ta="**உபகரண பாதுகாப்பு:** உங்கள் நீர் பயன்படுத்தும் உபகரணங்களின் ஆயுளை நீட்டிக்கிறது." data-hi="**उपकरण सुरक्षा:** आपके पानी का उपयोग करने वाले उपकरणों के जीवनकाल को बढ़ाता है।">**Appliance protection:** Extends the lifespan of your water-using appliances.</li>
                         <li data-en="**Cost savings:** Eliminates recurring expenses on salt, chemicals, and repairs." data-ta="**செலவு சேமிப்பு:** உப்பு, இரசாயனங்கள் மற்றும் பழுதுபார்ப்புகளுக்கான தொடர்ச்சியான செலவுகளை நீக்குகிறது." data-hi="**लागत बचत:** नमक, रसायन और मरम्मत पर आवर्ती खर्चों को समाप्त करता है।">**Cost savings:** Eliminates recurring expenses on salt, chemicals, and repairs.</li>
-                        <li data-en="**Eco-friendly:** A sustainable solution that doesn't waste water." data-ta="**சுற்றுச்சூழல் நட்பு:** நீரை வீணாக்காத ஒரு நிலையான தீர்வு." data-hi="**पर्यावरण के अनुकूल:** एक स्थायी solution that doesn't waste water.">**Eco-friendly:** A sustainable solution that doesn't waste water.</li>
+                        <li data-en="**Eco-friendly:** A sustainable solution that doesn't waste water." data-ta="**சுற்றுச்சூழல் நட்பு:** நீரை வீணாக்காத ஒரு நிலையான தீர்வு." data-hi="**पर्यावरण के अनुकूल:** एक स्थायी समाधान जो पानी बर्बाद नहीं करता है।">**Eco-friendly:** A sustainable solution that doesn't waste water.</li>
                     </ul>
 
                     <div class="grid md:grid-cols-2 gap-8 mb-8">
@@ -454,10 +484,10 @@
                     <div class="mt-8 text-center">
                         <h3 class="text-2xl md:text-3xl font-semibold text-white mb-4 text-center" data-en="Installation Highlights: Water Treatment" data-ta="நிறுவல் சிறப்பம்சங்கள்: நீர் சுத்திகரிப்பு" data-hi="स्थापना हाइलाइट्स: जल उपचार">Installation Highlights: Water Treatment</h3>
                         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 max-w-4xl mx-auto">
-                            <img src="images/hardwater1.jpg" alt="Hard Water Installation 1" class="w-full h-48 object-cover rounded-lg shadow-md transition-all duration-300 ease-in-out img-glow" loading="lazy">
-                            <img src="images/hardwater2.jpg" alt="Hard Water Installation 2" class="w-full h-48 object-cover rounded-lg shadow-md transition-all duration-300 ease-in-out img-glow" loading="lazy">
-                            <img src="images/hardwater3.jpg" alt="Hard Water Installation 3" class="w-full h-48 object-cover rounded-lg shadow-md transition-all duration-300 ease-in-out img-glow" loading="lazy">
-                            <img src="images/hardwater4.jpg" alt="Hard Water Installation 4" class="w-full h-48 object-cover rounded-lg shadow-md transition-all duration-300 ease-in-out img-glow" loading="lazy">
+                            <img src="images/hardwater1.jpg" alt="Hard Water Installation 1" class="w-full h-48 object-cover rounded-lg shadow-md transition-all duration-300 ease-in-out img-glow">
+                            <img src="images/hardwater2.jpg" alt="Hard Water Installation 2" class="w-full h-48 object-cover rounded-lg shadow-md transition-all duration-300 ease-in-out img-glow">
+                            <img src="images/hardwater3.jpg" alt="Hard Water Installation 3" class="w-full h-48 object-cover rounded-lg shadow-md transition-all duration-300 ease-in-out img-glow">
+                            <img src="images/hardwater4.jpg" alt="Hard Water Installation 4" class="w-full h-48 object-cover rounded-lg shadow-md transition-all duration-300 ease-in-out img-glow">
                         </div>
                         <p class="mt-4 text-gray-400 text-sm" data-en="Our team ensures seamless integration for lasting water quality." data-ta="எங்கள் குழு நீடித்த நீர் தரத்திற்காக தடையற்ற ஒருங்கிணைப்பை உறுதி செய்கிறது." data-hi="हमारी टीम स्थायी जल गुणवत्ता के लिए निर्बाध एकीकरण सुनिश्चित करती है।">Our team ensures seamless integration for lasting water quality.</p>
                     </div>
@@ -472,12 +502,14 @@
             </section>
             
             <!-- About Us Section -->
-            <section id="about" class="content-section">
+            <section id="about" class="content-section" role="tabpanel" aria-labelledby="about-tab">
                 <div class="bg-gray-800 p-6 md:p-8 rounded-xl shadow-xl border border-gray-700">
                      <h2 class="text-3xl md:text-4xl font-bold text-white mb-6 text-center" data-en="Our Foundation & Commitment" data-ta="எங்கள் அடித்தளம் மற்றும் அர்ப்பணிப்பு" data-hi="हमारी नींव और प्रतिबद्धता">Our Foundation & Commitment</h2>
                     <div class="grid md:grid-cols-3 gap-8">
-                        <div class="md:col-span-1">
+                        <div class="md:col-span-1 text-center">
                             <h3 class="text-2xl font-semibold text-white mb-2" data-en="Meet Our Founder" data-ta="எங்கள் நிறுவனரைச் சந்திக்கவும்" data-hi="हमारे संस्थापक से मिलें">Meet Our Founder</h3>
+                            <!-- Placeholder for founder image with styling -->
+                            <img src="https://placehold.co/150x150/4B0082/FFFFFF?text=Founder" alt="Mr. Ramesh Raju - Founder" class="founder-image">
                             <h4 class="text-xl md:text-2xl font-bold text-blue-300 mb-2" data-en="Mr. Ramesh Raju" data-ta="திரு. ரமேஷ் ராஜு" data-hi="श्री रमेश राजू">Mr. Ramesh Raju</h4>
                             <!-- UPDATED FOUNDER CONTENT -->
                             <p class="text-base text-gray-300 mb-4"
@@ -515,48 +547,46 @@
                     <div class="mt-8">
                         <h3 class="text-2xl md:text-3xl font-semibold text-white mb-4 text-center" data-en="Our Valued Clientele" data-ta="எங்கள் மதிப்புமிக்க வாடிக்கையாளர்கள்" data-hi="हमारे मूल्यवान ग्राहक">Our Valued Clientele</h3>
                         <p class="text-center text-base text-gray-300 mb-6" data-en="Our diverse clientele spans homeowners seeking optimal water quality and home security, businesses requiring comprehensive surveillance and efficient water treatment, educational institutions ensuring student safety, healthcare facilities upholding hygiene standards, and industrial sectors optimizing operations through advanced security and water softening solutions across Chennai and its surrounding areas." data-ta="எங்கள் மாறுபட்ட வாடிக்கையாளர் வீட்டு உரிமையாளர்கள், உகந்த நீர் தரம் மற்றும் வீட்டு பாதுகாப்பு தேடுபவர்கள், விரிவான கண்காணிப்பு மற்றும் திறமையான நீர் சுத்திகரிப்பு தேவைப்படும் வணிகங்கள், மாணவர் பாதுகாப்பை உறுதி செய்யும் கல்வி நிறுவனங்கள், சுகாதார தரங்களை கடைபிடிக்கும் சுகாதார வசதிகள், மற்றும் சென்னை மற்றும் அதை சுற்றியுள்ள பகுதிகளில் மேம்பட்ட பாதுகாப்பு மற்றும் நீர் மென்மையாக்கும் தீர்வுகள் மூலம் செயல்பாடுகளை மேம்படுத்தும் தொழில்துறை பிரிவுகளுக்கு பரவுகிறது." data-hi="हमारे विविध ग्राहक आवासीय ग्राहकों से लेकर इष्टतम जल गुणवत्ता और घर की सुरक्षा की तलाश में, व्यापक निगरानी और कुशल जल उपचार की आवश्यकता वाले व्यवसायों, छात्र सुरक्षा सुनिश्चित करने वाले शैक्षणिक संस्थानों, स्वच्छता मानकों को बनाए रखने वाले स्वास्थ्य सेवा सुविधाओं, और चेन्नई और उसके आसपास के क्षेत्रों में उन्नत सुरक्षा और जल नरम समाधानों के माध्यम से संचालन को अनुकूलित करने वाले औद्योगिक क्षेत्रों तक फैले हुए हैं।">Our diverse clientele spans homeowners seeking optimal water quality and home security, businesses requiring comprehensive surveillance and efficient water treatment, educational institutions ensuring student safety, healthcare facilities upholding hygiene standards, and industrial sectors optimizing operations through advanced security and water softening solutions across Chennai and its surrounding areas.</p>
-                        <div id="client-logos" class="flex flex-wrap justify-center items-center gap-6 p-4 border border-blue-700 rounded-lg bg-blue-900 bg-opacity-30 shadow-inner min-h-[120px]">
-                            <img src="images/logo1.jpg" alt="ALIMCO Logo" class="h-16 object-contain grayscale hover:grayscale-0 transition-all duration-300 img-glow" loading="lazy">
-                            <img src="images/logo2.jpeg" alt="BATHCAFF Logo" class="h-16 object-contain grayscale hover:grayscale-0 transition-all duration-300 img-glow" loading="lazy">
-                            <img src="images/logo3.png" alt="JE NESAM HOSPITAL Logo" class="h-16 object-contain grayscale hover:grayscale-0 transition-all duration-300 img-glow" loading="lazy">
-                            <img src="images/logo4.webp" alt="VNCT GLOBAL Logo" class="h-16 object-contain grayscale hover:grayscale-0 transition-all duration-300 img-glow" loading="lazy">
-                            <img src="images/logo5.png" alt="YNT Supply Chain Logo" class="h-16 object-contain grayscale hover:grayscale-0 transition-all duration-300 img-glow" loading="lazy">
-                            <img src="images/logo6.png" alt="Rathna Offset Printers Logo" class="h-16 object-contain grayscale hover:grayscale-0 transition-all duration-300 img-glow" loading="lazy">
-                            <img src="images/logo7.jpeg" alt="GUILD OF SERVICE Logo" class="h-16 object-contain grayscale hover:grayscale-0 transition-all duration-300 img-glow" loading="lazy">
-                            <img src="images/logo8.png" alt="ELECTRAACE Logo" class="h-16 object-contain grayscale hover:grayscale-0 transition-all duration-300 img-glow" loading="lazy">
-                            <img src="images/logo9.webp" alt="Janex Logistics Logo" class="h-16 object-contain grayscale hover:grayscale-0 transition-all duration-300 img-glow" loading="lazy">
-                            <img src="images/logo10.png" alt="SINDOORI MANAGEMENT SOLUTIONS PRIVATE LIMITED Logo" class="h-16 object-contain grayscale hover:grayscale-0 transition-all duration-300 img-glow" loading="lazy">
-                            <img src="images/logo11.jpeg" alt="LUX Construction Consulting Logo" class="h-16 object-contain grayscale hover:grayscale-0 transition-all duration-300 img-glow" loading="lazy">
-                            <img src="images/logo12.png" alt="Kyyba Logo" class="h-16 object-contain grayscale hover:grayscale-0 transition-all duration-300 img-glow" loading="lazy">
-                            <img src="images/logo13.png" alt="Cloutics Logo" class="h-16 object-contain grayscale hover:grayscale-0 transition-all duration-300 img-glow" loading="lazy">
-                            <img src="images/logo14.jpeg" alt="DTDC Logo" class="h-16 object-contain grayscale hover:grayscale-0 transition-all duration-300 img-glow" loading="lazy">
-                            <img src="images/logo15.png" alt="GRB Dairy Foods Logo" class="h-16 object-contain grayscale hover:grayscale-0 transition-all duration-300 img-glow" loading="lazy">
-                            <img src="images/logo16.png" alt="KFC Logo" class="h-16 object-contain grayscale hover:grayscale-0 transition-all duration-300 img-glow" loading="lazy">
-                            <img src="images/logo17.png" alt="HERRENKNECHT Logo" class="h-16 object-contain grayscale hover:grayscale-0 transition-all duration-300 img-glow" loading="lazy">
-                        </div>
-                    </div>
-
-                    <!-- New: Video Content Integration Section -->
-                    <div class="mt-12 text-center">
-                        <h3 class="text-2xl md:text-3xl font-bold text-white mb-6" data-en="See Our Solutions in Action" data-ta="எங்கள் தீர்வுகளைச் செயல்பாட்டில் காணுங்கள்" data-hi="हमारे समाधानों को देखें कार्य में">See Our Solutions in Action</h3>
-                        <p class="text-base text-gray-300 mb-6 max-w-2xl mx-auto" data-en="Explore compelling videos demonstrating our AI-powered surveillance features and the revolutionary benefits of our zero-maintenance hard water treatment. Visualizing our technology makes the difference clear." data-ta="எங்கள் AI-இயங்கும் கண்காணிப்பு அம்சங்கள் மற்றும் பூஜ்ஜிய பராமரிப்பு கடின நீர் சுத்திகரிப்பின் புரட்சிகரமான நன்மைகளை விளக்கும் கண்கவர் வீடியோக்களை ஆராயுங்கள். எங்கள் தொழில்நுட்பத்தை காட்சிப்படுத்துவது வித்தியாசத்தை தெளிவாகக் காட்டுகிறது." data-hi="हमारे एआई-संचालित निगरानी सुविधाओं और शून्य-रखरखाव कठोर जल उपचार के क्रांतिकारी लाभों को प्रदर्शित करने वाले आकर्षक वीडियो देखें। हमारी तकनीक को देखना अंतर स्पष्ट करता है।">Explore compelling videos demonstrating our AI-powered surveillance features and the revolutionary benefits of our zero-maintenance hard water treatment. Visualizing our technology makes the difference clear.</p>
-                        
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                            <div class="bg-gray-900 bg-opacity-30 p-4 rounded-lg shadow-md border border-gray-700">
-                                <h4 class="text-xl font-semibold text-blue-300 mb-3" data-en="Smart Surveillance Demo" data-ta="ஸ்மார்ட் கண்காணிப்பு டெமோ" data-hi="स्मार्ट निगरानी डेमो">Smart Surveillance Demo</h4>
-                                <div class="video-responsive rounded-lg overflow-hidden shadow-xl">
-                                    <!-- Replace with your actual YouTube embed code -->
-                                    <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen title="Surveillance System Demo Placeholder"></iframe>
-                                </div>
-                                <p class="text-sm text-gray-400 mt-3" data-en="A quick overview of our AI features and live monitoring capabilities." data-ta="எங்கள் AI அம்சங்கள் மற்றும் நேரடி கண்காணிப்பு திறன்களின் விரைவான கண்ணோட்டம்." data-hi="हमारे एआई सुविधाओं और लाइव निगरानी क्षमताओं का एक त्वरित अवलोकन।">A quick overview of our AI features and live monitoring capabilities.</p>
+                        <!-- Updated Client Logos Section for Auto-Scroll -->
+                        <div class="logo-scroll-container">
+                            <div class="logo-scroll">
+                                <img src="images/logo1.jpg" alt="ALIMCO Logo" class="h-16 object-contain grayscale hover:grayscale-0 transition-all duration-300 img-glow">
+                                <img src="images/logo2.jpeg" alt="BATHCAFF Logo" class="h-16 object-contain grayscale hover:grayscale-0 transition-all duration-300 img-glow">
+                                <img src="images/logo3.png" alt="JE NESAM HOSPITAL Logo" class="h-16 object-contain grayscale hover:grayscale-0 transition-all duration-300 img-glow">
+                                <img src="images/logo4.webp" alt="VNCT GLOBAL Logo" class="h-16 object-contain grayscale hover:grayscale-0 transition-all duration-300 img-glow">
+                                <img src="images/logo5.png" alt="YNT Supply Chain Logo" class="h-16 object-contain grayscale hover:grayscale-0 transition-all duration-300 img-glow">
+                                <img src="images/logo6.png" alt="Rathna Offset Printers Logo" class="h-16 object-contain grayscale hover:grayscale-0 transition-all duration-300 img-glow">
+                                <img src="images/logo7.jpeg" alt="GUILD OF SERVICE Logo" class="h-16 object-contain grayscale hover:grayscale-0 transition-all duration-300 img-glow">
+                                <img src="images/logo8.png" alt="ELECTRAACE Logo" class="h-16 object-contain grayscale hover:grayscale-0 transition-all duration-300 img-glow">
+                                <img src="images/logo9.webp" alt="Janex Logistics Logo" class="h-16 object-contain grayscale hover:grayscale-0 transition-all duration-300 img-glow">
+                                <img src="images/logo10.png" alt="SINDOORI MANAGEMENT SOLUTIONS PRIVATE LIMITED Logo" class="h-16 object-contain grayscale hover:grayscale-0 transition-all duration-300 img-glow">
+                                <img src="images/logo11.jpeg" alt="LUX Construction Consulting Logo" class="h-16 object-contain grayscale hover:grayscale-0 transition-all duration-300 img-glow">
+                                <img src="images/logo12.png" alt="Kyyba Logo" class="h-16 object-contain grayscale hover:grayscale-0 transition-all duration-300 img-glow">
+                                <img src="images/logo13.png" alt="Cloutics Logo" class="h-16 object-contain grayscale hover:grayscale-0 transition-all duration-300 img-glow">
+                                <img src="images/logo14.jpeg" alt="DTDC Logo" class="h-16 object-contain grayscale hover:grayscale-0 transition-all duration-300 img-glow">
+                                <img src="images/logo15.png" alt="GRB Dairy Foods Logo" class="h-16 object-contain grayscale hover:grayscale-0 transition-all duration-300 img-glow">
+                                <img src="images/logo16.png" alt="KFC Logo" class="h-16 object-contain grayscale hover:grayscale-0 transition-all duration-300 img-glow">
+                                <img src="images/logo17.png" alt="HERRENKNECHT Logo" class="h-16 object-contain grayscale hover:grayscale-0 transition-all duration-300 img-glow">
                             </div>
-                            <div class="bg-gray-900 bg-opacity-30 p-4 rounded-lg shadow-md border border-gray-700">
-                                <h4 class="text-xl font-semibold text-green-300 mb-3" data-en="Hard Water Solution Explained" data-ta="கடின நீர் தீர்வு விளக்கப்பட்டுள்ளது" data-hi="कठोर जल समाधान समझाया गया">Hard Water Solution Explained</h4>
-                                <div class="video-responsive rounded-lg overflow-hidden shadow-xl">
-                                    <!-- Replace with your actual YouTube embed code -->
-                                    <iframe src="https://www.youtube.com/embed/gMv16A54yA8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen title="Hard Water Treatment Explanation Placeholder"></iframe>
-                                </div>
-                                <p class="text-sm text-gray-400 mt-3" data-en="Understand the science behind our salt-free, chemical-free water treatment." data-ta="உப்பு இல்லாத, இரசாயனங்கள் இல்லாத நீர் சுத்திகரிப்பின் பின்னால் உள்ள அறிவியலைப் புரிந்து கொள்ளுங்கள்." data-hi="हमारे नमक-मुक्त, रसायन-मुक्त जल उपचार के पीछे के विज्ञान को समझें।">Understand the science behind our salt-free, chemical-free water treatment.</p>
+                            <!-- Duplicate logos for seamless scrolling effect -->
+                            <div class="logo-scroll" aria-hidden="true">
+                                <img src="images/logo1.jpg" alt="ALIMCO Logo" class="h-16 object-contain grayscale hover:grayscale-0 transition-all duration-300 img-glow">
+                                <img src="images/logo2.jpeg" alt="BATHCAFF Logo" class="h-16 object-contain grayscale hover:grayscale-0 transition-all duration-300 img-glow">
+                                <img src="images/logo3.png" alt="JE NESAM HOSPITAL Logo" class="h-16 object-contain grayscale hover:grayscale-0 transition-all duration-300 img-glow">
+                                <img src="images/logo4.webp" alt="VNCT GLOBAL Logo" class="h-16 object-contain grayscale hover:grayscale-0 transition-all duration-300 img-glow">
+                                <img src="images/logo5.png" alt="YNT Supply Chain Logo" class="h-16 object-contain grayscale hover:grayscale-0 transition-all duration-300 img-glow">
+                                <img src="images/logo6.png" alt="Rathna Offset Printers Logo" class="h-16 object-contain grayscale hover:grayscale-0 transition-all duration-300 img-glow">
+                                <img src="images/logo7.jpeg" alt="GUILD OF SERVICE Logo" class="h-16 object-contain grayscale hover:grayscale-0 transition-all duration-300 img-glow">
+                                <img src="images/logo8.png" alt="ELECTRAACE Logo" class="h-16 object-contain grayscale hover:grayscale-0 transition-all duration-300 img-glow">
+                                <img src="images/logo9.webp" alt="Janex Logistics Logo" class="h-16 object-contain grayscale hover:grayscale-0 transition-all duration-300 img-glow">
+                                <img src="images/logo10.png" alt="SINDOORI MANAGEMENT SOLUTIONS PRIVATE LIMITED Logo" class="h-16 object-contain grayscale hover:grayscale-0 transition-all duration-300 img-glow">
+                                <img src="images/logo11.jpeg" alt="LUX Construction Consulting Logo" class="h-16 object-contain grayscale hover:grayscale-0 transition-all duration-300 img-glow">
+                                <img src="images/logo12.png" alt="Kyyba Logo" class="h-16 object-contain grayscale hover:grayscale-0 transition-all duration-300 img-glow">
+                                <img src="images/logo13.png" alt="Cloutics Logo" class="h-16 object-contain grayscale hover:grayscale-0 transition-all duration-300 img-glow">
+                                <img src="images/logo14.jpeg" alt="DTDC Logo" class="h-16 object-contain grayscale hover:grayscale-0 transition-all duration-300 img-glow">
+                                <img src="images/logo15.png" alt="GRB Dairy Foods Logo" class="h-16 object-contain grayscale hover:grayscale-0 transition-all duration-300 img-glow">
+                                <img src="images/logo16.png" alt="KFC Logo" class="h-16 object-contain grayscale hover:grayscale-0 transition-all duration-300 img-glow">
+                                <img src="images/logo17.png" alt="HERRENKNECHT Logo" class="h-16 object-contain grayscale hover:grayscale-0 transition-all duration-300 img-glow">
                             </div>
                         </div>
                     </div>
@@ -694,13 +724,6 @@
                     '- Mrs. A. Devi, Homeowner': '- Mrs. A. Devi, Homeowner',
                     'Our Valued Clientele': 'Our Valued Clientele',
                     'Our diverse clientele spans homeowners seeking optimal water quality and home security, businesses requiring comprehensive surveillance and efficient water treatment, educational institutions ensuring student safety, healthcare facilities upholding hygiene standards, and industrial sectors optimizing operations through advanced security and water softening solutions across Chennai and its surrounding areas.': 'Our diverse clientele spans homeowners seeking optimal water quality and home security, businesses requiring comprehensive surveillance and efficient water treatment, educational institutions ensuring student safety, healthcare facilities upholding hygiene standards, and industrial sectors optimizing operations through advanced security and water softening solutions across Chennai and its surrounding areas.',
-                    // New Video Section Titles
-                    'See Our Solutions in Action': 'See Our Solutions in Action',
-                    'Explore compelling videos demonstrating our AI-powered surveillance features and the revolutionary benefits of our zero-maintenance hard water treatment. Visualizing our technology makes the difference clear.': 'Explore compelling videos demonstrating our AI-powered surveillance features and the revolutionary benefits of our zero-maintenance hard water treatment. Visualizing our technology makes the difference clear.',
-                    'Smart Surveillance Demo': 'Smart Surveillance Demo',
-                    'A quick overview of our AI features and live monitoring capabilities.': 'A quick overview of our AI features and live monitoring capabilities.',
-                    'Hard Water Solution Explained': 'Hard Water Solution Explained',
-                    'Understand the science behind our salt-free, chemical-free water treatment.': 'Understand the science behind our salt-free, chemical-free water treatment.',
                     // Footer
                     '&copy; 2024 Paras Enterprises. All Rights Reserved.': '&copy; 2024 Paras Enterprises. All Rights Reserved.',
                     'Chennai, India': 'Chennai, India',
@@ -815,15 +838,8 @@
                     '- Mr. S. Kumar, Business Owner': '- திரு. எஸ். குமார், வணிக உரிமையாளர்',
                     '"The zero-maintenance water softener is a game-changer! No more salt bags or constant checks. Our appliances are scale-free, and the water quality is noticeably better."': '"பூஜ்ஜிய பராமரிப்பு நீர் மென்மையாக்கி ஒரு விளையாட்டு மாற்றியாகும்! இனி உப்பு பைகள் அல்லது தொடர்ச்சியான சோதனைகள் இல்லை. எங்கள் உபகரணங்கள் சுண்ணாம்பு இல்லாமல் உள்ளன, மேலும் நீர் தரம் குறிப்பிடத்தக்க வகையில் சிறப்பாக உள்ளது."',
                     '- Mrs. A. Devi, Homeowner': '- திருமதி. ஏ. தேவி, வீட்டு உரிமையாளர்',
-                    'Our Valued Clientele': 'எங்கள் மதிப்புமிக்க வாடிக்கையாளர்கள்',
-                    'Our diverse clientele spans homeowners seeking optimal water quality and home security, businesses requiring comprehensive surveillance and efficient water treatment, educational institutions ensuring student safety, healthcare facilities upholding hygiene standards, and industrial sectors optimizing operations through advanced security and water softening solutions across Chennai and its surrounding areas.': 'எங்கள் மாறுபட்ட வாடிக்கையாளர் வீட்டு உரிமையாளர்கள், உகந்த நீர் தரம் மற்றும் வீட்டு பாதுகாப்பு தேடுபவர்கள், விரிவான கண்காணிப்பு மற்றும் திறமையான நீர் சுத்திகரிப்பு தேவைப்படும் வணிகங்கள், மாணவர் பாதுகாப்பை உறுதி செய்யும் கல்வி நிறுவனங்கள், சுகாதார தரங்களை கடைபிடிக்கும் சுகாதார வசதிகள், மற்றும் சென்னை மற்றும் அதை சுற்றியுள்ள பகுதிகளில் மேம்பட்ட பாதுகாப்பு மற்றும் நீர் மென்மையாக்கும் தீர்வுகள் மூலம் செயல்பாடுகளை மேம்படுத்தும் தொழில்துறை பிரிவுகளுக்கு பரவுகிறது।',
-                    // New Video Section Titles
-                    'See Our Solutions in Action': 'See Our Solutions in Action',
-                    'Explore compelling videos demonstrating our AI-powered surveillance features and the revolutionary benefits of our zero-maintenance hard water treatment. Visualizing our technology makes the difference clear.': 'Explore compelling videos demonstrating our AI-powered surveillance features and the revolutionary benefits of our zero-maintenance hard water treatment. Visualizing our technology makes the difference clear.',
-                    'Smart Surveillance Demo': 'Smart Surveillance Demo',
-                    'A quick overview of our AI features and live monitoring capabilities.': 'A quick overview of our AI features and live monitoring capabilities.',
-                    'Hard Water Solution Explained': 'Hard Water Solution Explained',
-                    'Understand the science behind our salt-free, chemical-free water treatment.': 'Understand the science behind our salt-free, chemical-free water treatment.',
+                    'Our Valued Clientele': 'Our Valued Clientele',
+                    'Our diverse clientele spans homeowners seeking optimal water quality and home security, businesses requiring comprehensive surveillance and efficient water treatment, educational institutions ensuring student safety, healthcare facilities upholding hygiene standards, and industrial sectors optimizing operations through advanced security and water softening solutions across Chennai and its surrounding areas.': 'Our diverse clientele spans homeowners seeking optimal water quality and home security, businesses requiring comprehensive surveillance and efficient water treatment, educational institutions ensuring student safety, healthcare facilities upholding hygiene standards, and industrial sectors optimizing operations through advanced security and water softening solutions across Chennai and its surrounding areas.',
                     // Footer
                     '&copy; 2024 Paras Enterprises. All Rights Reserved.': '&copy; 2024 Paras Enterprises. All Rights Reserved.',
                     'Chennai, India': 'Chennai, India',
@@ -938,140 +954,10 @@
                     '- Mr. S. Kumar, Business Owner': '- திரு. எஸ். குமார், வணிக உரிமையாளர்',
                     '"The zero-maintenance water softener is a game-changer! No more salt bags or constant checks. Our appliances are scale-free, and the water quality is noticeably better."': '"பூஜ்ஜிய பராமரிப்பு நீர் மென்மையாக்கி ஒரு விளையாட்டு மாற்றியாகும்! இனி உப்பு பைகள் அல்லது தொடர்ச்சியான சோதனைகள் இல்லை. எங்கள் உபகரணங்கள் சுண்ணாம்பு இல்லாமல் உள்ளன, மேலும் நீர் தரம் குறிப்பிடத்தக்க வகையில் சிறப்பாக உள்ளது."',
                     '- Mrs. A. Devi, Homeowner': '- திருமதி. ஏ. தேவி, வீட்டு உரிமையாளர்',
-                    'Our Valued Clientele': 'எங்கள் மதிப்புமிக்க வாடிக்கையாளர்கள்',
-                    'Our diverse clientele spans homeowners seeking optimal water quality and home security, businesses requiring comprehensive surveillance and efficient water treatment, educational institutions ensuring student safety, healthcare facilities upholding hygiene standards, and industrial sectors optimizing operations through advanced security and water softening solutions across Chennai and its surrounding areas.': 'எங்கள் மாறுபட்ட வாடிக்கையாளர் வீட்டு உரிமையாளர்கள், உகந்த நீர் தரம் மற்றும் வீட்டு பாதுகாப்பு தேடுபவர்கள், விரிவான கண்காணிப்பு மற்றும் திறமையான நீர் சுத்திகரிப்பு தேவைப்படும் வணிகங்கள், மாணவர் பாதுகாப்பை உறுதி செய்யும் கல்வி நிறுவனங்கள், சுகாதார தரங்களை கடைபிடிக்கும் சுகாதார வசதிகள், மற்றும் சென்னை மற்றும் அதை சுற்றியுள்ள பகுதிகளில் மேம்பட்ட பாதுகாப்பு மற்றும் நீர் மென்மையாக்கும் தீர்வுகள் மூலம் செயல்பாடுகளை மேம்படுத்தும் தொழில்துறை பிரிவுகளுக்கு பரவுகிறது।',
-                    // New Video Section Titles
-                    'See Our Solutions in Action': 'See Our Solutions in Action',
-                    'Explore compelling videos demonstrating our AI-powered surveillance features and the revolutionary benefits of our zero-maintenance hard water treatment. Visualizing our technology makes the difference clear.': 'Explore compelling videos demonstrating our AI-powered surveillance features and the revolutionary benefits of our zero-maintenance hard water treatment. Visualizing our technology makes the difference clear.',
-                    'Smart Surveillance Demo': 'Smart Surveillance Demo',
-                    'A quick overview of our AI features and live monitoring capabilities.': 'A quick overview of our AI features and live monitoring capabilities.',
-                    'Hard Water Solution Explained': 'Hard Water Solution Explained',
-                    'Understand the science behind our salt-free, chemical-free water treatment.': 'Understand the science behind our salt-free, chemical-free water treatment.',
+                    'Our Valued Clientele': 'Our Valued Clientele',
+                    'Our diverse clientele spans homeowners seeking optimal water quality and home security, businesses requiring comprehensive surveillance and efficient water treatment, educational institutions ensuring student safety, healthcare facilities upholding hygiene standards, and industrial sectors optimizing operations through advanced security and water softening solutions across Chennai and its surrounding areas.': 'Our diverse clientele spans homeowners seeking optimal water quality and home security, businesses requiring comprehensive surveillance and efficient water treatment, educational institutions ensuring student safety, healthcare facilities upholding hygiene standards, and industrial sectors optimizing operations through advanced security and water softening solutions across Chennai and its surrounding areas.',
                     // Footer
-                    '&copy; 2024 Paras Enterprises. All Rights Reserved.': '&copy; 2024 பாரஸ் எண்டர்பிரைசஸ். அனைத்து உரிமைகளும் பாதுகாக்கப்பட்டவை.',
-                    'Chennai, India': 'Chennai, India',
-                    'Email': 'Email',
-                    'Phone': 'Phone',
-                    'WhatsApp': 'WhatsApp',
-                    'LinkedIn': 'LinkedIn'
-                },
-                ta: {
-                    // Header
-                    'Paras Enterprises': 'பாரஸ் எண்டர்பிரைசஸ்',
-                    'Delivering Excellence in Security and Water Purity': 'பாதுகாப்பு மற்றும் நீர் தூய்மையில் சிறந்து விளங்குதல்',
-                    'Your Partner for Turn-Key Security and Zero-Maintenance Water Solutions': 'முழுமையான பாதுகாப்பு மற்றும் பூஜ்ஜிய பராமரிப்பு நீர் தீர்வுகளுக்கான உங்கள் பங்குதாரர்',
-                    // New/Updated Title and Meta Description Content
-                    'Paras Enterprises | AI Security & Zero-Maintenance Water Solutions in Chennai': 'பாரஸ் எண்டர்பிரைசஸ் | சென்னையில் AI பாதுகாப்பு மற்றும் பூஜ்ஜிய பராமரிப்பு நீர் தீர்வுகள்',
-                    'Paras Enterprises offers turn-key AI-powered surveillance systems and revolutionary zero-maintenance hard water treatment solutions in Chennai. Protect your home and business with smart security and eliminate limescale without salt, chemicals, or electricity.': 'பாரஸ் எண்டர்பிரைசஸ் சென்னையில் முழுமையான AI-இயங்கும் கண்காணிப்பு அமைப்புகள் மற்றும் புரட்சிகரமான பூஜ்ஜிய பராமரிப்பு கடின நீர் சுத்திகரிப்பு தீர்வுகளை வழங்குகிறது. ஸ்மார்ட் பாதுகாப்புடன் உங்கள் வீடு மற்றும் வணிகத்தைப் பாதுகாக்கவும், உப்பு, இரசாயனங்கள் அல்லது மின்சாரம் இல்லாமல் சுண்ணாம்பு அகற்றுங்கள்.',
-                    // Tabs
-                    'Turn-Key Surveillance': 'முழுமையான கண்காணிப்பு',
-                    'Hard Water Treatment': 'கடின நீர் சுத்திகரிப்பு',
-                    'About Us': 'எங்களைப் பற்றி',
-                    // Surveillance Section
-                    'Tailored Surveillance Solutions: For Every Home and Business': 'தனிப்பயனாக்கப்பட்ட கண்காணிப்பு தீர்வுகள்: ஒவ்வொரு வீடு மற்றும் வணிகத்திற்கும்',
-                    'Paras Enterprises provides advanced surveillance solutions designed to meet the diverse needs of both domestic and commercial clients. From simple home monitoring to complex enterprise security integrations, we deliver comprehensive, AI-powered systems for complete peace of mind.': 'பாரஸ் எண்டர்பிரைசஸ் வீட்டு மற்றும் வணிக வாடிக்கையாளர்களின் பல்வேறு தேவைகளைப் பூர்த்தி செய்யும் மேம்பட்ட கண்காணிப்பு தீர்வுகளை வழங்குகிறது. எளிய வீட்டு கண்காணிப்பு முதல் சிக்கலான நிறுவன பாதுகாப்பு ஒருங்கிணைப்புகள் வரை, முழுமையான மன அமைதிக்காக விரிவான, AI-இயங்கும் அமைப்புகளை நாங்கள் வழங்குகிறோம்.',
-                    'Smart Security for Homes & Small Businesses': 'வீடுகள் மற்றும் சிறு வணிகங்களுக்கான ஸ்மார்ட் பாதுகாப்பு',
-                    // Updated Domestic Segment Intro
-                    'For homeowners, shops, and small businesses, we offer cost-effective, user-friendly WiFi cameras with integrated AI. Get peace of mind with smart detection, local recording, and optional cloud backup. Start securing your property with just one camera!': 'வீடு உரிமையாளர்கள், கடைகள் மற்றும் சிறு வணிகங்களுக்கு, ஒருங்கிணைந்த AI அம்சங்களுடன் கூடிய செலவு குறைந்த, பயனர் நட்பு வைஃபை கேமராக்களை நாங்கள் வழங்குகிறோம். ஸ்மார்ட் கண்டறிதல், உள்ளூர் பதிவு மற்றும் விருப்பமான கிளவுட் காப்புப்பிரதியுடன் மன அமைதியைப் பெறுங்கள். ஒரே ஒரு கேமராவைப் பயன்படுத்தி உங்கள் சொத்தைப் பாதுகாப்பதைத் தொடங்குங்கள்!',
-                    'WiFi Cameras:': 'வைஃபை கேமராக்கள்:',
-                    'Available for both indoor and outdoor use, providing flexible placement.': 'உட்புற மற்றும் வெளிப்புற பயன்பாட்டிற்கு கிடைக்கிறது, நெகிழ்வான இடம் அமைப்பை வழங்குகிறது.',
-                    'Advanced AI Features:': 'மேம்பட்ட AI அம்சங்கள்:',
-                    'Built-in intelligence for smart detection and alerts.': 'ஸ்மார்ட் கண்டறிதல் மற்றும் எச்சரிக்கைகளுக்கான உள்ளமைக்கப்பட்ட நுண்ணறிவு.',
-                    'SD Card Recording:': 'SD கார்டு பதிவு:',
-                    'Local storage for reliable footage capture.': 'நம்பகமான படப்பிடிப்பு பதிவுக்கு உள்ளூர் சேமிப்பகம்.',
-                    'Optional Cloud Recording:': 'விரும்பினால் கிளவுட் பதிவு:',
-                    'Secure, subscription-based cloud storage for enhanced accessibility and backup.': 'மேம்பட்ட அணுகல் மற்றும் காப்புப்பிரதிக்கான பாதுகாப்பான, சந்தா அடிப்படையிலான கிளவுட் சேமிப்பகம்.',
-                    'Integrated Security Systems for Enterprises': 'நிறுவனங்களுக்கான ஒருங்கிணைந்த பாதுகாப்பு அமைப்புகள்',
-                    'For our commercial segment, we provide entire, turn-key solutions tailored to complex business needs. Our offerings go beyond cameras to include full integration of various security and network components.': 'எங்கள் வணிகப் பிரிவுக்கு, சிக்கலான வணிகத் தேவைகளுக்கு ஏற்ற முழுமையான, முழுமையான தீர்வுகளை நாங்கள் வழங்குகிறோம். எங்கள் சலுகைகள் கேமராக்களுக்கு அப்பால் பல்வேறு பாதுகாப்பு மற்றும் நெட்வொர்க் கூறுகளை முழுமையாக ஒருங்கிணைக்கின்றன.',
-                    'Network Integration:': 'நெட்வொர்க் ஒருங்கிணைப்பு:',
-                    'Seamless integration of access points, data, and voice connections.': 'அணுகல் புள்ளிகள், தரவு மற்றும் குரல் இணைப்புகளின் தடையற்ற ஒருங்கிணைப்பு.',
-                    'Access Control Systems:': 'அணுகல் கட்டுப்பாட்டு அமைப்புகள்:',
-                    'Robust solutions for managing entry and exit points.': 'நுழைவு மற்றும் வெளியேறும் இடங்களை நிர்வகிப்பதற்கான வலுவான தீர்வுகள்.',
-                    'Biometric Solutions:': 'பயோமெட்ரிக் தீர்வுகள்:',
-                    'Advanced biometric systems for secure authentication.': 'பாதுகாப்பான அங்கீகாரத்திற்கான மேம்பட்ட பயோமெட்ரிக் அமைப்புகள்.',
-                    'IP Cameras:': 'IP கேமராக்கள்:',
-                    'High-resolution IP cameras in various resolutions, equipped with many advanced AI features for superior monitoring and analytics.': 'மேம்பட்ட கண்காணிப்பு மற்றும் பகுப்பாய்வுக்கான பல மேம்பட்ட AI அம்சங்களுடன் கூடிய உயர் தெளிவுத்திறன் கொண்ட IP கேமராக்கள் பல்வேறு தெளிவுத்திறன்களில்.',
-                    'Comprehensive Camera Technologies': 'விரிவான கேமரா தொழில்நுட்பங்கள்',
-                    'Regardless of the segment, Paras Enterprises offers a wide array of advanced CCTV technologies to suit diverse environmental and operational requirements, all equipped with smart features for optimal performance.': 'பிரிவு எதுவாக இருந்தாலும், பாரஸ் எண்டர்பிரைசஸ் பல்வேறு சுற்றுச்சூழல் மற்றும் செயல்பாட்டுத் தேவைகளுக்கு ஏற்ற மேம்பட்ட CCTV தொழில்நுட்பங்களை வழங்குகிறது, இவை அனைத்தும் உகந்த செயல்திறனுக்கான ஸ்மார்ட் அம்சங்களுடன் பொருத்தப்பட்டுள்ளன.',
-                    'WiFi Cameras': 'வைஃபை கேமராக்கள்',
-                    'Versatile indoor and outdoor WiFi cameras, perfect for easy setup and wireless monitoring. Ideal for homes and small spaces.': 'பல்துறை உட்புற மற்றும் வெளிப்புற வைஃபை கேமராக்கள், எளிதான அமைப்பு மற்றும் வயர்லெஸ் கண்காணிப்புக்கு ஏற்றவை. வீடுகள் மற்றும் சிறிய இடங்களுக்கு சிறந்தது.',
-                    'AI features for smart detection.': 'ஸ்மார்ட் கண்டறிதலுக்கான AI அம்சங்கள்.',
-                    'SD card recording built-in.': 'உள்ளமைக்கப்பட்ட SD கார்டு பதிவு.',
-                    '4G SIM Card Based Cameras': '4G சிம் கார்டு அடிப்படையிலான கேமராக்கள்',
-                    'Reliable indoor and outdoor cameras using 4G connectivity, ideal for locations without traditional internet access.': 'பாரம்பரிய இணைய அணுகல் இல்லாத இடங்களுக்கு ஏற்ற 4G இணைப்பைப் பயன்படுத்தும் நம்பகமான உட்புற மற்றும் வெளிப்புற கேமராக்கள்.',
-                    'Solar Powered 4G Cameras': 'சூரிய ஆற்றல் மூலம் இயங்கும் 4G கேமராக்கள்',
-                    'Self-sufficient outdoor cameras with solar charging and 4G connectivity, perfect for remote or off-grid installations.': 'சூரிய ஆற்றல் சார்ஜிங் மற்றும் 4G இணைப்புடன் கூடிய சுய-சார்பு வெளிப்புற கேமராக்கள், தொலைதூர அல்லது ஆஃப்-கிரிட் நிறுவல்களுக்கு ஏற்றவை.',
-                    'Our Seamless Turn-Key Process': 'எங்கள் தடையற்ற முழுமையான செயல்முறை',
-                    'Consult & Design': 'ஆலோசனை மற்றும் வடிவமைப்பு',
-                    'Custom system design based on your needs and budget.': 'உங்கள் தேவைகள் மற்றும் பட்ஜெட்டின் அடிப்படையில் தனிப்பயன் அமைப்பு வடிவமைப்பு.',
-                    'Supply & Install': 'வழங்கல் மற்றும் நிறுவுதல்',
-                    'Professional installation and configuration.': 'தொழில்முறை நிறுவல் மற்றும் கட்டமைப்பு.',
-                    'Integrate AI': 'AI ஒருங்கிணைப்பு',
-                    'Intelligent analytics for proactive threat detection.': 'முன்கூட்டியே அச்சுறுத்தல் கண்டறிதலுக்கான அறிவார்ந்த பகுப்பாய்வு.',
-                    'Maintain & Support': 'பராமரிப்பு மற்றும் ஆதரவு',
-                    'Ensuring your system runs smoothly long-term.': 'உங்கள் அமைப்பு நீண்ட காலத்திற்கு சீராக இயங்குவதை உறுதி செய்தல்.',
-                    'Core Technology & Services': 'முக்கிய தொழில்நுட்பம் மற்றும் சேவைகள்',
-                    'Why Our Approach Works': 'எங்கள் அணுகுமுறை ஏன் வேலை செய்கிறது',
-                    'By managing the entire lifecycle of your security system, we eliminate complexity and deliver a solution that is perfectly tailored to your environment. You get a single point of accountability and a system guaranteed to perform.': 'உங்கள் பாதுகாப்பு அமைப்பின் முழு ஆயுட்காலத்தையும் நிர்வகிப்பதன் மூலம், நாங்கள் சிக்கலைக் குறைத்து, உங்கள் சூழலுக்கு perfectly tailored ஒரு தீர்வை வழங்குகிறோம். நீங்கள் ஒற்றைப் பொறுப்புப் புள்ளியையும், செயல்பட உத்தரவாதமளிக்கப்பட்ட அமைப்பையும் பெறுவீர்கள்.',
-                    'Installation Highlights: Surveillance': 'நிறுவல் சிறப்பம்சங்கள்: கண்காணிப்பு',
-                    'Our expert team ensures seamless and efficient installation of all surveillance systems.': 'எங்கள் நிபுணர் குழு அனைத்து கண்காணிப்பு அமைப்புகளையும் தடையின்றி மற்றும் திறமையாக நிறுவுவதை உறுதி செய்கிறது.',
-                    // Updated Surveillance CTA
-                    'Secure Your Property Now! Get a Free Surveillance Quote.': 'உங்கள் சொத்தை இப்போதே பாதுகாக்கவும்! இலவச கண்காணிப்பு மேற்கோளைப் பெறுங்கள்.',
-                    // Water Treatment Section
-                    'Revolutionary Zero-Maintenance Hard Water Treatment': 'புரட்சிகரமான பூஜ்ஜிய பராமரிப்பு கடின நீர் சுத்திகரிப்பு',
-                    // Updated Water Treatment Intro
-                    'Experience crystal-clear, limescale-free water with our innovative \'fix and forget\' solution. Our natural vortex technology ensures:': 'எங்கள் புதுமையான \'அமைத்து மறந்துவிடு\' தீர்வின் மூலம் தெளிவான, சுண்ணாம்பு இல்லாத நீரை அனுபவிக்கவும். எங்கள் இயற்கை சுழல் தொழில்நுட்பம் உறுதி செய்கிறது:',
-                    '**Zero maintenance:** No salt, chemicals, or electricity required.': '**பூஜ்ஜிய பராமரிப்பு:** உப்பு, இரசாயனங்கள் அல்லது மின்சாரம் தேவையில்லை.',
-                    '**Appliance protection:** Extends the lifespan of your water-using appliances.': '**உபகரண பாதுகாப்பு:** உங்கள் நீர் பயன்படுத்தும் உபகரணங்களின் ஆயுளை நீட்டிக்கிறது.',
-                    '**Cost savings:** Eliminates recurring expenses on salt, chemicals, and repairs.': '**செலவு சேமிப்பு:** உப்பு, இரசாயனங்கள் மற்றும் பழுதுபார்ப்புகளுக்கான தொடர்ச்சியான செலவுகளை நீக்குகிறது.',
-                    '**Eco-friendly:** A sustainable solution that doesn\'t waste water.': '**சுற்றுச்சூழல் நட்பு:** நீரை வீணாக்காத ஒரு நிலையான தீர்வு.',
-                    'What Others Do': 'மற்றவர்கள் என்ன செய்கிறார்கள்',
-                    'Traditional systems rely on salt, chemicals, and electricity. They require constant maintenance, waste water during regeneration, and often have high operational costs.': 'பாரம்பரிய அமைப்புகள் உப்பு, இரசாயனங்கள் மற்றும் மின்சாரத்தை நம்பியுள்ளன. அவற்றுக்கு நிலையான பராமரிப்பு தேவைப்படுகிறது, மறுஉருவாக்கத்தின் போது நீரை வீணடிக்கின்றன, மேலும் பெரும்பாலும் அதிக செயல்பாட்டு செலவுகள் உள்ளன.',
-                    'What We Do': 'நாங்கள் என்ன செய்கிறோம்',
-                    'Our system uses a natural vortex to physically restructure hardness minerals (magnesium and calcium). This prevents limescale formation permanently without altering TDS levels or adding anything to your water.': 'எங்கள் அமைப்பு ஒரு இயற்கையான சுழல் மூலம் கடினத்தன்மை தாதுக்களை (மக்னீசியம் மற்றும் கால்சியம்) உடல் ரீதியாக மறுசீரமைக்கிறது. இது TDS அளவை மாற்றாமலோ அல்லது உங்கள் நீரில் எதையும் சேர்க்காமலோ நிரந்தரமாக சுண்ணாம்பு உருவாவதைத் தடுக்கிறது.',
-                    'Unmatched Benefits: A Quick Comparison': 'நிகரற்ற நன்மைகள்: ஒரு விரைவான ஒப்பீடு',
-                    'No Maintenance': 'பராமரிப்பு இல்லை',
-                    'No Chemicals': 'இரசாயனங்கள் இல்லை',
-                    'No Water Waste': 'நீர் வீண் இல்லை',
-                    'No Salt': 'உப்பு இல்லை',
-                    'No Electricity': 'மின்சாரம் இல்லை',
-                    'Engineered for Extreme Conditions': 'தீவிர நிலைமைகளுக்காக வடிவமைக்கப்பட்டது',
-                    'Our technology is proven to perform where others fail, efficiently treating water with extremely high levels of Total Dissolved Solids (TDS) and hardness.': 'எங்கள் தொழில்நுட்பம் மற்றவர்கள் தோல்வியுறும் இடங்களில் செயல்பட நிரூபிக்கப்பட்டுள்ளது, மிக அதிக Total Dissolved Solids (TDS) மற்றும் கடினத்தன்மை கொண்ட நீரை திறமையாக சுத்திகரிக்கிறது.',
-                    'Installation Highlights: Water Treatment': 'நிறுவல் சிறப்பம்சங்கள்: நீர் சுத்திகரிப்பு',
-                    'Our team ensures seamless integration for lasting water quality.': 'எங்கள் குழு நீடித்த நீர் தரத்திற்காக தடையற்ற ஒருங்கிணைப்பை உறுதி செய்கிறது.',
-                    // Updated Water Treatment CTA
-                    'Get Clear Water Today! Request Your Free Consultation.': 'இன்று தெளிவான நீரைப் பெறுங்கள்! உங்கள் இலவச ஆலோசனையைக் கோருங்கள்.',
-                    // About Us Section
-                    'Our Foundation & Commitment': 'எங்கள் அடித்தளம் மற்றும் அர்ப்பணிப்பு',
-                    'Meet Our Founder': 'எங்கள் நிறுவனரைச் சந்திக்கவும்',
-                    'Mr. Ramesh Raju': 'திரு. ரமேஷ் ராஜு',
-                    'A trailblazing first-generation entrepreneur, Mr. Ramesh Raju boasts an illustrious 20-year professional career complemented by a transformative 5-year entrepreneurial odyssey. His unwavering passion lies in uncovering and delivering meaningful solutions that directly uplift both the common man and society at large.': '20 ஆண்டுகால தொழில்முறை அனுபவத்தையும், 7 ஆண்டுகால மாற்றியமைக்கும் தொழில்முனைவோர் பயணத்தையும் கொண்ட ஒரு முன்னோடி முதல் தலைமுறை தொழில்முனைவோர். சமூகத்தை மேம்படுத்தும் அர்த்தமுள்ள தீர்வுகளை வழங்குவதே அவரது அசைக்க முடியாத விருப்பமாகும்.',
-                    'An adept multilingual communicator, he connects effortlessly with people from all backgrounds.': 'ஒரு திறமையான பன்மொழித் தொடர்பாளர், அவர் அனைத்து பின்னணியிலிருந்தும் உள்ளவர்களுடன் சிரமமின்றி இணைகிறார்.',
-                    'Why Choose Paras Enterprises?': 'பாரஸ் எண்டர்பிரைசஸ் ஏன் தேர்வு செய்ய வேண்டும்?',
-                    'Expertise:': 'நிபுணத்துவம்:',
-                    'Our skilled team ensures expert design, installation, and maintenance for every project.': 'எங்கள் திறமையான குழு ஒவ்வொரு திட்டத்திற்கும் நிபுணத்துவ வடிவமைப்பு, நிறுவல் மற்றும் பராமரிப்பை உறுதி செய்கிறது.',
-                    'Innovation:': 'புதுமை:',
-                    'We stay ahead of the curve, offering cutting-edge AI, Cloud, and vortex technologies.': 'நாங்கள் AI, கிளவுட் மற்றும் சுழல் தொழில்நுட்பங்களில் முன்னோக்கிச் சென்று, அதிநவீன தீர்வுகளை வழங்குகிறோம்.',
-                    'Client-Centric:': 'வாடிக்கையாளர் மையப்படுத்தப்பட்டது:',
-                    'We prioritize your satisfaction, working within your budget without compromising quality.': 'தரத்தில் சமரசம் செய்யாமல், உங்கள் பட்ஜெட்டுக்குள் வேலை செய்து உங்கள் திருப்திக்கு முன்னுரிமை அளிக்கிறோம்.',
-                    'Responsibility:': 'பொறுப்பு:',
-                    'Our solutions are cost-effective and environmentally conscious, especially our eco-friendly water softeners.': 'எங்கள் தீர்வுகள் செலவு குறைந்தவை மற்றும் சுற்றுச்சூழல் உணர்வுள்ளவை, குறிப்பாக எங்கள் சுற்றுச்சூழல் நட்பு நீர் மென்மையாக்கிகள்.',
-                    'What Our Clients Say': 'எங்கள் வாடிக்கையாளர்கள் சொல்வது',
-                    '"Paras Enterprises transformed our office security. Their turn-key solution was seamless, and the AI features give us incredible peace of mind. Highly recommend!"': '"பாரஸ் எண்டர்பிரைசஸ் எங்கள் அலுவலக பாதுகாப்பை மாற்றியமைத்தது. அவர்களின் முழுமையான தீர்வு தடையற்றதாக இருந்தது, மேலும் AI அம்சங்கள் எங்களுக்கு நம்பமுடியாத மன அமைதியைத் தருகின்றன. மிகவும் பரிந்துரைக்கிறேன்!"',
-                    '- Mr. S. Kumar, Business Owner': '- திரு. எஸ். குமார், வணிக உரிமையாளர்',
-                    '"The zero-maintenance water softener is a game-changer! No more salt bags or constant checks. Our appliances are scale-free, and the water quality is noticeably better."': '"பூஜ்ஜிய பராமரிப்பு நீர் மென்மையாக்கி ஒரு விளையாட்டு மாற்றியாகும்! இனி உப்பு பைகள் அல்லது தொடர்ச்சியான சோதனைகள் இல்லை. எங்கள் உபகரணங்கள் சுண்ணாம்பு இல்லாமல் உள்ளன, மேலும் நீர் தரம் குறிப்பிடத்தக்க வகையில் சிறப்பாக உள்ளது."',
-                    '- Mrs. A. Devi, Homeowner': '- திருமதி. ஏ. தேவி, வீட்டு உரிமையாளர்',
-                    'Our Valued Clientele': 'எங்கள் மதிப்புமிக்க வாடிக்கையாளர்கள்',
-                    'Our diverse clientele spans homeowners seeking optimal water quality and home security, businesses requiring comprehensive surveillance and efficient water treatment, educational institutions ensuring student safety, healthcare facilities upholding hygiene standards, and industrial sectors optimizing operations through advanced security and water softening solutions across Chennai and its surrounding areas.': 'எங்கள் மாறுபட்ட வாடிக்கையாளர் வீட்டு உரிமையாளர்கள், உகந்த நீர் தரம் மற்றும் வீட்டு பாதுகாப்பு தேடுபவர்கள், விரிவான கண்காணிப்பு மற்றும் திறமையான நீர் சுத்திகரிப்பு தேவைப்படும் வணிகங்கள், மாணவர் பாதுகாப்பை உறுதி செய்யும் கல்வி நிறுவனங்கள், சுகாதார தரங்களை கடைபிடிக்கும் சுகாதார வசதிகள், மற்றும் சென்னை மற்றும் அதை சுற்றியுள்ள பகுதிகளில் மேம்பட்ட பாதுகாப்பு மற்றும் நீர் மென்மையாக்கும் தீர்வுகள் மூலம் செயல்பாடுகளை மேம்படுத்தும் தொழில்துறை பிரிவுகளுக்கு பரவுகிறது।',
-                    // New Video Section Titles
-                    'See Our Solutions in Action': 'See Our Solutions in Action',
-                    'Explore compelling videos demonstrating our AI-powered surveillance features and the revolutionary benefits of our zero-maintenance hard water treatment. Visualizing our technology makes the difference clear.': 'Explore compelling videos demonstrating our AI-powered surveillance features and the revolutionary benefits of our zero-maintenance hard water treatment. Visualizing our technology makes the difference clear.',
-                    'Smart Surveillance Demo': 'Smart Surveillance Demo',
-                    'A quick overview of our AI features and live monitoring capabilities.': 'A quick overview of our AI features and live monitoring capabilities.',
-                    'Hard Water Solution Explained': 'Hard Water Solution Explained',
-                    'Understand the science behind our salt-free, chemical-free water treatment.': 'Understand the science behind our salt-free, chemical-free water treatment.',
-                    // Footer
-                    '&copy; 2024 Paras Enterprises. All Rights Reserved.': '&copy; 2024 பாரஸ் எண்டர்பிரைசஸ். அனைத்து உரிமைகளும் பாதுகாக்கப்பட்டவை.',
+                    '&copy; 2024 Paras Enterprises. All Rights Reserved.': '&copy; 2024 Paras Enterprises. All Rights Reserved.',
                     'Chennai, India': 'Chennai, India',
                     'Email': 'Email',
                     'Phone': 'Phone',
@@ -1109,9 +995,9 @@
                     'Network Integration:': 'नेटवर्क एकीकरण:',
                     'Seamless integration of access points, data, and voice connections.': 'पहुँच बिंदुओं, डेटा और वॉयस कनेक्शन का निर्बाध एकीकरण।',
                     'Access Control Systems:': 'पहुँच नियंत्रण प्रणाली:',
-                    'Robust solutions for managing entry and exit points.': 'नुय्व्गता और निकास बिंदुओं के प्रबंधन के लिए मजबूत समाधान।',
+                    'Robust solutions for managing entry and exit points.': 'प्रवेश और निकास बिंदुओं के प्रबंधन के लिए मजबूत समाधान।',
                     'Biometric Solutions:': 'बायोमेट्रिक समाधान:',
-                    'Advanced biometric systems for secure authentication.': 'सुरक्षित प्रमाणीकरण के लिए उन्नत बायोमेट्रिक सिस्टम।',
+                    'Advanced biometric systems for secure authentication.': 'सुरक्षित प्रमाणीकरण के लिए उन्नत பயोमेट्रिक सिस्टम।',
                     'IP Cameras:': 'आईपी कैमरे:',
                     'High-resolution IP cameras in various resolutions, equipped with many advanced AI features for superior monitoring and analytics.': 'उच्च-रिज़ॉल्यूशन आईपी कैमरे विभिन्न प्रस्तावों में, बेहतर निगरानी और विश्लेषण के लिए कई उन्नत एआई सुविधाओं से लैस।',
                     'Comprehensive Camera Technologies': 'व्यापक कैमरा प्रौद्योगिकियां',
@@ -1126,4 +1012,233 @@
                     'Self-sufficient outdoor cameras with solar charging and 4G connectivity, perfect for remote or off-grid installations.': 'सौर चार्जिंग और 4G कनेक्टिविटी वाले आत्मनिर्भर आउटडोर कैमरे, दूरस्थ या ऑफ-ग्रिड इंस्टॉलेशन के लिए एकदम सही।',
                     'Our Seamless Turn-Key Process': 'हमारी निर्बाध टर्न-की प्रक्रिया',
                     'Consult & Design': 'परामर्श और डिजाइन',
-                  
+                    'Custom system design based on your needs and budget.': 'आपकी आवश्यकताओं और बजट के आधार पर कस्टम सिस्टम डिजाइन।',
+                    'Supply & Install': 'आपूर्ति और स्थापित करें',
+                    'Professional installation and configuration.': 'पेशेवर स्थापना और विन्यास।',
+                    'Integrate AI': 'एआई एकीकृत करें',
+                    'Intelligent analytics for proactive threat detection.': 'सक्रिय खतरे का पता लगाने के लिए बुद्धिमान विश्लेषण।',
+                    'Maintain & Support': 'बनाए रखें और समर्थन करें',
+                    'Ensuring your system runs smoothly long-term.': 'यह सुनिश्चित करना कि आपका सिस्टम लंबे समय तक सुचारू रूप से चले।',
+                    'Core Technology & Services': 'मुख्य प्रौद्योगिकी और सेवाएँ',
+                    'Why Our Approach Works': 'हमारा दृष्टिकोण क्यों काम करता है',
+                    'By managing the entire lifecycle of your security system, we eliminate complexity and deliver a solution that is perfectly tailored to your environment. You get a single point of accountability and a system guaranteed to perform.': 'अपनी सुरक्षा प्रणाली के पूरे जीवनचक्र का प्रबंधन करके, हम जटिलता को समाप्त करते हैं और एक ऐसा समाधान प्रदान करते हैं जो आपके वातावरण के लिए पूरी तरह से अनुकूलित है। आपको जवाबदेही का एक ही बिंदु और प्रदर्शन करने की गारंटीकृत प्रणाली मिलती है।',
+                    'Installation Highlights: Surveillance': 'स्थापना हाइलाइट्स: निगरानी',
+                    'Our expert team ensures seamless and efficient installation of all surveillance systems.': 'हमारी विशेषज्ञ टीम सभी निगरानी प्रणालियों की निर्बाध और कुशल स्थापना सुनिश्चित करती है।',
+                    // Updated Surveillance CTA
+                    'Secure Your Property Now! Get a Free Surveillance Quote.': 'अपनी संपत्ति अभी सुरक्षित करें! निःशुल्क निगरानी उद्धरण प्राप्त करें।',
+                    // Water Treatment Section
+                    'Revolutionary Zero-Maintenance Hard Water Treatment': 'क्रांतिकारी शून्य-रखरखाव कठोर जल उपचार',
+                    // Updated Water Treatment Intro
+                    'Experience crystal-clear, limescale-free water with our innovative \'fix and forget\' solution. Our natural vortex technology ensures:': 'हमारे अभिनव \'सेट-एंड-भूल जाओ\' समाधान के साथ क्रिस्टल-स्पष्ट, लाइमस्केल-मुक्त पानी का अनुभव करें। हमारी प्राकृतिक भंवर तकनीक सुनिश्चित करती है:',
+                    '**Zero maintenance:** No salt, chemicals, or electricity required.': '**शून्य रखरखाव:** नमक, रसायन या बिजली की आवश्यकता नहीं।',
+                    '**Appliance protection:** Extends the lifespan of your water-using appliances.': '**उपकरण सुरक्षा:** आपके पानी का उपयोग करने वाले उपकरणों के जीवनकाल को बढ़ाता है।',
+                    '**Cost savings:** Eliminates recurring expenses on salt, chemicals, and repairs.': '**लागत बचत:** नमक, रसायन और मरम्मत पर आवर्ती खर्चों को समाप्त करता है।',
+                    '**Eco-friendly:** A sustainable solution that doesn\'t waste water.': '**पर्यावरण के अनुकूल:** एक स्थायी समाधान जो पानी बर्बाद नहीं करता है।',
+                    'What Others Do': 'दूसरे क्या करते हैं',
+                    'Traditional systems rely on salt, chemicals, and electricity. They require constant maintenance, waste water during regeneration, and often have high operational costs.': 'पारंपरिक प्रणालियाँ नमक, रसायन और बिजली पर निर्भर करती हैं। उन्हें लगातार रखरखाव की आवश्यकता होती है, पुनर्जनन के दौरान पानी बर्बाद होता है, और अक्सर उच्च परिचालन लागत होती है।',
+                    'What We Do': 'हम क्या करते हैं',
+                    'Our system uses a natural vortex to physically restructure hardness minerals (magnesium and calcium). This prevents limescale formation permanently without altering TDS levels or adding anything to your water.': 'हमारी प्रणाली कठोरता खनिजों (मैग्नीशियम और कैल्शियम) को शारीरिक रूप से पुनर्गठित करने के लिए एक प्राकृतिक भंवर का उपयोग करती है। यह टीडीएस स्तर को बदले बिना या आपके पानी में कुछ भी जोड़े बिना स्थायी रूप से लाइमस्केल के निर्माण को रोकता है।',
+                    'Unmatched Benefits: A Quick Comparison': 'बेजोड़ लाभ: एक त्वरित तुलना',
+                    'No Maintenance': 'कोई रखरखाव नहीं',
+                    'No Chemicals': 'कोई रसायन नहीं',
+                    'No Water Waste': 'कोई जल अपशिष्ट नहीं',
+                    'No Salt': 'कोई नमक नहीं',
+                    'No Electricity': 'कोई बिजली नहीं',
+                    'Engineered for Extreme Conditions': 'चरम स्थितियों के लिए इंजीनियर किया गया',
+                    'Our technology is proven to perform where others fail, efficiently treating water with extremely high levels of Total Dissolved Solids (TDS) and hardness.': 'हमारी तकनीक दूसरों के विफल होने पर प्रदर्शन करने के लिए सिद्ध है, जो अत्यधिक उच्च स्तर के कुल घुलित ठोस (टीडीएस) और कठोरता वाले पानी का कुशलता से इलाज करती है।',
+                    'Installation Highlights: Water Treatment': 'स्थापना हाइलाइट्स: जल उपचार',
+                    'Our team ensures seamless integration for lasting water quality.': 'हमारी टीम स्थायी जल गुणवत्ता के लिए निर्बाध एकीकरण सुनिश्चित करती है.',
+                    // Updated Water Treatment CTA
+                    'Get Clear Water Today! Request Your Free Consultation.': 'आज ही स्वच्छ जल प्राप्त करें! अपनी निःशुल्क परामर्श का अनुरोध करें।',
+                    // About Us Section
+                    'Our Foundation & Commitment': 'हमारी नींव और प्रतिबद्धता',
+                    'Meet Our Founder': 'हमारे संस्थापक से मिलें',
+                    'Mr. Ramesh Raju': 'श्री रमेश राजू',
+                    'A trailblazing first-generation entrepreneur, Mr. Ramesh Raju boasts an illustrious 20-year professional career complemented by a transformative 5-year entrepreneurial odyssey. His unwavering passion lies in uncovering and delivering meaningful solutions that directly uplift both the common man and society at large.': 'एक अग्रणी पहली पीढ़ी के उद्यमी, श्री रमेश राजू के पास 20 साल का शानदार पेशेवर करियर है, जो 5 साल के परिवर्तनकारी उद्यमशीलता के ओडिसी द्वारा पूरक है। उनका अटूट जुनून सार्थक समाधानों को उजागर करने और वितरित करने में निहित है जो आम आदमी और बड़े पैमाने पर समाज दोनों को सीधे ऊपर उठाते हैं।',
+                    'An adept multilingual communicator, he connects effortlessly with people from all backgrounds.': 'एक कुशल बहुभाषी संचारक, वह सभी पृष्ठभूमि के लोगों के साथ आसानी से जुड़ता है।',
+                    'Why Choose Paras Enterprises?': 'पारस एंटरप्राइजेज क्यों चुनें?',
+                    'Expertise:': 'विशेषज्ञता:',
+                    'Our skilled team ensures expert design, installation, and maintenance for every project.': 'हमारी कुशल टीम हर परियोजना के लिए विशेषज्ञ डिजाइन, स्थापना और रखरखाव सुनिश्चित करती है।',
+                    'Innovation:': 'नवाचार:',
+                    'We stay ahead of the curve, offering cutting-edge AI, Cloud, and vortex technologies.': 'हम अत्याधुनिक एआई, क्लाउड और भंवर प्रौद्योगिकियों की पेशकश करते हुए आगे रहते हैं।',
+                    'Client-Centric:': 'ग्राहक-केंद्रित:',
+                    'We prioritize your satisfaction, working within your budget without compromising quality.': 'हम गुणवत्ता से समझौता किए बिना आपके बजट के भीतर काम करते हुए आपकी संतुष्टि को प्राथमिकता देते हैं।',
+                    'Responsibility:': 'जिम्मेदारी:',
+                    'Our solutions are cost-effective and environmentally conscious, especially our eco-friendly water softeners.': 'हमारे समाधान लागत प्रभावी और पर्यावरण के प्रति जागरूक हैं, विशेष रूप से हमारे पर्यावरण के अनुकूल जल सॉफ़्टनर।',
+                    'What Our Clients Say': 'हमारे ग्राहक क्या कहते हैं',
+                    '"Paras Enterprises transformed our office security. Their turn-key solution was seamless, and the AI features give us incredible peace of mind. Highly recommend!"': '"Paras Enterprises transformed our office security. Their turn-key solution was seamless, and the AI features give us incredible peace of mind. Highly recommend!"',
+                    '- Mr. S. Kumar, Business Owner': '- श्री एस. कुमार, व्यवसाय के मालिक',
+                    '"The zero-maintenance water softener is a game-changer! No more salt bags or constant checks. Our appliances are scale-free, and the water quality is noticeably better."': '"शून्य-रखरखाव जल सॉफ़्टनर एक गेम-चेंजर है! अब कोई नमक बैग या लगातार जांच नहीं। हमारे उपकरण स्केल-मुक्त हैं, और पानी की गुणवत्ता उल्लेखनीय रूप से बेहतर है।"',
+                    '- Mrs. A. Devi, Homeowner': '- श्रीमती ए. देवी, गृहस्वामी',
+                    'Our Valued Clientele': 'Our Valued Clientele',
+                    'Our diverse clientele spans homeowners seeking optimal water quality and home security, businesses requiring comprehensive surveillance and efficient water treatment, educational institutions ensuring student safety, healthcare facilities upholding hygiene standards, and industrial sectors optimizing operations through advanced security and water softening solutions across Chennai and its surrounding areas.': 'Our diverse clientele spans homeowners seeking optimal water quality and home security, businesses requiring comprehensive surveillance and efficient water treatment, educational institutions ensuring student safety, healthcare facilities upholding hygiene standards, and industrial sectors optimizing operations through advanced security and water softening solutions across Chennai and its surrounding areas.',
+                    // Footer
+                    '&copy; 2024 Paras Enterprises. All Rights Reserved.': '&copy; 2024 Paras Enterprises. All Rights Reserved.',
+                    'Chennai, India': 'Chennai, India',
+                    'Email': 'ईमेल',
+                    'Phone': 'फ़ोन',
+                    'WhatsApp': 'व्हाट्सएप',
+                    'LinkedIn': 'लिंक्डइन'
+                }
+            };
+
+            let currentLangIndex = 0; // 0: en, 1: ta, 2: hi
+            const languages = ['en', 'ta', 'hi'];
+            const languageButtonTexts = ['தமிழ்', 'हिन्दी', 'English']; // What the button shows for the *next* click
+
+            const updateContent = (lang) => {
+                document.querySelectorAll('[data-en]').forEach(element => {
+                    const enText = element.getAttribute('data-en');
+                    const taText = element.getAttribute('data-ta');
+                    const hiText = element.getAttribute('data-hi');
+
+                    if (lang === 'en') {
+                        element.innerHTML = enText;
+                    } else if (lang === 'ta') {
+                        element.innerHTML = taText;
+                    } else if (lang === 'hi') {
+                         element.innerHTML = hiText;
+                    }
+                });
+
+                // Update chart labels if water tab is active
+                if (document.getElementById('water').classList.contains('active')) {
+                    initPerformanceChart(); // Reinitialize chart to update labels
+                }
+            };
+
+            const toggleLanguage = () => {
+                currentLangIndex = (currentLangIndex + 1) % languages.length;
+                document.getElementById('language-toggle').textContent = languageButtonTexts[currentLangIndex];
+                updateContent(languages[currentLangIndex]);
+            };
+
+            document.getElementById('language-toggle').addEventListener('click', toggleLanguage);
+
+            const initPerformanceChart = () => {
+                if (performanceChartInstance) {
+                    performanceChartInstance.destroy();
+                }
+                const ctx = document.getElementById('performanceChart').getContext('2d');
+                
+                let xLabelText, yLabelText, datasetLabel;
+                if (languages[currentLangIndex] === 'en') {
+                    xLabelText = 'TDS Level (ppm)';
+                    yLabelText = 'Hardness Level (ppm)';
+                    datasetLabel = 'Our Product\'s Max Capability';
+                } else if (languages[currentLangIndex] === 'ta') {
+                    xLabelText = 'TDS அளவு (ppm)';
+                    yLabelText = 'கடினத்தன்மை அளவு (ppm)';
+                    datasetLabel = 'எங்கள் தயாரிப்பின் அதிகபட்ச திறன்';
+                } else if (languages[currentLangIndex] === 'hi') {
+                    xLabelText = 'टीडीएस स्तर (पीपीएम)';
+                    yLabelText = 'कठोरता स्तर (पीपीएम)';
+                    datasetLabel = 'हमारे उत्पाद की अधिकतम क्षमता';
+                }
+
+
+                performanceChartInstance = new Chart(ctx, {
+                    type: 'bar',
+                    data: {
+                        labels: [xLabelText, yLabelText],
+                        datasets: [{
+                            label: datasetLabel,
+                            data: [12000, 5000],
+                            backgroundColor: [
+                                'rgba(59, 130, 246, 0.9)', /* Brighter blue for chart bar */
+                                'rgba(34, 197, 94, 0.9)' /* Brighter green for chart bar */
+                            ],
+                            borderColor: [
+                                'rgba(59, 130, 246, 1)',
+                                'rgba(34, 197, 94, 1)'
+                            ],
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        indexAxis: 'y',
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        scales: {
+                            x: {
+                                beginAtZero: true,
+                                ticks: {
+                                    callback: function(value, index, values) {
+                                        return value.toLocaleString();
+                                    },
+                                    color: '#a0aec0' /* Lighter ticks for contrast */
+                                },
+                                grid: {
+                                    color: '#4a5568' /* Darker grid lines for dark theme */
+                                }
+                            },
+                            y: {
+                                ticks: {
+                                    color: '#a0aec0' /* Lighter ticks for contrast */
+                                },
+                                grid: {
+                                    color: '#4a5568' /* Darker grid lines for dark theme */
+                                }
+                            }
+                        },
+                        plugins: {
+                            legend: {
+                                display: false
+                            },
+                            tooltip: {
+                                callbacks: {
+                                    label: function(context) {
+                                        let label = context.dataset.label || '';
+                                        if (label) {
+                                            label += ': ';
+                                        }
+                                        if (context.parsed.x !== null) {
+                                            label += context.parsed.x.toLocaleString();
+                                        }
+                                        return label;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                });
+            };
+
+            tabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    const tabName = tab.dataset.tab;
+
+                    // Update aria-selected for tabs
+                    tabs.forEach(item => {
+                        item.classList.remove('tab-active');
+                        item.setAttribute('aria-selected', 'false');
+                    });
+                    tab.classList.add('tab-active');
+                    tab.setAttribute('aria-selected', 'true');
+
+                    // Handle content section display with fade-in
+                    sections.forEach(section => {
+                        section.classList.remove('active');
+                    });
+                    const activeSection = document.getElementById(tabName);
+                    activeSection.classList.add('active'); // This will trigger the fade-in due to opacity transition
+
+                    if (tabName === 'water') {
+                        // Delay chart initialization slightly to ensure canvas is visible
+                        setTimeout(initPerformanceChart, 50);
+                    }
+                });
+            });
+
+            const comparisonItems = document.querySelectorAll('.comparison-item');
+            comparisonItems.forEach(item => {
+                 // Pre-flip to show the checkmark on page load
+                setTimeout(() => item.classList.add('flipped'), 500);
+            });
+
+            // Initialize content to English on load
+            updateContent(languages[currentLangIndex]);
+        });
+    </script>
+</body>
+</html>
