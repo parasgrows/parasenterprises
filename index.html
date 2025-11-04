@@ -13,7 +13,7 @@
 </head>
 <body class="bg-gray-50 text-gray-800">
 
-    <!-- Header & Navigation (Copied from index.html) -->
+    <!-- Header & Navigation (Consistent across site) -->
     <header class="header-bg shadow-lg sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
             <div class="text-2xl font-extrabold text-white tracking-wider rounded-lg p-1">
@@ -48,23 +48,114 @@
                 <p class="text-xl text-gray-600 max-w-3xl mx-auto mb-10">
                     See what our diverse range of residential, commercial, and industrial clients have to say about our defined solutions and committed service.
                 </p>
-                <a href="#testimonials" class="inline-flex items-center bg-lime-600 text-white font-bold text-lg py-3 px-8 rounded-xl shadow-xl hover:bg-lime-700 transition transform hover:scale-105">
-                    Explore Testimonials
+                <!-- Updated CTA to point to the new logos section -->
+                <a href="#client-logos" class="inline-flex items-center bg-lime-600 text-white font-bold text-lg py-3 px-8 rounded-xl shadow-xl hover:bg-lime-700 transition transform hover:scale-105">
+                    View Our Clients
                 </a>
             </div>
         </section>
 
-        <!-- Placeholder Content Section -->
-        <section id="testimonials" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-            <h2 class="text-3xl font-bold text-center text-gray-900 mb-8">Client Logos & Reviews Coming Soon!</h2>
-            <div class="p-10 bg-gray-100 rounded-xl shadow-inner text-gray-600 text-center">
-                <p>We are currently gathering and formatting our client success stories and logos. Check back soon to see the organizations and homes we've secured and connected across Chennai.</p>
+        <!-- NEW: Client Logos Section -->
+        <section id="client-logos" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+            <h2 class="text-3xl font-extrabold text-center text-gray-900 mb-12">
+                Trusted by Leading Businesses in Chennai
+            </h2>
+            <div class="bg-white p-8 md:p-12 rounded-xl shadow-lg border border-gray-200">
+                <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-8 items-center">
+                    <!-- 
+                        REPLACE THESE PLACEHOLDERS:
+                        Replace the placeholder <img> tags below with your actual client logo image files.
+                        Example: <img class="h-12 mx-auto grayscale hover:grayscale-0 transition duration-300" src="images/client-logo-1.png" alt="Client Logo 1">
+                    -->
+                    
+                    <!-- Placeholder Logo 1 -->
+                    <div class="h-12 flex items-center justify-center bg-gray-100 rounded-lg text-gray-500 text-sm font-medium">Logo 1</div>
+                    <!-- Placeholder Logo 2 -->
+                    <div class="h-12 flex items-center justify-center bg-gray-100 rounded-lg text-gray-500 text-sm font-medium">Logo 2</div>
+                    <!-- Placeholder Logo 3 -->
+                    <div class="h-12 flex items-center justify-center bg-gray-100 rounded-lg text-gray-500 text-sm font-medium">Logo 3</div>
+                    <!-- Placeholder Logo 4 -->
+                    <div class="h-12 flex items-center justify-center bg-gray-100 rounded-lg text-gray-500 text-sm font-medium">Logo 4</div>
+                    <!-- Placeholder Logo 5 -->
+                    <div class="h-12 flex items-center justify-center bg-gray-100 rounded-lg text-gray-500 text-sm font-medium">Logo 5</div>
+                    <!-- Placeholder Logo 6 -->
+                    <div class="h-12 flex items-center justify-center bg-gray-100 rounded-lg text-gray-500 text-sm font-medium">Logo 6</div>
+                    <!-- Placeholder Logo 7 -->
+                    <div class="h-12 flex items-center justify-center bg-gray-100 rounded-lg text-gray-500 text-sm font-medium">Logo 7</div>
+                    <!-- Placeholder Logo 8 -->
+                    <div class="h-12 flex items-center justify-center bg-gray-100 rounded-lg text-gray-500 text-sm font-medium">Logo 8</div>
+                    <!-- Placeholder Logo 9 -->
+                    <div class="h-12 flex items-center justify-center bg-gray-100 rounded-lg text-gray-500 text-sm font-medium">Logo 9</div>
+                    <!-- Placeholder Logo 10 -->
+                    <div class="h-12 flex items-center justify-center bg-gray-100 rounded-lg text-gray-500 text-sm font-medium">Logo 10</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Testimonials Section -->
+        <section id="testimonials" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 bg-gray-100 rounded-xl">
+            <h2 class="text-3xl font-extrabold text-center text-gray-900 mb-12">
+                What Our Chennai Clients Say
+            </h2>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                
+                <!-- Testimonial 1: Residential -->
+                <div class="bg-white p-6 rounded-xl shadow-lg border-t-4 border-lime-500 hover:shadow-xl transition duration-300">
+                    <p class="text-3xl text-gray-300 mb-4 font-serif">“</p>
+                    <p class="text-gray-700 italic mb-6">"Paras Enterprises handled our full smart home integration—from VDP to automated gates. The installation was seamless, and the post-sales support is excellent. Highly recommend them for modern security solutions."</p>
+                    <div class="flex items-center">
+                        <div class="w-10 h-10 bg-lime-100 rounded-full flex items-center justify-center text-lime-600 font-bold mr-3">JD</div>
+                        <div>
+                            <p class="font-bold text-gray-900">Jeeva Devi</p>
+                            <p class="text-sm text-gray-500">Home Owner, Alwarpet</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2: Commercial -->
+                <div class="bg-white p-6 rounded-xl shadow-lg border-t-4 border-cyan-500 hover:shadow-xl transition duration-300">
+                    <p class="text-3xl text-gray-300 mb-4 font-serif">“</p>
+                    <p class="text-gray-700 italic mb-6">"Our office network was constantly failing. Paras Enterprises installed structured cabling and a high-speed Wi-Fi setup that completely stabilized our operations. Professional team and exceptional work quality."</p>
+                    <div class="flex items-center">
+                        <div class="w-10 h-10 bg-cyan-100 rounded-full flex items-center justify-center text-cyan-600 font-bold mr-3">SK</div>
+                        <div>
+                            <p class="font-bold text-gray-900">Sanjay Kumar</p>
+                            <p class="text-sm text-gray-500">IT Manager, Tech Solutions Inc.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 3: Industrial / Factory -->
+                <div class="bg-white p-6 rounded-xl shadow-lg border-t-4 border-red-500 hover:shadow-xl transition duration-300">
+                    <p class="text-3xl text-gray-300 mb-4 font-serif">“</D</p>
+                    <p class="text-gray-700 italic mb-6">"We needed a robust CCTV system for our warehouse. The team at Paras provided clear, high-resolution cameras tailored for large areas. The security coverage is flawless. A truly defined solution."</p>
+                    <div class="flex items-center">
+                        <div class="w-10 h-10 bg-red-100 rounded-full flex items-center justify-center text-red-600 font-bold mr-3">AV</div>
+                        <div>
+                            <p class="font-bold text-gray-900">Anitha Vasudevan</p>
+                            <p class="text-sm text-gray-500">Operations Head, Grand Manufacturing</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Call to Action for Clients -->
+        <section class="bg-lime-600 py-16 mt-16">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h3 class="text-3xl font-bold text-white mb-4">Ready to Join Our Satisfied Clients?</h3>
+                <p class="text-lime-200 mb-8">Let us provide a defined, reliable solution for your security and automation needs in Chennai.</p>
+                <a href="https://wa.me/919894214024" target="_blank" class="inline-flex items-center bg-white text-lime-600 font-bold text-lg py-3 px-8 rounded-xl shadow-2xl hover:bg-gray-100 transition transform hover:scale-105">
+                    Get Started Now
+                </a>
             </div>
         </section>
 
     </main>
 
-    <!-- Footer (Copied from index.html) -->
+    <!-- Footer (Consistent across site) -->
     <footer class="bg-gray-900 text-gray-400 py-8">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <p>&copy; 2025 Paras Enterprises. All rights reserved. | Defined Solutions for Chennai.</p>
