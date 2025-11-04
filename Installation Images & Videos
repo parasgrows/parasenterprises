@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Installation Media & Gallery | Paras Enterprises Chennai</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .header-bg { background: linear-gradient(90deg, #1f2937 0%, #111827 100%); }
+        .media-bg { background-color: #fdf2f8; } /* Pink 50 */
+        .media-accent { color: #db2777; } /* Pink 600 */
+        .media-border { border-color: #f472b6; } /* Pink 400 */
+        .video-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            height: 0;
+        }
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Header & Navigation (Replicated for consistency) -->
+    <header class="header-bg shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+            <div class="text-2xl font-extrabold text-white tracking-wider rounded-lg p-1">
+                <a href="index.html">Paras Enterprises <span class="text-indigo-400 font-medium text-xl">| Defined Solutions</span></a>
+            </div>
+            <!-- Desktop Navigation -->
+            <nav class="hidden md:flex space-x-6 items-center">
+                <a href="index.html" class="text-gray-300 hover:text-white transition duration-200 font-medium">Home</a>
+                <a href="cctv.html" class="text-gray-300 hover:text-red-400 transition duration-200 font-medium">CCTV</a>
+                <a href="networking.html" class="text-gray-300 hover:text-cyan-400 transition duration-200 font-medium">Networking</a>
+                <a href="smarthome.html" class="text-gray-300 hover:text-indigo-400 transition duration-200 font-medium">Smart Home</a>
+                <a href="gateautomation.html" class="text-gray-300 hover:text-amber-400 transition duration-200 font-medium">Gate Automation</a>
+                <a href="portfolio.html" class="text-gray-300 hover:text-green-400 transition duration-200 font-medium">Projects</a>
+                <a href="clients.html" class="text-gray-300 hover:text-lime-400 transition duration-200 font-medium">Clients</a>
+                <a href="#" class="text-pink-400 font-bold transition duration-200">Media</a>
+                <a href="https://wa.me/919894214024" target="_blank" class="bg-green-500 text-white font-bold py-1 px-3 rounded-lg hover:bg-green-400 transition ml-4 shadow-md">WhatsApp</a>
+            </nav>
+            <!-- Mobile WhatsApp Button -->
+            <a href="https://wa.me/919894214024" target="_blank" class="md:hidden bg-green-500 text-white font-bold py-2 px-4 rounded-lg shadow-md hover:bg-green-400 transition flex items-center">
+                WhatsApp
+            </a>
+        </div>
+    </header>
+
+    <main class="media-bg">
+        <!-- Hero Banner -->
+        <section class="py-16 sm:py-24 text-center border-b media-border">
+            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h1 class="text-4xl sm:text-5xl font-extrabold text-gray-900 mb-4 leading-tight">
+                    Installation <span class="media-accent">Images & Videos</span> Gallery
+                </h1>
+                <p class="text-xl text-gray-600 max-w-4xl mx-auto mb-10">
+                    See our defined solutions in action. Browse through our latest installations of CCTV, Networking, Smart Home, and Gate Automation projects across Chennai.
+                </p>
+                <a href="portfolio.html" class="inline-flex items-center bg-pink-600 text-white font-bold text-xl py-3 px-8 rounded-xl shadow-xl hover:bg-pink-700 transition transform hover:scale-105">
+                    View Project Case Studies
+                </a>
+            </div>
+        </section>
+
+        <!-- Video Gallery Section -->
+        <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+            <h2 class="text-3xl sm:text-4xl font-extrabold text-center text-gray-900 mb-12">
+                Featured Installation Videos
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                
+                <!-- Placeholder Video 1 (Use YouTube/Vimeo embed code) -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden border media-border border-opacity-50 p-4">
+                    <h3 class="font-bold text-xl text-gray-900 mb-3">Residential CCTV Installation Showcase</h3>
+                    <div class="video-container rounded-lg overflow-hidden">
+                        <!-- REPLACE BELOW WITH YOUR EMBED CODE -->
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        <!-- END EMBED CODE -->
+                    </div>
+                    <p class="text-gray-600 text-sm mt-3">A quick look at a high-definition CCTV setup in an independent home.</p>
+                </div>
+
+                <!-- Placeholder Video 2 -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden border media-border border-opacity-50 p-4">
+                    <h3 class="font-bold text-xl text-gray-900 mb-3">Automatic Sliding Gate Operation</h3>
+                    <div class="video-container rounded-lg overflow-hidden">
+                        <!-- REPLACE BELOW WITH YOUR EMBED CODE -->
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        <!-- END EMBED CODE -->
+                    </div>
+                    <p class="text-gray-600 text-sm mt-3">Demonstration of a smooth and secure gate automation system for a factory.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Image Gallery Section -->
+        <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
+            <h2 class="text-3xl sm:text-4xl font-extrabold text-center text-gray-900 mb-12">
+                Installation Photo Gallery
+            </h2>
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+                
+                <!-- Placeholder Image Boxes (Replace with your actual <img> tags) -->
+                <div class="bg-gray-200 rounded-lg shadow-md aspect-video flex items-center justify-center border media-border border-opacity-50">
+                    <span class="text-gray-500 text-sm">CCTV Image 1</span>
+                </div>
+                <div class="bg-gray-200 rounded-lg shadow-md aspect-video flex items-center justify-center border media-border border-opacity-50">
+                    <span class="text-gray-500 text-sm">Networking Cable Run</span>
+                </div>
+                <div class="bg-gray-200 rounded-lg shadow-md aspect-video flex items-center justify-center border media-border border-opacity-50">
+                    <span class="text-gray-500 text-sm">VDP Setup</span>
+                </div>
+                <div class="bg-gray-200 rounded-lg shadow-md aspect-video flex items-center justify-center border media-border border-opacity-50">
+                    <span class="text-gray-500 text-sm">Gate Motor Install</span>
+                </div>
+                <div class="bg-gray-200 rounded-lg shadow-md aspect-video flex items-center justify-center border media-border border-opacity-50">
+                    <span class="text-gray-500 text-sm">Image 5</span>
+                </div>
+                <div class="bg-gray-200 rounded-lg shadow-md aspect-video flex items-center justify-center border media-border border-opacity-50">
+                    <span class="text-gray-500 text-sm">Image 6</span>
+                </div>
+                <!-- Add more image divs as needed -->
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-400 py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p>&copy; 2025 Paras Enterprises. All rights reserved. | Defined Solutions for Chennai.</p>
+            <div class="mt-4 flex justify-center space-x-4">
+                <a href="https://wa.me/919894214024" target="_blank" class="text-green-500 hover:text-green-400 transition">WhatsApp</a>
+                <a href="portfolio.html" class="text-gray-400 hover:text-white transition">View Our Projects</a>
+            </div>
+        </div>
+    </footer>
+    
+</body>
+</html>
