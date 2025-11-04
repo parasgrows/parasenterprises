@@ -3,322 +3,129 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- Load Tailwind CSS and Inter Font -->
+    <title>Paras Enterprises | Defined Solutions in Chennai - CCTV, Networking, Smart Home, Gate Automation</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
     <style>
         body { font-family: 'Inter', sans-serif; }
-        /* Custom gradient for professional feel */
-        .header-bg {
-            background: linear-gradient(90deg, #1f2937 0%, #111827 100%);
-        }
+        .header-bg { background: linear-gradient(90deg, #1f2937 0%, #111827 100%); }
+        .service-card { transition: all 0.3s ease; }
+        .service-card:hover { transform: translateY(-5px) scale(1.02); box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1); }
     </style>
-    
-    <!-- 
-    SEO IMPROVEMENT: 
-    1. TITLE: Prioritized high-value services and location.
-    2. DESCRIPTION: Shortened the English version (data-en) to be under 160 characters for optimal snippet display, while retaining key local and technical keywords.
-    3. KEYWORDS: Simplified as this tag is largely obsolete, focusing on the highest-volume terms.
-    -->
-    <title data-en="AI Security & Water Softener Systems Chennai | Paras Enterprises" data-ta="சென்னை AI பாதுகாப்பு மற்றும் நீர் மென்மையாக்கி அமைப்புகள் | பாரஸ் எண்டர்பிரைசஸ்">AI Security & Water Softener Systems Chennai | Paras Enterprises</title>
-    
-    <meta name="description" data-en="Pioneering AI-powered CCTV Installation, turn-key Security Systems, and Zero-Maintenance Hard Water Softener Systems in Chennai, Kanchipuram, Chengalpet, and Thiruvallur." data-ta="பாரஸ் எண்டர்பிரைசஸ், சென்னை, காஞ்சிபுரம், செங்கல்பட்டு மற்றும் திருவள்ளூர் பகுதிகளில் AI-இயங்கும் கண்காணிப்பு அமைப்புகள், முழுமையான பாதுகாப்பு தீர்வுகள் மற்றும் புரட்சிகரமான பூஜ்ஜிய பராமரிப்பு கடின நீர் மென்மையாக்கிகளை முன்னோக்கியுள்ளது. நாங்கள் குடியிருப்பு, வணிக மற்றும் விவசாயத் துறைகளுக்கு விரிவான நீர் சோதனை மற்றும் ஒருங்கிணைந்த பாதுகாப்பு மற்றும் நீர் சுத்திகரிப்பு தீர்வுகளை வழங்குகிறோம்.">
-    
-    <meta name="keywords" content="CCTV Installation Chennai, Security Systems Chennai, AI Surveillance, Hard Water Softener System, Zero Maintenance Water Treatment, Water Testing Chennai, Kanchipuram, Chengalpet, Thiruvallur">
-
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "LocalBusiness",
-      "name": "Paras Enterprises",
-      "image": "images/Logo.jpg",
-      "@id": "https://www.parasenterprises.com/#organization",
-      "url": "https://www.parasenterprises.com/",
-      "telephone": "+919894214024",
-      "email": "parasgrows@gmail.com",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "Chennai",
-        "addressLocality": "Chennai",
-        "addressRegion": "Tamil Nadu",
-        "postalCode": "600001",
-        "addressCountry": "IN"
-      },
-      "priceRange": "$$",
-      "openingHoursSpecification": [
-        {
-          "@type": "OpeningHoursSpecification",
-          "dayOfWeek": [
-            "Monday",
-            "Tuesday",
-            "Wednesday",
-            "Thursday",
-            "Friday",
-            "Saturday"
-          ],
-          "opens": "09:00",
-          "closes": "19:00"
-        },
-        {
-          "@type": "OpeningHoursSpecification",
-          "dayOfWeek": "Sunday",
-          "opens": "00:00",
-          "closes": "23:59",
-          "description": "By prior appointment only"
-        }
-      ],
-      "hasOfferCatalog": {
-        "@type": "OfferCatalog",
-        "name": "Our Services",
-        "itemListElement": [
-          {
-            "@type": "OfferCatalog",
-            "name": "Surveillance Systems",
-            "itemListElement": [
-              {
-                "@type": "Offer",
-                "itemOffered": {
-                  "@type": "Service",
-                  "name": "CCTV Camera Installation"
-                }
-              },
-              {
-                "@type": "Offer",
-                "itemOffered": {
-                  "@type": "Service",
-                  "name": "IP Camera Systems"
-                }
-              },
-              {
-                "@type": "Offer",
-                "itemOffered": {
-                    "@type": "Service",
-                    "name": "Data Networking & Wi-Fi Solutions"
-                }
-              },
-              {
-                  "@type": "Offer",
-                  "itemOffered": {
-                      "@type": "Service",
-                      "name": "Access Control Systems"
-                  }
-              }
-              /* Closing brackets for OfferCatalog list structure */
-            ]
-          },
-          {
-            "@type": "OfferCatalog",
-            "name": "Water Treatment Solutions",
-            "itemListElement": [
-                {
-                    "@type": "Offer",
-                    "itemOffered": {
-                        "@type": "Service",
-                        "name": "Zero-Maintenance Water Softener"
-                    }
-                },
-                {
-                    "@type": "Offer",
-                    "itemOffered": {
-                        "@type": "Service",
-                        "name": "Water Testing and Analysis"
-                    }
-                }
-            ]
-          }
-        ]
-      }
-    }
-    </script>
 </head>
 <body class="bg-gray-50 text-gray-800">
 
     <!-- Header & Navigation -->
-    <header class="header-bg shadow-lg">
+    <header class="header-bg shadow-lg sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
             <div class="text-2xl font-extrabold text-white tracking-wider rounded-lg p-1">
-                Paras Enterprises
+                <a href="index.html">Paras Enterprises <span class="text-indigo-400 font-medium text-xl">| Defined Solutions</span></a>
             </div>
-            <nav class="hidden md:flex space-x-6">
-                <a href="#security" class="text-gray-300 hover:text-white transition duration-200 font-medium">Security</a>
-                <a href="#water-treatment" class="text-gray-300 hover:text-white transition duration-200 font-medium">Water Solutions</a>
-                <a href="#niche-services" class="text-gray-300 hover:text-white transition duration-200 font-medium">Networking & Access</a>
-                <a href="#contact" class="text-yellow-400 hover:text-yellow-300 transition duration-200 font-medium">Contact Us</a>
+            <!-- Desktop Navigation -->
+            <nav class="hidden md:flex space-x-6 items-center">
+                <a href="index.html" class="text-white font-bold transition duration-200">Home</a>
+                <a href="cctv.html" class="text-gray-300 hover:text-red-400 transition duration-200 font-medium">CCTV</a>
+                <a href="networking.html" class="text-gray-300 hover:text-cyan-400 transition duration-200 font-medium">Networking</a>
+                <a href="smarthome.html" class="text-gray-300 hover:text-indigo-400 transition duration-200 font-medium">Smart Home</a>
+                <a href="gateautomation.html" class="text-gray-300 hover:text-amber-400 transition duration-200 font-medium">Gate Automation</a>
+                <a href="portfolio.html" class="text-gray-300 hover:text-green-400 transition duration-200 font-medium">Projects</a>
+                <a href="https://wa.me/919894214024" target="_blank" class="bg-green-500 text-white font-bold py-1 px-3 rounded-lg hover:bg-green-400 transition ml-4 shadow-md">WhatsApp</a>
             </nav>
-            <button id="contact-mobile-btn" class="md:hidden bg-yellow-500 text-gray-900 font-bold py-2 px-4 rounded-lg shadow-md hover:bg-yellow-400 transition">
-                Call Now
-            </button>
+            <!-- Mobile WhatsApp Button -->
+            <a href="https://wa.me/919894214024" target="_blank" class="md:hidden bg-green-500 text-white font-bold py-2 px-4 rounded-lg shadow-md hover:bg-green-400 transition flex items-center">
+                WhatsApp
+            </a>
         </div>
     </header>
 
-    <!-- Hero Section (H1) -->
-    <main class="pt-10">
-        <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-16">
-            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-gray-900 mb-4 tracking-tight">
-                <span class="text-indigo-600">AI Security & Water Softener Systems</span> in Chennai
-            </h1>
-            <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-                Your trusted partner for modern, **turn-key Security Solutions** and **Zero-Maintenance Hard Water Treatment** across Chennai, Kanchipuram, Chengalpet, and Thiruvallur.
-            </p>
-            <div class="mt-8 space-y-4 sm:space-y-0 sm:space-x-4">
-                <a href="#security" class="inline-block bg-indigo-600 text-white font-bold py-3 px-8 rounded-xl shadow-lg hover:bg-indigo-700 transition transform hover:scale-105">
-                    Explore Security Systems
-                </a>
-                <a href="#water-treatment" class="inline-block bg-yellow-500 text-gray-900 font-bold py-3 px-8 rounded-xl shadow-lg hover:bg-yellow-400 transition transform hover:scale-105">
-                    Find Your Water Solution
+    <main>
+        <!-- Hero Section -->
+        <section class="bg-gray-100 py-16 sm:py-24 text-center border-b border-gray-200">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h1 class="text-4xl sm:text-6xl font-extrabold text-gray-900 mb-4 leading-tight">
+                    Defined Solutions for a Secure & Connected <span class="text-indigo-600">Chennai</span>
+                </h1>
+                <p class="text-xl sm:text-2xl text-gray-600 max-w-3xl mx-auto mb-10">
+                    Your trusted partner for **CCTV Installation, Networking Infrastructure, Smart Home Automation, and Gate Automation** solutions across the Chennai region.
+                </p>
+                <a href="https://wa.me/919894214024" target="_blank" class="inline-flex items-center bg-green-600 text-white font-bold text-xl py-4 px-10 rounded-xl shadow-2xl hover:bg-green-700 transition transform hover:scale-105">
+                    Connect on WhatsApp for a Free Quote
                 </a>
             </div>
         </section>
 
-        <!-- Services Section 1: Security (H2) -->
-        <section id="security" class="py-16 bg-white border-t border-gray-200">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <h2 class="text-3xl sm:text-4xl font-extrabold text-gray-900 mb-6 text-center">
-                    Advanced <span class="text-red-600">CCTV Installation Chennai</span> & Smart Surveillance
-                </h2>
-                <p class="text-lg text-gray-600 mb-10 text-center max-w-4xl mx-auto">
-                    We specialize in state-of-the-art **IP Camera Systems** and **AI-Powered Surveillance** that offer real-time analytics and predictive security, moving beyond basic recording.
-                </p>
-                
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-                    <div class="p-6 bg-gray-50 rounded-xl shadow-lg border border-gray-100 transform hover:shadow-xl transition duration-300">
-                        <svg class="w-12 h-12 text-indigo-500 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.552-4.552A1.98 1.98 0 0121 7.448V16.55a1.98 1.98 0 01-1.448 1.898L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>
-                        <h3 class="text-xl font-bold text-gray-900 mb-2">AI-Powered Monitoring</h3>
-                        <p class="text-gray-600">Intelligent video analytics for object detection, face recognition, and perimeter security.</p>
-                    </div>
-                    <div class="p-6 bg-gray-50 rounded-xl shadow-lg border border-gray-100 transform hover:shadow-xl transition duration-300">
-                        <svg class="w-12 h-12 text-indigo-500 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"></path></svg>
-                        <h3 class="text-xl font-bold text-gray-900 mb-2">Wireless Security Systems</h3>
-                        <p class="text-gray-600">Seamless setup and integration with the latest **Wireless CCTV** technology for homes and offices.</p>
-                    </div>
-                    <div class="p-6 bg-gray-50 rounded-xl shadow-lg border border-gray-100 transform hover:shadow-xl transition duration-300">
-                        <svg class="w-12 h-12 text-indigo-500 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.102a2.404 2.404 0 01-.582-.962L16 2.5l-4.717 1.886A2 2 0 009.68 5H4a2 2 0 00-2 2v10a2 2 0 002 2h16a2 2 0 002-2V9.68a2.404 2.404 0 01-1.382 2.156z"></path></svg>
-                        <h3 class="text-xl font-bold text-gray-900 mb-2">Complete Site Audit</h3>
-                        <p class="text-gray-600">Professional **CCTV Installer** services ensuring optimal coverage and compliance for all properties.</p>
-                    </div>
-                </div>
+        <!-- Service Overview Cards -->
+        <section id="services" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+            <h2 class="text-3xl sm:text-4xl font-extrabold text-center text-gray-900 mb-12">
+                Our Core Services Tailored for the Chennai Market
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+
+                <!-- Service Card 1: CCTV Surveillance -->
+                <a href="cctv.html" class="service-card bg-white border-t-4 border-red-600 rounded-xl shadow-lg p-6 flex flex-col items-start hover:shadow-xl">
+                    <svg class="w-10 h-10 text-red-600 mb-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2zm0 18a8 8 0 0 1-8-8c0-3.35 1.77-6.26 4.4-7.85l.6.9c-2.07 1.4-3.4 3.73-3.4 6.95 0 4.41 3.59 8 8 8s8-3.59 8-8c0-3.22-1.33-5.55-3.4-6.95l.6-.9c2.63 1.59 4.4 4.5 4.4 7.85a8 8 0 0 1-8 8zM12 6a3 3 0 1 0 0 6 3 3 0 0 0 0-6zm0 2a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/></svg>
+                    <h3 class="font-bold text-2xl text-gray-900 mb-2">CCTV Surveillance</h3>
+                    <p class="text-gray-600 mb-4 flex-grow">Comprehensive **CCTV Camera Installation in Chennai** for commercial, residential, and industrial monitoring. Never miss a detail.</p>
+                    <span class="text-red-600 font-semibold mt-auto">View Solutions &rarr;</span>
+                </a>
+
+                <!-- Service Card 2: Networking Infrastructure -->
+                <a href="networking.html" class="service-card bg-white border-t-4 border-cyan-500 rounded-xl shadow-lg p-6 flex flex-col items-start hover:shadow-xl">
+                    <svg class="w-10 h-10 text-cyan-600 mb-4" fill="currentColor" viewBox="0 0 24 24"><path d="M20 3h-2V1h-2v2h-2V1h-2v2h-2V1H8v2H6V1H4v2H2v18h20V3zm-2 16H4V5h16v14zM10 7H8v2h2V7zm4 0h-2v2h2V7zm4 0h-2v2h2V7zM6 13h2v2H6v-2zm4 0h2v2h-2v-2zm4 0h2v2h-2v-2zM6 17h2v2H6v-2zm4 0h2v2h-2v-2zm4 0h2v2h-2v-2z"/></svg>
+                    <h3 class="font-bold text-2xl text-gray-900 mb-2">Networking Infrastructure</h3>
+                    <p class="text-gray-600 mb-4 flex-grow">Reliable **Structured Cabling, LAN/WAN, and High-Speed Wi-Fi Solutions** for offices and apartments in Chennai.</p>
+                    <span class="text-cyan-600 font-semibold mt-auto">View Solutions &rarr;</span>
+                </a>
+
+                <!-- Service Card 3: Smart Home Automation -->
+                <a href="smarthome.html" class="service-card bg-white border-t-4 border-indigo-600 rounded-xl shadow-lg p-6 flex flex-col items-start hover:shadow-xl">
+                    <svg class="w-10 h-10 text-indigo-600 mb-4" fill="currentColor" viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8h5zm-2-2v-4h8v4H8z"/></svg>
+                    <h3 class="font-bold text-2xl text-gray-900 mb-2">Smart Home Automation</h3>
+                    <p class="text-gray-600 mb-4 flex-grow">Advanced security with **Video Door Phones (VDP)** and seamless **Digital Smart Lock Integration** for modern Chennai homes.</p>
+                    <span class="text-indigo-600 font-semibold mt-auto">View Solutions &rarr;</span>
+                </a>
+
+                <!-- Service Card 4: Gate Automation -->
+                <a href="gateautomation.html" class="service-card bg-white border-t-4 border-amber-500 rounded-xl shadow-lg p-6 flex flex-col items-start hover:shadow-xl">
+                    <svg class="w-10 h-10 text-amber-600 mb-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15h2v-6h-2v6zm2-8V7h-2v2h2z"/></svg>
+                    <h3 class="font-bold text-2xl text-gray-900 mb-2">Gate Automation</h3>
+                    <p class="text-gray-600 mb-4 flex-grow">**Automatic Gate Openers** for Sliding and Swing Gates, including **Retrofit Gate Upgrades** for homes and factories.</p>
+                    <span class="text-amber-600 font-semibold mt-auto">View Solutions &rarr;</span>
+                </a>
             </div>
         </section>
 
-        <!-- Services Section 2: Water Treatment (H2) -->
-        <section id="water-treatment" class="py-16 bg-gray-50">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <h2 class="text-3xl sm:text-4xl font-extrabold text-gray-900 mb-6 text-center">
-                    The Ultimate <span class="text-indigo-600">Hard Water Softener System</span> for Chennai's Water
-                </h2>
-                <p class="text-lg text-gray-600 mb-10 text-center max-w-4xl mx-auto">
-                    Say goodbye to scale, stains, and high maintenance costs. We provide advanced, **Zero Maintenance Water Treatment** solutions tailored for local borewell and hard municipal water sources.
-                </p>
-
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-                    <div class="p-8 bg-white rounded-xl shadow-xl space-y-4">
-                        <h3 class="text-2xl font-bold text-indigo-700">Non-Electric, No-Salt Technology</h3>
-                        <ul class="list-disc list-inside text-gray-700 space-y-2 ml-4">
-                            <li>Permanent **Hard Water Solution** without the need for constant salt refills.</li>
-                            <li>Effective against high TDS and mineral content common in **Borewell Water Treatment Chennai**.</li>
-                            <li>Extends the life of your plumbing, geysers, and appliances.</li>
-                            <li>Initial, comprehensive **Water Testing** to determine the perfect solution.</li>
-                        </ul>
-                    </div>
-                    <div class="relative overflow-hidden rounded-xl shadow-2xl h-64">
-                         <!-- Placeholder image for visual appeal -->
-                        <img src="https://placehold.co/800x600/6366f1/ffffff?text=Zero+Maintenance+Water+Softener" onerror="this.onerror=null;this.src='https://placehold.co/800x600/6366f1/ffffff?text=Water+Treatment';" alt="Zero Maintenance Water Softener System for Hard Water" class="w-full h-full object-cover">
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Niche Services Deep Dive Section (H2/H3) -->
-        <section id="niche-services" class="py-16 bg-white border-t border-gray-200">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <h2 class="text-3xl sm:text-4xl font-extrabold text-gray-900 mb-12 text-center">
-                    Specialized Solutions: Networking and Access Control
-                </h2>
-                
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
-                    <!-- Data Networking Deep Dive -->
-                    <div class="p-8 bg-gray-50 rounded-xl shadow-lg border border-gray-100">
-                        <h3 class="text-2xl font-bold text-indigo-600 mb-4">
-                            Seamless <span class="text-red-600">Data Networking & Wi-Fi Solutions</span>
-                        </h3>
-                        <p class="mb-4 text-gray-700">
-                            In today's digital world, reliable connectivity is non-negotiable. Our services ensure full coverage and maximum speed for your home or business. We specialize in robust, high-performance network setups.
-                        </p>
-                        <h4 class="text-lg font-semibold text-gray-800">Targeted SEO Keywords:</h4>
-                        <ul class="list-disc list-inside text-gray-600 ml-4">
-                            <li>**Structured Cabling** and installation services in Chennai.</li>
-                            <li>**Wi-Fi Solutions for Home** (Mesh and high-density networking).</li>
-                            <li>**Network Setup Chennai** for small and medium enterprises (SME).</li>
-                            <li>Outdoor and long-range **Wireless Network Installation**.</li>
-                        </ul>
-                        <a href="#contact" class="mt-4 inline-block text-indigo-600 hover:text-indigo-800 font-semibold transition">
-                            Get a Network Audit →
-                        </a>
-                    </div>
-
-                    <!-- Access Control Deep Dive -->
-                    <div class="p-8 bg-gray-50 rounded-xl shadow-lg border border-gray-100">
-                        <h3 class="text-2xl font-bold text-indigo-600 mb-4">
-                            Secure <span class="text-red-600">Access Control Systems</span> & Time Management
-                        </h3>
-                        <p class="mb-4 text-gray-700">
-                            Control entry, monitor movement, and manage staff attendance effortlessly. Our solutions provide modern, scalable security beyond traditional keys and locks.
-                        </p>
-                        <h4 class="text-lg font-semibold text-gray-800">Targeted SEO Keywords:</h4>
-                        <ul class="list-disc list-inside text-gray-600 ml-4">
-                            <li>**Biometric Access Control** system dealers/installers.</li>
-                            <li>**Time Attendance Systems** for payroll and efficiency tracking.</li>
-                            <li>**Door Access System Installation** (Fingerprint, RFID, Facial Recognition).</li>
-                            <li>Residential and commercial security **Access Control Solutions**.</li>
-                        </ul>
-                        <a href="#contact" class="mt-4 inline-block text-indigo-600 hover:text-indigo-800 font-semibold transition">
-                            Request an Access System Quote →
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
-        <!-- Local Service Area & CTA (H2) -->
-        <section id="contact" class="py-16 bg-indigo-600 text-white">
+        <!-- Audience Section -->
+        <section class="bg-indigo-50 py-16">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                <h2 class="text-3xl sm:text-4xl font-extrabold mb-4">
-                    Serving Chennai and Surrounding Regions
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-gray-900 mb-6">
+                    Serving the Chennai Community
                 </h2>
-                <p class="text-xl font-medium mb-6">
-                    We proudly deliver and install all our security and water solutions in:
+                <p class="text-xl text-gray-700 max-w-4xl mx-auto mb-8">
+                    Our solutions are custom-designed for the specific security and operational needs of:
                 </p>
-                <div class="text-2xl font-bold tracking-wider mb-8">
-                    <span class="p-2 bg-indigo-700 rounded-lg shadow-md mx-2">Chennai</span>
-                    <span class="p-2 bg-indigo-700 rounded-lg shadow-md mx-2">Kanchipuram</span>
-                    <span class="p-2 bg-indigo-700 rounded-lg shadow-md mx-2">Chengalpet</span>
-                    <span class="p-2 bg-indigo-700 rounded-lg shadow-md mx-2">Thiruvallur</span>
+                <div class="flex flex-wrap justify-center gap-4">
+                    <span class="bg-white text-indigo-700 font-semibold py-2 px-4 rounded-full shadow-md">Independent Homes</span>
+                    <span class="bg-white text-indigo-700 font-semibold py-2 px-4 rounded-full shadow-md">Flats & Apartments</span>
+                    <span class="bg-white text-indigo-700 font-semibold py-2 px-4 rounded-full shadow-md">Small Offices</span>
+                    <span class="bg-white text-indigo-700 font-semibold py-2 px-4 rounded-full shadow-md">Corporate Companies</span>
+                    <span class="bg-white text-indigo-700 font-semibold py-2 px-4 rounded-full shadow-md">Factories & Warehouses</span>
                 </div>
-                
-                <p class="text-2xl font-extrabold mb-8">
-                    Ready to enhance your security or solve your hard water problem?
-                </p>
-                <a href="tel:+919894214024" class="inline-block bg-yellow-500 text-gray-900 font-bold text-2xl py-4 px-12 rounded-xl shadow-2xl hover:bg-yellow-400 transition transform hover:scale-105">
-                    Call Us Now: +91 98942 14024
-                </a>
             </div>
         </section>
+
     </main>
 
     <!-- Footer -->
     <footer class="bg-gray-900 text-gray-400 py-8">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <p>&copy; 2025 Paras Enterprises. All rights reserved.</p>
-            <p class="mt-2 text-sm">CCTV Installation, Water Softener, Data Networking, and Access Control Services.</p>
+            <p>&copy; 2025 Paras Enterprises. All rights reserved. | Defined Solutions for Chennai.</p>
+            <div class="mt-4 flex justify-center space-x-4">
+                <a href="https://wa.me/919894214024" target="_blank" class="text-green-500 hover:text-green-400 transition">WhatsApp</a>
+                <a href="portfolio.html" class="text-gray-400 hover:text-white transition">View Our Projects</a>
+            </div>
         </div>
     </footer>
     
-    <!-- Simple JS for mobile call button -->
-    <script>
-        document.getElementById('contact-mobile-btn').addEventListener('click', function() {
-            window.location.href = 'tel:+919894214024';
-        });
-    </script>
 </body>
 </html>
