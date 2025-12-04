@@ -1,23 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <title>Paras Enterprises | CCTV, Networking, Automation & Water Solutions Chennai</title>
-  <meta name="description" content="Paras Enterprises delivers CCTV, Networking, Smart Home, Gate Automation & Zero-Maintenance Hard Water Solutions across Chennai. Certified systems. Expert installation.">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .text-accent {
+            color: #1D4ED8; /* Tailwind Blue-700 */
+        }
+        .bg-accent {
+            background-color: #1D4ED8;
+        }
+    </style>
+    
+    <!-- 1. CRITICAL SEO ELEMENTS -->
+    <title>Paras Enterprises | Integrated Security & Automation in Chennai</title>
+    <meta name="description" content="Chennai's leading provider of integrated solutions: CCTV, Home Automation, Automatic Gate Motors, Networking, and Hard Water Conditioners. Reliable service since 2012.">
+    <link rel="canonical" href="https://parasgrows.github.io/parasenterprises/index.html">
+    <meta name="robots" content="index, follow">
 
-  <!-- Open Graph (Facebook / LinkedIn) -->
-  <meta property="og:title" content="Paras Enterprises | CCTV, Networking, Automation & Water Solutions Chennai">
-  <meta property="og:description" content="Integrated CCTV, Networking, Smart Home, Gate Automation & Hard Water Solutions in Chennai. Certified systems & expert installation.">
-  <meta property="og:url" content="https://parasgrows.github.io/parasenterprises/">
-  <meta property="og:type" content="website">
-  <meta property="og:image" content="https://parasgrows.github.io/parasenterprises/assets/og-home.jpg">
-
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Paras Enterprises | CCTV, Networking & Automation Chennai">
-  <meta name="twitter:description" content="Integrated technology solutions in Chennai — CCTV, Networking, Automation & Water Treatment.">
-  <meta name="twitter:image" content="https://parasgrows.github.io/parasenterprises/assets/og-home.jpg">
-
-  <!-- Canonical (optional but recommended) -->
-  <link rel="canonical" href="https://parasgrows.github.io/parasenterprises/">
-
-  <!-- Insert JSON-LD schema here (see next step) -->
+    <!-- 2. JSON-LD STRUCTURED DATA (LocalBusiness Schema) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Paras Enterprises",
+      "image": "https://placehold.co/600x400/93C5FD/1D4ED8?text=Integrated+Smart+Systems", 
+      "url": "https://parasgrows.github.io/parasenterprises/index.html",
+      "telephone": "+919894214024",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "No. 29, 13th St, Sripuram, Ashok Nagar",
+        "addressLocality": "Chennai",
+        "addressRegion": "Tamil Nadu",
+        "postalCode": "600083",
+        "addressCountry": "IN"
+      },
+      "priceRange": "$$",
+      "servesArea": {
+        "@type": "State",
+        "name": "Tamil Nadu"
+      },
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Security and Automation Services",
+        "itemListElement": [
+          {
+            "@type": "OfferCatalog",
+            "name": "CCTV Surveillance Systems"
+          },
+          {
+            "@type": "OfferCatalog",
+            "name": "Automatic Gate Motors"
+          },
+          {
+            "@type": "OfferCatalog",
+            "name": "Home Automation & VDP"
+          },
+          {
+            "@type": "OfferCatalog",
+            "name": "Network Cabling & WiFi Setup"
+          },
+          {
+            "@type": "OfferCatalog",
+            "name": "Hard Water Conditioners"
+          }
+        ]
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday",
+            "Saturday"
+          ],
+          "opens": "09:00",
+          "closes": "18:00"
+        }
+      ]
+    }
+    </script>
 </head>
+<body class="bg-gray-50 text-gray-800 antialiased">
+
+    <!-- Header and Navigation Bar -->
+    <nav class="bg-white shadow-lg p-4 sticky top-0 z-20">
+        <div class="container mx-auto flex items-center justify-between">
+            <a href="/" class="text-2xl font-bold text-gray-900 tracking-tight">Paras Enterprises</a>
+            
+            <!-- Desktop Navigation -->
+            <div class="space-x-4 hidden md:flex">
+                <a href="/" class="text-white bg-blue-600 hover:bg-blue-700 font-semibold transition-colors duration-200 px-3 py-2 rounded-lg shadow-md">Home</a>
+                <a href="/services.html" class="text-gray-600 hover:text-blue-600 transition-colors duration-200 px-3 py-2 rounded-lg">Services</a>
+                <a href="/projects.html" class="text-gray-600 hover:text-blue-600 transition-colors duration-200 px-3 py-2 rounded-lg">Projects</a>
+                <a href="/clients.html" class="text-gray-600 hover:text-blue-600 transition-colors duration-200 px-3 py-2 rounded-lg">Clients</a>
+                <a href="/about.html" class="text-gray-600 hover:text-blue-600 transition-colors duration-200 px-3 py-2 rounded-lg">About Us</a>
+                <a href="/contact.html" class="text-gray-600 hover:text-blue-600 transition-colors duration-200 px-3 py-2 rounded-lg">Contact</a>
+            </div>
+
+            <!-- Mobile Menu Placeholder (Hidden until interactive JS is added, but good practice) -->
+            <button class="md:hidden text-gray-600 hover:text-blue-600 p-2 rounded-md">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
+        </div>
+    </nav>
+    
+    <!-- Floating WhatsApp CTA (Direct Lead Gen) -->
+    <a href="https://wa.me/919894214024?text=Hello%20Paras%20Enterprises" target="_blank" class="fixed bottom-6 right-6 z-50 bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-2xl transition-all duration-300 transform hover:scale-110">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12.001 2c-5.522 0-10 4.478-10 10s4.478 10 10 10c1.472 0 2.871-.321 4.148-.902l3.298 1.077c.365.119.76.01.996-.245.236-.254.272-.619.096-.949l-.004-.007c-.02-.036-1.554-2.839-1.554-2.839-2.091 1.057-4.493 1.637-6.984 1.637-4.418 0-8-3.582-8-8s3.582-8 8-8zM12.001 4c3.313 0 6 2.687 6 6s-2.687 6-6 6-6-2.687-6-6 2.687-6 6-6zM14.5 11l-3 3-2-2 1-1 2 2 4-4 1 1-5 5z"/>
+        </svg>
+    </a>
+
+    <!-- Hero Section -->
+    <header class="bg-gray-100 py-20 md:py-32 relative overflow-hidden">
+        <div class="container mx-auto px-4 max-w-7xl relative z-10">
+            <div class="md:grid md:grid-cols-12 md:gap-12 items-center">
+                <div class="col-span-6 text-center md:text-left mb-10 md:mb-0">
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-gray-900 leading-tight mb-4">
+                        Seamlessly Integrated <span class="text-accent block">Technology Solutions</span>
+                    </h1>
+                    <p class="text-xl text-gray-600 mb-8 max-w-lg md:max-w-none mx-auto md:mx-0">
+                        Chennai's trusted expert for comprehensive security, automation, and utility management since 2012.
+                    </p>
+                    <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 justify-center md:justify-start">
+                        <!-- Primary CTA -->
+                        <a href="/services.html" class="bg-blue-600 text-white font-bold px-8 py-4 rounded-xl hover:bg-blue-700 transition-colors duration-300 shadow-lg text-lg">
+                            Explore Our Services
+                        </a>
+                        <!-- Secondary CTA -->
+                        <a href="/contact.html" class="bg-white text-gray-800 font-bold px-8 py-4 rounded-xl border border-gray-300 hover:bg-gray-100 transition-colors duration-300 shadow-md text-lg">
+                            Get a Free Quote
+                        </a>
+                    </div>
+                </div>
+                <!-- Hero Image Placeholder -->
+                <div class="col-span-6">
+                    <img src="https://placehold.co/600x400/93C5FD/1D4ED8?text=Integrated+Smart+Systems" 
+                         alt="Illustration of interconnected smart devices and security camera"
+                         class="w-full h-auto object-cover rounded-2xl shadow-2xl transform hover:scale-[1.02] transition-transform duration-500" 
+                         loading="lazy">
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Core Service Pillars (Features Section) -->
+    <section class="py-16 md:py-24">
+        <div class="container mx-auto px-4 max-w-7xl">
+            <h2 class="text-3xl font-bold text-center text-gray-900 mb-12">Our Pillars of Expertise</h2>
+            
+            <div class="grid md:grid-cols-4 gap-8">
+                
+                <!-- Pillar 1: Security (CCTV) -->
+                <div class="text-center p-6 bg-white rounded-xl shadow-lg border-t-4 border-red-500 transform hover:scale-105 transition-transform duration-300">
+                    <div class="text-5xl mb-4 text-red-600">🛡️</div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Advanced Security</h3>
+                    <p class="text-gray-600">High-definition CCTV and IP surveillance for robust protection of your home or business.</p>
+                </div>
+
+                <!-- Pillar 2: Automation (Gates/VDP) -->
+                <div class="text-center p-6 bg-white rounded-xl shadow-lg border-t-4 border-yellow-500 transform hover:scale-105 transition-transform duration-300">
+                    <div class="text-5xl mb-4 text-yellow-600">⚙️</div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Seamless Automation</h3>
+                    <p class="text-gray-600">Reliable automatic gate motors, video door phones (VDP), and smart access control.</p>
+                </div>
+
+                <!-- Pillar 3: Connectivity (Networking) -->
+                <div class="text-center p-6 bg-white rounded-xl shadow-lg border-t-4 border-blue-500 transform hover:scale-105 transition-transform duration-300">
+                    <div class="text-5xl mb-4 text-blue-600">🌐</div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Reliable Networking</h3>
+                    <p class="text-gray-600">Expert structured cabling, stable Wi-Fi mesh systems, and data infrastructure setup.</p>
+                </div>
+
+                <!-- Pillar 4: Utility (Water) -->
+                <div class="text-center p-6 bg-white rounded-xl shadow-lg border-t-4 border-green-500 transform hover:scale-105 transition-transform duration-300">
+                    <div class="text-5xl mb-4 text-green-600">💧</div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Hard Water Solutions</h3>
+                    <p class="text-gray-600">Zero-maintenance water conditioners to protect your plumbing and appliances from scale.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Call to Action Section for Site Survey (High-Impact CTA) -->
+    <section class="bg-accent py-16 md:py-20 text-white">
+        <div class="container mx-auto px-4 max-w-7xl text-center">
+            <h2 class="text-3xl md:text-4xl font-extrabold mb-4">Need a Site Survey in Chennai?</h2>
+            <p class="text-xl text-blue-200 mb-8 max-w-3xl mx-auto">
+                For the most accurate assessment and quotation, book a free, no-obligation technical visit today.
+            </p>
+            <a href="/contact.html" class="bg-yellow-400 text-gray-900 font-extrabold px-10 py-4 rounded-full hover:bg-yellow-500 transition-colors duration-300 shadow-2xl text-lg inline-block">
+                Request Survey & Quote
+            </a>
+        </div>
+    </section>
+
+    <!-- Why Choose Us (Summary) -->
+    <section class="py-16 md:py-24 bg-gray-50">
+        <div class="container mx-auto px-4 max-w-7xl">
+            <div class="md:grid md:grid-cols-2 gap-12 items-center">
+                <div class="mb-8 md:mb-0">
+                    <img src="https://placehold.co/600x450/374151/ffffff?text=Quality+Installation" 
+                         alt="Technician installing a security device"
+                         class="w-full h-auto object-cover rounded-xl shadow-xl" loading="lazy">
+                </div>
+                <div>
+                    <span class="text-sm font-semibold text-accent uppercase mb-3 block">Our Commitment</span>
+                    <h2 class="text-3xl font-extrabold text-gray-900 mb-6">Local Expertise, Global Standards</h2>
+                    <p class="text-lg text-gray-700 mb-6">
+                        We don't just sell products; we deliver end-to-end, integrated solutions. Our team is based in Chennai, offering unparalleled responsiveness and understanding of local infrastructure needs, especially concerning climate and water quality challenges.
+                    </p>
+                    <ul class="space-y-3 text-gray-700">
+                        <li class="flex items-start">
+                            <span class="text-green-500 mr-3 text-xl">✅</span>
+                            <span>**Holistic Integration:** Systems designed to work together (CCTV + Access Control).</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-green-500 mr-3 text-xl">✅</span>
+                            <span>**Durability:** We use heavy-duty components built for Indian conditions.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-green-500 mr-3 text-xl">✅</span>
+                            <span>**Post-Installation Support:** Local team for fast service and maintenance.</span>
+                        </li>
+                    </ul>
+                    <a href="/about.html" class="mt-6 inline-block text-blue-600 font-semibold hover:underline">
+                        Read More About Our Team & History →
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer (Repeat contact details for SEO) -->
+    <footer class="bg-gray-900 text-white mt-12 py-10">
+        <div class="container mx-auto px-4 max-w-7xl">
+            <div class="grid md:grid-cols-4 gap-8 pb-8 border-b border-gray-700">
+                
+                <!-- Company Info -->
+                <div>
+                    <h4 class="text-xl font-bold mb-4">Paras Enterprises</h4>
+                    <p class="text-gray-400 text-sm">Chennai's specialist in integrated technology and utility solutions.</p>
+                </div>
+                
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="/services.html" class="text-gray-400 hover:text-blue-400">Services Overview</a></li>
+                        <li><a href="/projects.html" class="text-gray-400 hover:text-blue-400">Our Portfolio</a></li>
+                        <li><a href="/clients.html" class="text-gray-400 hover:text-blue-400">Client Testimonials</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info (NAP Consistency) -->
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Get In Touch</h4>
+                    <p class="text-gray-400 text-sm">
+                        <a href="tel:+919894214024" class="hover:text-blue-400">+91 98942 14024</a><br>
+                        <a href="mailto:parasgrows@zohomail.in" class="hover:text-blue-400">parasgrows@zohomail.in</a>
+                    </p>
+                </div>
+
+                 <!-- Address (NAP Consistency) -->
+                 <div>
+                    <h4 class="text-lg font-semibold mb-4">Office Location</h4>
+                    <p class="text-gray-400 text-sm" id="footer-address">
+                        No. 25/22, 19th St, 4th Avenue,<br>
+                        Ashok Nagar, Chennai - 600083
+                    </p>
+                </div>
+
+            </div>
+            <div class="text-center mt-6 text-gray-500 text-sm">
+                &copy; 2024 Paras Enterprises. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
