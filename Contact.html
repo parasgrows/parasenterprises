@@ -3,139 +3,84 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Get In Touch</title>
+    <!-- Load Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Use Inter font family -->
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
         body {
             font-family: 'Inter', sans-serif;
-        }
-        .text-accent {
-            color: #1D4ED8; /* Tailwind Blue-700 */
-        }
-        .bg-accent {
-            background-color: #1D4ED8;
+            background-color: #f7f9fb; /* Light background for contrast */
         }
     </style>
-
-    <!-- 1. SEO TITLE -->
-    <title>Contact CCTV & Home Automation Experts in Chennai | Paras Enterprises</title>
-    
-    <!-- 2. META DESCRIPTION -->
-    <meta name="description" content="Get in touch with Paras Enterprises for site surveys, quotations, or technical support for security, networking, and automation services in Chennai.">
-
-    <!-- 3. CANONICAL TAG -->
-    <link rel="canonical" href="https://parasgrows.github.io/parasenterprises/contact.html">
-
 </head>
-<body class="bg-gray-50 text-gray-800 antialiased">
+<body class="flex items-center justify-center min-h-screen p-4">
 
-    <!-- Header and Navigation Bar -->
-    <nav class="bg-white shadow-lg p-4 sticky top-0 z-20">
-        <div class="container mx-auto flex items-center justify-between">
-            <a href="/" class="text-2xl font-bold text-gray-900 tracking-tight">Paras Enterprises</a>
-            <div class="space-x-4 hidden md:flex">
-                <a href="/" class="text-gray-600 hover:text-blue-600 transition-colors duration-200 px-3 py-2 rounded-lg">Home</a>
-                <a href="/services.html" class="text-gray-600 hover:text-blue-600 transition-colors duration-200 px-3 py-2 rounded-lg">Services</a>
-                <a href="/about.html" class="text-gray-600 hover:text-blue-600 transition-colors duration-200 px-3 py-2 rounded-lg">About Us</a>
-                <a href="/contact.html" class="text-white bg-blue-600 hover:bg-blue-700 font-semibold transition-colors duration-200 px-3 py-2 rounded-lg shadow-md">Contact</a>
-            </div>
-        </div>
-    </nav>
-    
-    <!-- Floating WhatsApp CTA -->
-    <a href="https://wa.me/919894214024?text=Hi%20Paras%20Enterprises" target="_blank" class="fixed bottom-6 right-6 z-50 bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-2xl transition-all duration-300 transform hover:scale-110">
-        <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M12.001 2c-5.522 0-10 4.478-10 10s4.478 10 10 10c1.472 0 2.871-.321 4.148-.902l3.298 1.077c.365.119.76.01.996-.245.236-.254.272-.619.096-.949l-.004-.007c-.02-.036-1.554-2.839-1.554-2.839-2.091 1.057-4.493 1.637-6.984 1.637-4.418 0-8-3.582-8-8s3.582-8 8-8zM12.001 4c3.313 0 6 2.687 6 6s-2.687 6-6 6-6-2.687-6-6 2.687-6 6-6zM14.5 11l-3 3-2-2 1-1 2 2 4-4 1 1-5 5z"/>
-        </svg>
-    </a>
-
-    <!-- Main content container -->
-    <div class="container mx-auto px-4 py-16 max-w-7xl">
-        <header class="text-center mb-16">
-            <h1 class="text-4xl md:text-5xl font-extrabold text-gray-900 mb-4">Contact Us Today</h1>
-            <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-                Ready to discuss your next project? Call us directly, or visit our office in Chennai. We look forward to hearing from you!
-            </p>
+    <!-- Contact Form Container -->
+    <div class="w-full max-w-2xl bg-white shadow-xl rounded-xl p-8 md:p-12 transition-all duration-300 hover:shadow-2xl">
+        
+        <!-- Header Section -->
+        <header class="text-center mb-10">
+            <h1 class="text-4xl font-extrabold text-gray-900 mb-2">Get In Touch</h1>
+            <p class="text-lg text-gray-600">We'd love to hear from you. Send us a message!</p>
         </header>
 
-        <div class="grid md:grid-cols-2 gap-12">
+        <!-- Contact Form -->
+        <form action="#" method="POST" class="space-y-6">
             
-            <!-- Contact Information -->
-            <div class="bg-white p-10 rounded-xl shadow-lg border-t-4 border-blue-600">
-                <h2 class="text-3xl font-bold text-gray-900 mb-6">Our Details</h2>
-                
-                <div class="space-y-6">
-                    
-                    <!-- Phone -->
-                    <div>
-                        <p class="text-lg font-semibold text-blue-600 mb-1">General Inquiries & Sales</p>
-                        <a href="tel:+919894214024" class="text-2xl font-extrabold text-gray-900 hover:text-blue-700 transition-colors inline-flex items-center">
-                            <svg class="w-6 h-6 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
-                            +91 98942 14024
-                        </a>
-                    </div>
-                    
-                    <!-- Email -->
-                    <div>
-                        <p class="text-lg font-semibold text-blue-600 mb-1">Email</p>
-                        <a href="mailto:parasgrows@zohomail.in" class="text-xl text-gray-700 hover:text-blue-700 transition-colors inline-flex items-center">
-                            <svg class="w-6 h-6 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8m-2-3a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2h14a2 2 0 002-2V5a2 2 0 00-2-2z"></path></svg>
-                            parasgrows@zohomail.in
-                        </a>
-                    </div>
-
-                    <!-- Address -->
-                    <div>
-                        <p class="text-lg font-semibold text-blue-600 mb-1">Office Address (Chennai)</p>
-                        <p class="text-xl text-gray-700 flex items-start">
-                            <svg class="w-6 h-6 mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.899a2 2 0 01-2.828 0L6.343 16.657A8 8 0 1117.657 16.657z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
-                            No. 25/22, 19th Street, 4th Avenue,<br>
-                            Ashok Nagar, Chennai - 600083
-                        </p>
-                    </div>
-
-                    <!-- Hours -->
-                    <div>
-                        <p class="text-lg font-semibold text-blue-600 mb-1">Working Hours</p>
-                        <p class="text-xl text-gray-700">Mon - Sat: 9:00 AM to 7:00 PM</p>
-                    </div>
-                </div>
+            <!-- Full Name -->
+            <div>
+                <label for="full-name" class="block text-sm font-medium text-gray-700 mb-1">Full Name</label>
+                <input type="text" id="full-name" name="full-name" required
+                       class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:ring-indigo-500 focus:border-indigo-500 transition duration-150 ease-in-out"
+                       placeholder="John Doe">
             </div>
 
-            <!-- Map/Location Placeholder -->
-            <div class="rounded-xl overflow-hidden shadow-2xl">
-                <h2 class="text-3xl font-bold bg-gray-800 text-white p-4 text-center">Find Us on the Map</h2>
-                <!-- Placeholder for an embedded Google Map -->https://maps.app.goo.gl/EU1ow5acu1UCfStp6
-                <img src="https://placehold.co/600x450/374151/ffffff?text=Map+Placeholder+-+Ashok+Nagar%2C+Chennai" 
-                     alt="Google Maps placeholder for Ashok Nagar, Chennai"
-                     class="w-full h-auto object-cover" 
-                     loading="lazy">
+            <!-- Email Address -->
+            <div>
+                <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email Address</label>
+                <input type="email" id="email" name="email" required
+                       class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:ring-indigo-500 focus:border-indigo-500 transition duration-150 ease-in-out"
+                       placeholder="you@example.com">
             </div>
 
-        </div>
-        
-        <!-- CTA for Site Survey -->
-        <section class="mt-16 text-center bg-gray-100 p-12 rounded-xl border-t-4 border-gray-300">
-            <h3 class="text-3xl font-bold text-gray-900 mb-4">Request a Free Site Survey</h3>
-            <p class="text-lg text-gray-700 mb-6 max-w-2xl mx-auto">
-                For complex installations (CCTV, Networking, Gate Motors), a professional survey ensures the best outcome. Contact us to schedule yours.
+            <!-- Subject -->
+            <div>
+                <label for="subject" class="block text-sm font-medium text-gray-700 mb-1">Subject</label>
+                <input type="text" id="subject" name="subject"
+                       class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:ring-indigo-500 focus:border-indigo-500 transition duration-150 ease-in-out"
+                       placeholder="Regarding a project/support request/general inquiry">
+            </div>
+
+            <!-- Message -->
+            <div>
+                <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Message</label>
+                <textarea id="message" name="message" rows="5" required
+                          class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:ring-indigo-500 focus:border-indigo-500 transition duration-150 ease-in-out"
+                          placeholder="Your detailed message..."></textarea>
+            </div>
+
+            <!-- Submit Button -->
+            <div>
+                <button type="submit"
+                        class="w-full flex justify-center py-3 px-4 border border-transparent rounded-lg shadow-md text-base font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition duration-150 ease-in-out transform hover:scale-[1.01]">
+                    Send Message
+                </button>
+            </div>
+
+        </form>
+
+        <!-- Additional Contact Info (Optional) -->
+        <div class="mt-10 pt-6 border-t border-gray-100 text-center">
+            <p class="text-sm text-gray-500">
+                You can also reach us directly:
+                <br class="md:hidden">
+                <span class="font-semibold text-indigo-600">hello@mockcompany.com</span> | <span class="font-semibold text-indigo-600">(555) 123-4567</span>
             </p>
-            <a href="https://wa.me/919894214024?text=I%20would%20like%20to%20request%20a%20site%20survey%20for%20a%20new%20installation." target="_blank" class="bg-green-500 text-white font-bold px-8 py-4 rounded-full hover:bg-green-600 transition-colors duration-300 shadow-xl inline-flex items-center space-x-2">
-                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12.001 2c-5.522 0-10 4.478-10 10s4.478 10 10 10c1.472 0 2.871-.321 4.148-.902l3.298 1.077c.365.119.76.01.996-.245.236-.254.272-.619.096-.949l-.004-.007c-.02-.036-1.554-2.839-1.554-2.839-2.091 1.057-4.493 1.637-6.984 1.637-4.418 0-8-3.582-8-8s3.582-8 8-8zM12.001 4c3.313 0 6 2.687 6 6s-2.687 6-6 6-6-2.687-6-6 2.687-6 6-6zM14.5 11l-3 3-2-2 1-1 2 2 4-4 1 1-5 5z"/></svg>
-                <span>WhatsApp Us Now</span>
-            </a>
-        </section>
+        </div>
 
     </div>
-
-    <!-- Footer -->
-    <footer class="bg-gray-800 text-white mt-12 py-8">
-        <div class="container mx-auto px-4 text-center">
-            <p>&copy; 2024 Paras Enterprises. Integrated Technology Solutions in Chennai.</p>
-        </div>
-    </footer>
 
 </body>
 </html>
