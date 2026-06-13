@@ -8,22 +8,53 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
     <style>
-        body {
-            font-family: 'Inter', sans-serif;
-        }
-        .text-accent {
-            color: #1D4ED8; /* Tailwind Blue-700 */
-        }
-        .bg-accent {
-            background-color: #1D4ED8;
-        }
+        body { font-family: 'Inter', sans-serif; }
+        .text-accent { color: #1D4ED8; }
+        .bg-accent { background-color: #1D4ED8; }
     </style>
     
     <!-- 1. CRITICAL SEO ELEMENTS -->
-    <title>About Us | Paras Enterprises - Smart Integration Experts in Chennai</title>
-    <meta name="description" content="Learn about Paras Enterprises, Chennai's trusted systems integrator since 2018. Specializing in high-uptime CCTV, networking, automation, and hard water treatment solutions.">
+    <title>Paras Enterprises | STQC-Certified CCTV & 4G Security Experts Chennai</title>
+    <meta name="description" content="Paras Enterprises: Chennai's trusted experts in STQC-certified IP cameras, 4G solar surveillance, and networking. Serving Jafferkhanpet, Ashok Nagar, & West Mambalam.">
     <link rel="canonical" href="https://parasgrows.github.io/parasenterprises/about.html">
     <meta name="robots" content="index, follow">
+
+    <!-- 2. LOCAL BUSINESS SCHEMA (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Paras Enterprises",
+      "image": "https://parasgrows.github.io/parasenterprises/logo.png",
+      "@id": "https://parasgrows.github.io/parasenterprises/",
+      "url": "https://parasgrows.github.io/parasenterprises/",
+      "telephone": "+919894214024",
+      "priceRange": "$$",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "S-2, No. 10/2, Kanni Street, Jafferkhanpet",
+        "addressLocality": "Chennai",
+        "postalCode": "600083",
+        "addressRegion": "TN",
+        "addressCountry": "IN"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 13.0301,
+        "longitude": 80.2133
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+        "opens": "09:00",
+        "closes": "19:00"
+      },
+      "sameAs": [
+        "https://maps.app.goo.gl/XtFyVRPkfq4iGtsb6"
+      ],
+      "keywords": "CCTV Installation, STQC Certified IP Cameras, 4G Solar Cameras, Networking, Water Softener, Jafferkhanpet, Ashok Nagar, West Mambalam"
+    }
+    </script>
 </head>
 <body class="bg-gray-50 text-gray-800 antialiased">
 
@@ -31,8 +62,6 @@
     <nav class="bg-white shadow-lg p-4 sticky top-0 z-20">
         <div class="container mx-auto flex items-center justify-between">
             <a href="index.html" class="text-2xl font-bold text-gray-900 tracking-tight">Paras Enterprises</a>
-            
-            <!-- Desktop Navigation -->
             <div class="space-x-4 hidden md:flex">
                 <a href="index.html" class="text-gray-600 hover:text-blue-600 transition-colors duration-200 px-3 py-2 rounded-lg">Home</a>
                 <a href="services.html" class="text-gray-600 hover:text-blue-600 transition-colors duration-200 px-3 py-2 rounded-lg">Services</a>
@@ -40,30 +69,24 @@
                 <a href="about.html" class="text-white bg-blue-600 hover:bg-blue-700 font-semibold transition-colors duration-200 px-3 py-2 rounded-lg shadow-md">About Us</a>
                 <a href="contact.html" class="text-gray-600 hover:text-blue-600 transition-colors duration-200 px-3 py-2 rounded-lg">Contact</a>
             </div>
-
-            <!-- Mobile Menu Toggle Button -->
-            <button id="menu-btn" class="md:hidden text-gray-600 hover:text-blue-600 p-2 rounded-md focus:outline-none" aria-label="Toggle Menu">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
-                </svg>
+            <button id="menu-btn" class="md:hidden text-gray-600 hover:text-blue-600 p-2 rounded-md focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
             </button>
         </div>
     </nav>
 
-    <!-- Mobile Navigation Drawer -->
+    <!-- Mobile Menu -->
     <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-200 px-4 py-3 space-y-2 shadow-inner sticky top-[73px] z-20">
-        <a href="index.html" class="block text-gray-600 hover:text-blue-600 py-1">Home</a>
-        <a href="services.html" class="block text-gray-600 hover:text-blue-600 py-1">Services</a>
-        <a href="clients.html" class="block text-gray-600 hover:text-blue-600 py-1">Clients</a>
+        <a href="index.html" class="block text-gray-600 py-1">Home</a>
+        <a href="services.html" class="block text-gray-600 py-1">Services</a>
+        <a href="clients.html" class="block text-gray-600 py-1">Clients</a>
         <a href="about.html" class="block text-blue-600 font-semibold py-1">About Us</a>
-        <a href="contact.html" class="block text-gray-600 hover:text-blue-600 py-1">Contact</a>
+        <a href="contact.html" class="block text-gray-600 py-1">Contact</a>
     </div>
     
-    <!-- Floating WhatsApp CTA (Direct Lead Gen) -->
-    <a href="https://wa.me/919894214024?text=Hello%20Paras%20Enterprises" target="_blank" rel="noopener noreferrer" class="fixed bottom-6 right-6 z-50 bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-2xl transition-all duration-300 transform hover:scale-110" aria-label="Contact us on WhatsApp">
-        <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397 0 11.948 0c3.174.001 6.161 1.24 8.401 3.487 2.24 2.246 3.475 5.236 3.472 8.411-.004 6.597-5.342 11.946-11.892 11.946-2.015-.001-3.996-.511-5.741-1.486L0 24zm6.59-4.846c1.666.988 3.31 1.472 5.302 1.473 5.4 0 9.795-4.405 9.798-9.822.003-2.624-1.017-5.093-2.872-6.951-1.855-1.857-4.325-2.878-6.945-2.879-5.4 0-9.798 4.405-9.801 9.822-.001 2.016.523 3.985 1.52 5.742l-.997 3.64 3.737-.981-.142-.224zM16.51 14.15c-.247-.125-1.467-.724-1.693-.807-.227-.084-.393-.125-.558.125-.165.249-.64.807-.784.973-.145.166-.29.187-.537.062-.247-.125-1.044-.385-1.988-1.227-.735-.656-1.232-1.466-1.377-1.714-.145-.247-.015-.38.109-.504.113-.111.247-.29.372-.436.124-.145.165-.249.248-.415.083-.166.042-.311-.02-.436-.063-.125-.559-1.349-.765-1.848-.2-.486-.403-.42-.558-.428-.144-.007-.31-.009-.475-.009-.165 0-.434.062-.661.311-.227.249-.867.851-.867 2.076s.891 2.408.99 2.541c.1.133 1.753 2.677 4.248 3.754.593.257 1.058.41 1.419.524.596.189 1.138.162 1.567.098.478-.072 1.467-.6 1.674-1.18.206-.581.206-1.079.144-1.18-.061-.103-.226-.165-.473-.29z"/>
-        </svg>
+    <!-- WhatsApp CTA -->
+    <a href="https://wa.me/919894214024?text=Hello%20Paras%20Enterprises" target="_blank" class="fixed bottom-6 right-6 z-50 bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-2xl transition-all duration-300 transform hover:scale-110">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397 0 11.948 0c3.174.001 6.161 1.24 8.401 3.487 2.24 2.246 3.475 5.236 3.472 8.411-.004 6.597-5.342 11.946-11.892 11.946-2.015-.001-3.996-.511-5.741-1.486L0 24zm6.59-4.846c1.666.988 3.31 1.472 5.302 1.473 5.4 0 9.795-4.405 9.798-9.822.003-2.624-1.017-5.093-2.872-6.951-1.855-1.857-4.325-2.878-6.945-2.879-5.4 0-9.798 4.405-9.801 9.822-.001 2.016.523 3.985 1.52 5.742l-.997 3.64 3.737-.981-.142-.224zM16.51 14.15c-.247-.125-1.467-.724-1.693-.807-.227-.084-.393-.125-.558.125-.165.249-.64.807-.784.973-.145.166-.29.187-.537.062-.247-.125-1.044-.385-1.988-1.227-.735-.656-1.232-1.466-1.377-1.714-.145-.247-.015-.38.109-.504.113-.111.247-.29.372-.436.124-.145.165-.249.248-.415.083-.166.042-.311-.02-.436-.063-.125-.559-1.349-.765-1.848-.2-.486-.403-.42-.558-.428-.144-.007-.31-.009-.475-.009-.165 0-.434.062-.661.311-.227.249-.867.851-.867 2.076s.891 2.408.99 2.541c.1.133 1.753 2.677 4.248 3.754.593.257 1.058.41 1.419.524.596.189 1.138.162 1.567.098.478-.072 1.467-.6 1.674-1.18.206-.581.206-1.079.144-1.18-.061-.103-.226-.165-.473-.29z"/></svg>
     </a>
 
     <!-- Page Title Header -->
@@ -71,47 +94,63 @@
         <div class="container mx-auto px-4 max-w-7xl">
             <h1 class="text-4xl md:text-5xl font-extrabold text-gray-900 mb-4">About Paras Enterprises</h1>
             <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-                Delivering engineering excellence, seamless integration, and reliable infrastructure management since 2018.
+                Chennai’s trusted system integrator for **STQC-certified CCTV**, high-speed networking, and smart automation solutions.
             </p>
         </div>
     </header>
 
-    <!-- Main Story Content Section -->
+    <!-- Main Content -->
     <section class="py-16 bg-white">
         <div class="container mx-auto px-4 max-w-5xl">
-            <div class="space-y-8 text-lg text-gray-700 leading-relaxed">
+            <div class="space-y-12 text-lg text-gray-700 leading-relaxed">
                 <div>
                     <h2 class="text-3xl font-bold text-gray-900 mb-4">Who We Are</h2>
                     <p>
-                        Founded in 2018 in Chennai, <strong>Paras Enterprises</strong> has grown into a premiere professional system integrator specializing in low-voltage electrical systems, enterprise security infrastructure, robust networking solutions, and mechanical utility handling.
+                        Founded in 2018 in Chennai, <strong>Paras Enterprises</strong> is led by a first-generation entrepreneur dedicated to engineering excellence. We specialize in end-to-end **CCTV surveillance (IP, 4K, 4G, Solar)**, robust **networking infrastructure**, and specialized **hard water treatment** for residential and commercial properties.
                     </p>
                 </div>
 
                 <div>
-                    <h2 class="text-3xl font-bold text-gray-900 mb-4">Our Unique Approach</h2>
+                    <h2 class="text-3xl font-bold text-gray-900 mb-4">Our Core Surveillance Expertise</h2>
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <ul class="list-disc pl-6 space-y-3">
+                            <li><strong>STQC-Certified Systems:</strong> High-security IP cameras and NVRs for mission-critical infrastructure.</li>
+                            <li><strong>4G & Solar 4G Cameras:</strong> Perfect for standalone surveillance in areas without broadband.</li>
+                            <li><strong>Residential Wi-Fi Solutions:</strong> Seamless setup of Wi-Fi cameras with 4G routers for NRI homeowners.</li>
+                        </ul>
+                        <ul class="list-disc pl-6 space-y-3">
+                            <li><strong>Commercial Networking:</strong> Fiber optic backbones, PoE switching, and industrial LAN setups.</li>
+                            <li><strong>Access & Automation:</strong> Biometric solutions, smart locks, and gate automation.</li>
+                            <li><strong>Water Quality:</strong> Maintenance-free hard water conditioners and iron filtration.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div>
+                    <h2 class="text-3xl font-bold text-gray-900 mb-4">The Paras Difference</h2>
                     <p>
-                        We differentiate ourselves by refusing to sell standalone box products. Instead, our team designs <strong>holistic, deeply integrated ecosystem solutions</strong>. Whether it is configuring artificial intelligence over an IP surveillance perimeter, running optimized Cat6 structured data cabling, installing automated entrance gates, or deploying chemical-free hard water conditioners, we design solutions configured to operate cohesively under real-world conditions.
+                        We differentiate ourselves through **honest consulting**. Whether it's reclaiming camera access from former partners or repositioning existing hardware for better coverage, we prioritize your security over equipment sales. From our base in **Jafferkhanpet**, we provide same-day troubleshooting and dedicated warranty support across **Ashok Nagar** and **West Mambalam**.
                     </p>
                 </div>
 
-                <!-- Core Operating Pillars Grid -->
+                <!-- Operating Pillars -->
                 <div class="pt-8">
                     <h2 class="text-3xl font-bold text-center text-gray-900 mb-8">Our Founding Commitments</h2>
                     <div class="grid md:grid-cols-3 gap-6">
                         <div class="bg-gray-50 p-6 rounded-xl border border-gray-100 shadow-sm text-center">
                             <div class="text-4xl mb-3">🛠️</div>
-                            <h3 class="text-xl font-bold text-gray-900 mb-2">Technical Perfection</h3>
-                            <p class="text-sm text-gray-600">We utilize heavy-duty equipment, top-tier brands, and verified layout architecture engineered for maximum operational longevity.</p>
+                            <h3 class="text-xl font-bold text-gray-900 mb-2">Technical Honesty</h3>
+                            <p class="text-sm text-gray-600">We optimize your existing layout first, only recommending new hardware when essential for coverage.</p>
                         </div>
                         <div class="bg-gray-50 p-6 rounded-xl border border-gray-100 shadow-sm text-center">
                             <div class="text-4xl mb-3">📍</div>
-                            <h3 class="text-xl font-bold text-gray-900 mb-2">Deep Local Knowledge</h3>
-                            <p class="text-sm text-gray-600">Based in Ashok Nagar, we understand Chennai's environmental realities, from structural cabling considerations to regional water iron and scaling challenges.</p>
+                            <h3 class="text-xl font-bold text-gray-900 mb-2">Local & Reliable</h3>
+                            <p class="text-sm text-gray-600">Centered in Jafferkhanpet, we provide rapid, on-site support to the local Chennai community.</p>
                         </div>
                         <div class="bg-gray-50 p-6 rounded-xl border border-gray-100 shadow-sm text-center">
                             <div class="text-4xl mb-3">🤝</div>
-                            <h3 class="text-xl font-bold text-gray-900 mb-2">Unwavering Support</h3>
-                            <p class="text-sm text-gray-600">Our customer relationships don't end at deployment. We offer responsive, hands-on, post-installation support and maintenance services.</p>
+                            <h3 class="text-xl font-bold text-gray-900 mb-2">NRI Trusted</h3>
+                            <p class="text-sm text-gray-600">Expert remote monitoring setups for clients living abroad who need to secure their properties in India.</p>
                         </div>
                     </div>
                 </div>
@@ -119,55 +158,46 @@
         </div>
     </section>
 
-    <!-- High Impact Call To Action Section -->
+    <!-- Call To Action -->
     <section class="bg-accent py-16 text-white text-center">
         <div class="container mx-auto px-4 max-w-7xl">
-            <h2 class="text-3xl font-extrabold mb-4">Partner with Chennai's Systems Experts</h2>
+            <h2 class="text-3xl font-extrabold mb-4">Secure Your Property Today</h2>
             <p class="text-xl text-blue-200 mb-8 max-w-2xl mx-auto">
-                Let us evaluate your property or commercial premises. Contact our technical team for an accurate site assessment.
+                Consult with Chennai's CCTV and networking specialists for a professional site evaluation.
             </p>
-            <a href="contact.html" class="bg-yellow-400 text-gray-900 font-extrabold px-10 py-4 rounded-full hover:bg-yellow-500 transition-colors duration-300 shadow-2xl text-lg inline-block">
-                Get in Touch Today
-            </a>
+            <a href="contact.html" class="bg-yellow-400 text-gray-900 font-extrabold px-10 py-4 rounded-full hover:bg-yellow-500 shadow-2xl text-lg inline-block">Get a Free Consultation</a>
         </div>
     </section>
 
-    <!-- Footer Area -->
+    <!-- Footer -->
     <footer class="bg-gray-900 text-white py-10">
         <div class="container mx-auto px-4 max-w-7xl">
             <div class="grid md:grid-cols-4 gap-8 pb-8 border-b border-gray-700">
-                
                 <div>
                     <h4 class="text-xl font-bold mb-4">Paras Enterprises</h4>
-                    <p class="text-gray-400 text-sm">Chennai's specialist in integrated technology and utility solutions.</p>
+                    <p class="text-gray-400 text-sm">Specialists in integrated surveillance, networking, and utility solutions.</p>
                 </div>
-                
                 <div>
                     <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
                     <ul class="space-y-2 text-sm">
-                        <li><a href="services.html" class="text-gray-400 hover:text-blue-400">Services Overview</a></li>
-                        <li><a href="clients.html" class="text-gray-400 hover:text-blue-400">Client Testimonials</a></li>
-                        <li><a href="about.html" class="text-gray-400 hover:text-blue-400">About Our Team</a></li>
-                        <li><a href="contact.html" class="text-gray-400 hover:text-blue-400">Get a Free Quote</a></li>
+                        <li><a href="services.html" class="text-gray-400 hover:text-blue-400">Our Services</a></li>
+                        <li><a href="contact.html" class="text-gray-400 hover:text-blue-400">Get a Quote</a></li>
                     </ul>
                 </div>
-
                 <div>
-                    <h4 class="text-lg font-semibold mb-4">Get In Touch</h4>
+                    <h4 class="text-lg font-semibold mb-4">Contact</h4>
                     <p class="text-gray-400 text-sm">
                         <a href="tel:+919894214024" class="hover:text-blue-400">+91 98942 14024</a><br>
                         <a href="mailto:parasgrows@zohomail.in" class="hover:text-blue-400">parasgrows@zohomail.in</a>
                     </p>
                 </div>
-
                 <div>
-                    <h4 class="text-lg font-semibold mb-4">Office Location</h4>
-                    <p class="text-gray-400 text-sm" id="footer-address">
+                    <h4 class="text-lg font-semibold mb-4">Office</h4>
+                    <p class="text-gray-400 text-sm">
                         S-2, No. 10/2, Kanni Street, Jafferkhanpet,<br>
-                        Ashok Nagar, Chennai - 600083
+                        Chennai - 600083
                     </p>
                 </div>
-
             </div>
             <div class="text-center mt-6 text-gray-500 text-sm">
                 &copy; 2026 Paras Enterprises. All rights reserved.
@@ -175,14 +205,10 @@
         </div>
     </footer>
 
-    <!-- Script for mobile toggle logic functionality -->
     <script>
         const menuBtn = document.getElementById('menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
-
-        menuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
+        menuBtn.addEventListener('click', () => { mobileMenu.classList.toggle('hidden'); });
     </script>
 </body>
 </html>
